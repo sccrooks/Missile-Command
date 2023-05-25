@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using QFSW.QC;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using QFSW.QC;
+using Zenject;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField]
-    private string _gameScene;
+    SceneData _sceneData;
 
     /// <summary>
     /// Starts the game
@@ -15,7 +13,7 @@ public class MainMenuController : MonoBehaviour
     [Command]
     public void StartGame()
     {
-        SceneManager.LoadScene(_gameScene, LoadSceneMode.Single);
+        SceneManager.LoadScene(_sceneData.Game, LoadSceneMode.Single);
     }
 
     /// <summary>
@@ -26,9 +24,14 @@ public class MainMenuController : MonoBehaviour
     {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-        #else 
+        #else
             Application.Quit();
         #endif
-    
+    }
+
+    [Command]
+    public void GameOver()
+    {
+        throw new System.NotImplementedException();
     }
 }

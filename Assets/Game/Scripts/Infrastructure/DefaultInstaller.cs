@@ -4,8 +4,16 @@ using Zenject;
 
 public class DefaultInstaller : MonoInstaller
 {
+    [SerializeField] private SceneData _sceneData;
+
     public override void InstallBindings()
     {
-        Container.Bind<IGameManager>().To<GameManager>().AsSingle();
+        
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        SceneManager.LoadScene(_sceneData.MainMenu, LoadSceneMode.Single);
     }
 }

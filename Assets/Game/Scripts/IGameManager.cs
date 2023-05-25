@@ -4,4 +4,7 @@ using UnityEngine;
 
 public interface IGameManager
 {
+    public void StartGame();
+    public void ExitGame();
+    public void GameOver();
 }
