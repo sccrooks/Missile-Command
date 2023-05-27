@@ -5,7 +5,8 @@ using Zenject;
 
 public class MainMenuController : MonoBehaviour
 {
-    SceneData _sceneData;
+    [SerializeField]
+    private SceneData _sceneData;
 
     /// <summary>
     /// Starts the game

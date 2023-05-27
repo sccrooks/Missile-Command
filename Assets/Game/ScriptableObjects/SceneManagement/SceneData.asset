@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c42e688172f18d846adf395c72163698, type: 3}
   m_Name: SceneData
   m_EditorClassIdentifier: 
-  <Setup>k__BackingField: Setup
-  <MainMenu>k__BackingField: MainMenu
-  <Game>k__BackingField: Game
-  <Endless>k__BackingField: Endless
-  <GameOver>k__BackingField: GameOver
+  Setup: Setup
+  MainMenu: MainMenu
+  Game: Game
+  Endless: Endless
+  GameOver: GameOver
