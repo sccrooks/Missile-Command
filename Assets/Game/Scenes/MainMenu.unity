@@ -1783,4 +1783,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b210233fa23d14245a31b56592b43d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameScene: Game
+  _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
