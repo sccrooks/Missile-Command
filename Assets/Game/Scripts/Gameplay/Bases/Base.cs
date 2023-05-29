@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.Bases
 {
+    /// <summary>
+    /// Used for storing base data and individual base actions.
+    /// </summary>
     public class Base : MonoBehaviour
     {
         [Header("Base Art")]
-        [SerializeField] private GameObject _baseDestroyed;
         [SerializeField] private GameObject _baseAlive;
+        [SerializeField] private GameObject _baseDestroyed;
 
         [Header("Base Stats")]
         [SerializeField] private bool _isAlive;
@@ -31,11 +34,17 @@ namespace MissileCommand.Gameplay.Bases
             }
         }
 
+        /// <summary>
+        /// Destroy the base
+        /// </summary>
         public void Destroy()
         {
            IsAlive = false;
         }
 
+        /// <summary>
+        /// Revive the base
+        /// </summary>
         public void Revive()
         {
             IsAlive = true;
