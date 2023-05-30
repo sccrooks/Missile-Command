@@ -199,6 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
+  _baseHolder: {fileID: 0}
+  score: 0
 --- !u!1 &139136566
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +448,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1414213894715741793, guid: 123c0f1603cf7504b9b3b994d95775a1, type: 3}
+      propertyPath: _aliveBases
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1414213894715741798, guid: 123c0f1603cf7504b9b3b994d95775a1, type: 3}
       propertyPath: m_RootOrder
       value: 6

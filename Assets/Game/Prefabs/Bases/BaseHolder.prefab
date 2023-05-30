@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 2591469332917365217}
   - {fileID: 2591469333800096983}
   - {fileID: 2591469332787700848}
+  _aliveBases: 0
 --- !u!1001 &1414213893618425470
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 using QFSW.QC;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
@@ -8,67 +8,114 @@ namespace MissileCommand.Gameplay.Bases {
     public class BaseHolder : MonoBehaviour
     {
         [SerializeField]
-        private List<Base> _baseList = new List<Base>();
+        private List<Base> _bases = new List<Base>();
 
         [SerializeField]
-        [ReadOnly(true)] private int _aliveBases;
-
-        private void Start()
+        private int _activeBases;
+        public int ActiveBases
         {
-            foreach (Base @base in _baseList)
+            get => _activeBases;
+            private set
             {
-                @base.BaseDestroyed += OnBaseDestroyed;
-                @base.BaseRevived += OnBaseRevived;
-
-                if (@base.IsAlive)
-                    _aliveBases++;
+                _activeBases = value;
+                if (_activeBases <= 0)
+                    AllBasesDestroyed?.Invoke();
             }
         }
+
+        public event Action AllBasesDestroyed;
+
+        #region -- Start, OnValidate, OnDestroy --
+        private void Start()
+        {
+            foreach (Base @base in _bases)
+            {
+                @base.BaseDestroyed += OnBaseDestroyed;
+                @base.BaseRepaired += OnBaseRepaired;
+            }
+
+            ActiveBases = getTotalActivebases();
+        }
+
+        private void OnDestroy()
+        {
+            foreach (Base @base in _bases)
+            {
+                @base.BaseDestroyed -= OnBaseDestroyed;
+                @base.BaseRepaired -= OnBaseRepaired;
+            }
+        }
+
+        private void OnValidate()
+        {
+            ActiveBases = getTotalActivebases();
+        }
+        #endregion
 
         /// <summary>
         /// Destroy a base at index
         /// </summary>
-        /// <param name="i">Index of base to destroy</param>
+        /// <param name="index">Index of base to destroy</param>
         [Command("Bases-DestroyBase")]
-        public void DestroyBase(int i)
+        public void DestroyBase(int index)
         {
-            if (i < 0 || i >= _baseList.Count)
+            if (index < 0 || index >= _bases.Count)
             {
                 Debug.LogWarning("Cannot destroy base at index, index is out of range");
                 return;
             }
 
-            _baseList[i].Destroy();
+            _bases[index].Destroy();
         }
 
         /// <summary>
         /// Revive a base at index
         /// </summary>
-        /// <param name="i">Index of base to revive</param>
+        /// <param name="index">Index of base to revive</param>
         [Command("Bases-ReviveBase")]
-        public void ReviveBase(int i)
+        public void RepairBase(int index)
         {
-            if (i < 0 || i >= _baseList.Count)
+            if (index < 0 || index >= _bases.Count)
             {
                 Debug.LogWarning("Cannot revive base at index, index is out of range");
                 return;
             }
 
-            _baseList[i].Revive();
+            _bases[index].Repair();
         }
 
         /// <summary>
-        /// 
+        /// Event subscriber for Base Destroyed event
         /// </summary>
         private void OnBaseDestroyed()
         {
-            _aliveBases--;
+            ActiveBases--;
             
         }
 
-        private void OnBaseRevived()
+        /// <summary>
+        /// Event subscriber for Base Revived event
+        /// </summary>
+        private void OnBaseRepaired()
         {
-            _aliveBases++;
+            ActiveBases++;
+        }
+
+        /// <summary>
+        /// Searchs bases list and returns total number of alive bases
+        /// </summary>
+        /// <returns>Total number of alive bases</returns>
+        private int getTotalActivebases()
+        {
+            int aliveBases = 0;
+
+            foreach (Base @base in _bases)
+            {
+                if (@base.IsActive)
+                    aliveBases++;
+            }
+
+            return aliveBases;
         }
     }
 }
