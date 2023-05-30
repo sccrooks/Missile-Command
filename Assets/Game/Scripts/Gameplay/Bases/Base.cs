@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Bases
@@ -18,18 +19,21 @@ namespace MissileCommand.Gameplay.Bases
         { 
             get { return _isActive; } 
             private set 
-            { 
+            {
+                // Prevent changing base active status if new value is the same as old
+                if (_isActive == value) return;
+
                 _isActive = value;
 
                 if (!_isActive)
                 {
-                    _baseDestroyed.SetActive(true);
-                    _baseActive.SetActive(false);
+                    _baseDestroyed?.SetActive(true);
+                    _baseActive?.SetActive(false);
                     BaseDestroyed?.Invoke();
                 } else
                 {
-                    _baseDestroyed.SetActive(false);
-                    _baseActive.SetActive(true);
+                    _baseDestroyed?.SetActive(false);
+                    _baseActive?.SetActive(true);
                     BaseRepaired?.Invoke();
                 }
             }
@@ -39,10 +43,11 @@ namespace MissileCommand.Gameplay.Bases
         public event Action BaseRepaired;
 
 #if UNITY_EDITOR
-        private void OnValidate() { UnityEditor.EditorApplication.delayCall += _OnValidate; }
+        private void OnValidate() { EditorApplication.delayCall += _OnValidate; }
         private void _OnValidate()
         {
-            IsActive = _isActive;
+            if (!EditorApplication.isPlayingOrWillChangePlaymode)
+                IsActive = _isActive;
         }
 #endif
 
@@ -51,8 +56,7 @@ namespace MissileCommand.Gameplay.Bases
         /// </summary>
         public void Destroy()
         {
-            if (IsActive)
-                IsActive = false;
+            IsActive = false;
         }
 
         /// <summary>
@@ -60,8 +64,7 @@ namespace MissileCommand.Gameplay.Bases
         /// </summary>
         public void Repair()
         {
-            if (!IsActive)
-                IsActive = true;
+            IsActive = true;
         }
     }
 }

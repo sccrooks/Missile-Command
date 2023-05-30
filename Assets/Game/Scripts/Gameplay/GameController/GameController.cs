@@ -26,6 +26,16 @@ namespace MissileCommand.Gameplay.GameController
             Instance = this;
         }
 
+        private void Start()
+        {
+            _baseHolder.AllBasesDestroyed += OnAllBasesDestroyed;
+        }
+
+        private void OnDestroy()
+        {
+            _baseHolder.AllBasesDestroyed -= OnAllBasesDestroyed;
+        }
+
         private void OnAllBasesDestroyed()
         {
             EndGame();

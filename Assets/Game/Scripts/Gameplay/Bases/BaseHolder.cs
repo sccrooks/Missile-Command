@@ -1,7 +1,7 @@
 using QFSW.QC;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using UnityEditor;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Bases {
@@ -48,7 +48,10 @@ namespace MissileCommand.Gameplay.Bases {
 
         private void OnValidate()
         {
-            ActiveBases = getTotalActivebases();
+#if UNITY_EDITOR
+            if (!EditorApplication.isPlayingOrWillChangePlaymode)
+                ActiveBases = getTotalActivebases();
+#endif
         }
         #endregion
 
@@ -90,7 +93,6 @@ namespace MissileCommand.Gameplay.Bases {
         private void OnBaseDestroyed()
         {
             ActiveBases--;
-            
         }
 
         /// <summary>
@@ -107,15 +109,15 @@ namespace MissileCommand.Gameplay.Bases {
         /// <returns>Total number of alive bases</returns>
         private int getTotalActivebases()
         {
-            int aliveBases = 0;
+            int active = 0;
 
             foreach (Base @base in _bases)
             {
                 if (@base.IsActive)
-                    aliveBases++;
+                    active++;
             }
 
-            return aliveBases;
+            return active;
         }
     }
 }

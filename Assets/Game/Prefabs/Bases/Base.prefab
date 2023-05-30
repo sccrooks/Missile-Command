@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3483239280769828341}
   - component: {fileID: 3483239280769828338}
   m_Layer: 7
-  m_Name: BaseAlive
+  m_Name: BaseActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,9 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2ffe339bfa88140bb648890f597abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseAlive: {fileID: 3483239280769828340}
+  _baseActive: {fileID: 3483239280769828340}
   _baseDestroyed: {fileID: 3483239281306083317}
-  _isAlive: 1
+  _isActive: 1
 --- !u!61 &8321778595029313865
 BoxCollider2D:
   m_ObjectHideFlags: 0
