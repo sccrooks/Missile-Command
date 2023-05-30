@@ -26,7 +26,7 @@ namespace MissileCommand.Gameplay.Bases
                 if (!_isAlive)
                 {
                     _baseDestroyed.SetActive(true);
-                    _baseAlive.SetActive(true);
+                    _baseAlive.SetActive(false);
                     BaseDestroyed?.Invoke();
                 } else
                 {
@@ -40,12 +40,21 @@ namespace MissileCommand.Gameplay.Bases
         public event Action BaseDestroyed;
         public event Action BaseRevived;
 
+#if UNITY_EDITOR
+        private void OnValidate() { UnityEditor.EditorApplication.delayCall += _OnValidate; }
+        private void _OnValidate()
+        {
+            IsAlive = _isAlive;
+        }
+#endif
+
         /// <summary>
         /// Destroy the base
         /// </summary>
         public void Destroy()
         {
-           IsAlive = false;
+            if (IsAlive)
+                IsAlive = false;
         }
 
         /// <summary>
@@ -53,7 +62,8 @@ namespace MissileCommand.Gameplay.Bases
         /// </summary>
         public void Revive()
         {
-            IsAlive = true;
+            if (!IsAlive)
+                IsAlive = true;
         }
     }
 }
