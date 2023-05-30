@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,13 +27,18 @@ namespace MissileCommand.Gameplay.Bases
                 {
                     _baseDestroyed.SetActive(true);
                     _baseAlive.SetActive(true);
+                    BaseDestroyed?.Invoke();
                 } else
                 {
                     _baseDestroyed.SetActive(false);
                     _baseAlive.SetActive(true);
+                    BaseRevived?.Invoke();
                 }
             }
         }
+
+        public event Action BaseDestroyed;
+        public event Action BaseRevived;
 
         /// <summary>
         /// Destroy the base
