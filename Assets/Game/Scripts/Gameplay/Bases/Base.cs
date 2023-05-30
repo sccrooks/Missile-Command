@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Bases
@@ -11,40 +10,44 @@ namespace MissileCommand.Gameplay.Bases
     public class Base : MonoBehaviour
     {
         [Header("Base Art")]
-        [SerializeField] private GameObject _baseAlive;
+        [SerializeField] private GameObject _baseActive;
         [SerializeField] private GameObject _baseDestroyed;
 
         [Header("Base Stats")]
-        [SerializeField] private bool _isAlive;
-        public bool IsAlive 
+        [SerializeField] private bool _isActive;
+        public bool IsActive 
         { 
-            get { return _isAlive; } 
+            get { return _isActive; } 
             private set 
-            { 
-                _isAlive = value;
+            {
+                // Prevent changing base active status if new value is the same as old
+                if (_isActive == value) return;
 
-                if (!_isAlive)
+                _isActive = value;
+
+                if (!_isActive)
                 {
-                    _baseDestroyed.SetActive(true);
-                    _baseAlive.SetActive(false);
+                    _baseDestroyed?.SetActive(true);
+                    _baseActive?.SetActive(false);
                     BaseDestroyed?.Invoke();
                 } else
                 {
-                    _baseDestroyed.SetActive(false);
-                    _baseAlive.SetActive(true);
-                    BaseRevived?.Invoke();
+                    _baseDestroyed?.SetActive(false);
+                    _baseActive?.SetActive(true);
+                    BaseRepaired?.Invoke();
                 }
             }
         }
 
         public event Action BaseDestroyed;
-        public event Action BaseRevived;
+        public event Action BaseRepaired;
 
 #if UNITY_EDITOR
-        private void OnValidate() { UnityEditor.EditorApplication.delayCall += _OnValidate; }
+        private void OnValidate() { EditorApplication.delayCall += _OnValidate; }
         private void _OnValidate()
         {
-            IsAlive = _isAlive;
+            if (!EditorApplication.isPlayingOrWillChangePlaymode)
+                IsActive = _isActive;
         }
 #endif
 
@@ -53,17 +56,15 @@ namespace MissileCommand.Gameplay.Bases
         /// </summary>
         public void Destroy()
         {
-            if (IsAlive)
-                IsAlive = false;
+            IsActive = false;
         }
 
         /// <summary>
-        /// Revive the base
+        /// Repair the base
         /// </summary>
-        public void Revive()
+        public void Repair()
         {
-            if (!IsAlive)
-                IsAlive = true;
+            IsActive = true;
         }
     }
 }
