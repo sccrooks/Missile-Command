@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reticle : MonoBehaviour
+namespace MissileCommand.Gameplay.Reticle
 {
-    
-
-    private void Update()
+    public class Reticle : MonoBehaviour
     {
-        
+        private void Update()
+        {
+
+        }
     }
 }
