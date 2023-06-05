@@ -200,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
   _baseHolder: {fileID: 1069496444}
+  _reticle: {fileID: 0}
   score: 0
 --- !u!1 &134371709
 GameObject:
