@@ -4,11 +4,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.Reticle
 {
-    public class Reticle : MonoBehaviour
+    public class ReticleController : MonoBehaviour
     {
-        private void Update()
-        {
-
-        }
     }
 }
