@@ -18,6 +18,7 @@ namespace MissileCommand.Gameplay.GameController
 
         [Header("Game stats")]
         [SerializeField] private int score;
+        [SerializeField] private float speed;
 
         #region -- Awake/Start/OnDestroy --
         private void Awake()
@@ -42,7 +43,7 @@ namespace MissileCommand.Gameplay.GameController
         /// <param name="movement">Vector2</param>
         public void MoveReticle(Vector2 movement)
         {
-            _reticle.gameObject.transform.position = movement;
+            _reticle.Transform.position += new Vector3(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime, 0);
         }
 
         /// <summary>
