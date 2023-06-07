@@ -7,6 +7,7 @@ namespace MissileCommand.Infrastructure.ScriptableObjects
     public class IntVariable : ScriptableObject, ISerializationCallbackReceiver
     {
         public int InitialValue;
+        
         [NonSerialized]
         public int RunTimeValue;
 
