@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects
@@ -8,6 +7,7 @@ namespace MissileCommand.Infrastructure.ScriptableObjects
     public class IntVariable : ScriptableObject, ISerializationCallbackReceiver
     {
         public int InitialValue;
+        [NonSerialized]
         public int RunTimeValue;
 
         public void OnAfterDeserialize()
