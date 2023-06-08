@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserData : ScriptableObject, ISerializationCallbackReceiver
+namespace MissileCommand.Infrastructure.ScriptableObjects
 {
-    public string Name;
-
-    public void OnAfterDeserialize()
+    [CreateAssetMenu(fileName = "User Data", menuName = ("Infrastructure/User Data"))]
+    public class UserData : ScriptableObject, ISerializationCallbackReceiver
     {
-        // TODO: Save name to file
-        throw new System.NotImplementedException();
-    }
+        public string Name;
 
-    public void OnBeforeSerialize()
-    {
-        // TODO: Load name from file
-        throw new System.NotImplementedException();
+        public void OnAfterDeserialize()
+        {
+            // TODO: Save name to file
+            throw new System.NotImplementedException();
+        }
+
+        public void OnBeforeSerialize()
+        {
+            // TODO: Load name from file
+            throw new System.NotImplementedException();
+        }
     }
 }
