@@ -20,10 +20,19 @@ namespace MissileCommand.Utils
             _gameOverEvent.Raise();
         }
 
+        /// <summary>
+        /// Exits the game
+        /// </summary>
         [Command("Quit")]
         public void QuitGame()
         {
             _quitGameEvent.Raise();
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
         }
     }
 }

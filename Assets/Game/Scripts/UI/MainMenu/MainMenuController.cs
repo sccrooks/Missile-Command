@@ -27,19 +27,6 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(_sceneData.Endless, LoadSceneMode.Single);
     }
 
-    /// <summary>
-    /// Exits the game
-    /// </summary>
-    [Command("Quit")]
-    public void QuitGame()
-    {
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
-    }
-
     [Command]
     public void GameOver()
     {
