@@ -828,9 +828,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2081794348}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 11400000, guid: bcdc16f2e9b829b478b08f6b8cab7c19, type: 2}
+        m_TargetAssemblyTypeName: MissileCommand.Infrastructure.Events.GameEvent,
+          Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
