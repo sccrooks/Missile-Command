@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void BaseCollision()
     {
-        
+        Debug.Log("Collided with Base");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnvironmentCollision()
     {
-        
+        Debug.Log("Collided with environment");
     }
 }
