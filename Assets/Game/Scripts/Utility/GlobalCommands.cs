@@ -26,6 +26,8 @@ namespace MissileCommand.Utils
         [Command("Quit")]
         public void QuitGame()
         {
+            Debug.Log("Exiting Game...");
+
             _quitGameEvent.Raise();
 
 #if UNITY_EDITOR
