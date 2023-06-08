@@ -1,5 +1,6 @@
 using MissileCommand.Gameplay.Bases;
 using MissileCommand.Gameplay.Reticle;
+using MissileCommand.Infrastructure.Events;
 using QFSW.QC;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,9 @@ namespace MissileCommand.Gameplay.GameController
         [Header("Game stats")]
         [SerializeField] private int score;
         [SerializeField] private float speed;
+
+        [Header("Events")]
+        [SerializeField] private GameEvent _gameOverEvent;
 
         #region -- Awake/Start/OnDestroy --
         private void Awake()
@@ -50,16 +54,16 @@ namespace MissileCommand.Gameplay.GameController
         /// Event listener for BaseHolder.AllBasesDestroyed.
         /// We want to attempt to end game once this event has triggered
         /// </summary>
-        private void OnAllBasesDestroyed()
+        public void OnAllBasesDestroyed()
         {
-            EndGame();
+            _gameOverEvent.Raise();
         }
 
         /// <summary>
         /// Attempts to end the game
         /// </summary>
         [Command]
-        private void EndGame()
+        public void EndGame()
         {
             SceneManager.LoadScene(_sceneData.GameOver);
         }
