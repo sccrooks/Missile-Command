@@ -11,12 +11,19 @@ namespace MissileCommand.Utils
 
         [Header("Events")]
         [SerializeField] private GameEvent _gameOverEvent;
+        [SerializeField] private GameEvent _quitGameEvent;
 
 
-        [Command("End Game")]
+        [Command("End-Game")]
         public void EndGame()
         {
             _gameOverEvent.Raise();
+        }
+
+        [Command("Quit")]
+        public void QuitGame()
+        {
+            _quitGameEvent.Raise();
         }
     }
 }
