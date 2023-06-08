@@ -1,3 +1,4 @@
+using MissileCommand.Infrastructure.Events;
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -24,23 +25,24 @@ namespace MissileCommand.Gameplay.Bases
                 if (_isActive == value) return;
 
                 _isActive = value;
+                _baseStateChanged.Raise();
 
                 if (!_isActive)
                 {
                     _baseDestroyed?.SetActive(true);
                     _baseActive?.SetActive(false);
-                    BaseDestroyed?.Invoke();
                 } else
                 {
                     _baseDestroyed?.SetActive(false);
                     _baseActive?.SetActive(true);
-                    BaseRepaired?.Invoke();
                 }
             }
         }
 
-        public event Action BaseDestroyed;
-        public event Action BaseRepaired;
+
+        [Header("Events")]
+        [SerializeField] private GameEvent _baseStateChanged;
+
 
 #if UNITY_EDITOR
         private void OnValidate() { EditorApplication.delayCall += _OnValidate; }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace MissileCommand.Infrastructure.Events
 {
+    [CreateAssetMenu(fileName = "Game Event", menuName = "Infrastructure/Game Event")]
     public class GameEvent : ScriptableObject
     {
         private List<GameEventListener> listeners = new List<GameEventListener>();

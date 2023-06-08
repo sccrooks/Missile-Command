@@ -1,10 +1,12 @@
+using MissileCommand.Infrastructure.Events;
 using QFSW.QC;
 using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Bases {
+namespace MissileCommand.Gameplay.Bases
+{
     public class BaseHolder : MonoBehaviour
     {
         [SerializeField]
@@ -12,95 +14,25 @@ namespace MissileCommand.Gameplay.Bases {
 
         [SerializeField]
         private int _activeBases;
-        public int ActiveBases
-        {
-            get => _activeBases;
-            private set
-            {
-                _activeBases = value;
-                if (_activeBases <= 0)
-                    AllBasesDestroyed?.Invoke();
-            }
-        }
 
-        public event Action AllBasesDestroyed;
 
-        #region -- Start, OnValidate, OnDestroy --
+        [Header("Events")]
+        [SerializeField] private GameEvent _allBasesDestroyed;
+
         private void Start()
         {
-            foreach (Base @base in _bases)
+            ValidateActiveBases();
+        }
+
+        public void ValidateActiveBases()
+        {
+            _activeBases = getTotalActivebases();
+
+            if (_activeBases <= 0)
             {
-                @base.BaseDestroyed += OnBaseDestroyed;
-                @base.BaseRepaired += OnBaseRepaired;
+                Debug.Log("[GameController] All bases destroyed");
+                _allBasesDestroyed.Raise();
             }
-
-            ActiveBases = getTotalActivebases();
-        }
-
-        private void OnDestroy()
-        {
-            foreach (Base @base in _bases)
-            {
-                @base.BaseDestroyed -= OnBaseDestroyed;
-                @base.BaseRepaired -= OnBaseRepaired;
-            }
-        }
-
-        private void OnValidate()
-        {
-#if UNITY_EDITOR
-            if (!EditorApplication.isPlayingOrWillChangePlaymode)
-                ActiveBases = getTotalActivebases();
-#endif
-        }
-        #endregion
-
-        /// <summary>
-        /// Destroy a base at index
-        /// </summary>
-        /// <param name="index">Index of base to destroy</param>
-        [Command("Bases-DestroyBase")]
-        public void DestroyBase(int index)
-        {
-            if (index < 0 || index >= _bases.Count)
-            {
-                Debug.LogWarning("Cannot destroy base at index, index is out of range");
-                return;
-            }
-
-            _bases[index].Destroy();
-        }
-
-        /// <summary>
-        /// Revive a base at index
-        /// </summary>
-        /// <param name="index">Index of base to revive</param>
-        [Command("Bases-ReviveBase")]
-        public void RepairBase(int index)
-        {
-            if (index < 0 || index >= _bases.Count)
-            {
-                Debug.LogWarning("Cannot revive base at index, index is out of range");
-                return;
-            }
-
-            _bases[index].Repair();
-        }
-
-        /// <summary>
-        /// Event subscriber for Base Destroyed event
-        /// </summary>
-        private void OnBaseDestroyed()
-        {
-            ActiveBases--;
-        }
-
-        /// <summary>
-        /// Event subscriber for Base Revived event
-        /// </summary>
-        private void OnBaseRepaired()
-        {
-            ActiveBases++;
         }
 
         /// <summary>
@@ -119,5 +51,40 @@ namespace MissileCommand.Gameplay.Bases {
 
             return active;
         }
+
+
+        #region Commands
+        /// <summary>
+        /// Destroy a base at index
+        /// </summary>
+        /// <param name="index">Index of base to destroy</param>
+        [Command("Bases-Destroy")]
+        public void DestroyBase(int index)
+        {
+            if (index < 0 || index >= _bases.Count)
+            {
+                Debug.LogWarning("Cannot destroy base at index, index is out of range");
+                return;
+            }
+
+            _bases[index].Destroy();
+        }
+
+        /// <summary>
+        /// Revive a base at index
+        /// </summary>
+        /// <param name="index">Index of base to revive</param>
+        [Command("Bases-Repair")]
+        public void RepairBase(int index)
+        {
+            if (index < 0 || index >= _bases.Count)
+            {
+                Debug.LogWarning("Cannot revive base at index, index is out of range");
+                return;
+            }
+
+            _bases[index].Repair();
+        }
+        #endregion
     }
 }
