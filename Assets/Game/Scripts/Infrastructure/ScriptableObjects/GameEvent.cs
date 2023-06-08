@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects
+namespace MissileCommand.Infrastructure.Events
 {
     public class GameEvent : ScriptableObject
     {
@@ -10,7 +10,8 @@ namespace MissileCommand.Infrastructure.ScriptableObjects
 
         public void Raise()
         {
-
+            for (int i = 0; i < listeners.Count; i++)
+                listeners[i].OnEventRaised();
         }
 
         public void RegisterListener(GameEventListener listener)
