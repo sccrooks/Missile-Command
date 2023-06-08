@@ -205,7 +205,7 @@ MonoBehaviour:
   _reticle: {fileID: 452275231}
   score: 0
   speed: 10
-  _gameOverEvent: {fileID: 0}
+  _gameOverEvent: {fileID: 11400000, guid: 376f95c710701d94588be74971ca5f64, type: 2}
 --- !u!114 &130765639
 MonoBehaviour:
   m_ObjectHideFlags: 0

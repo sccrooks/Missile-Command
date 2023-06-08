@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 2591469333800096983}
   - {fileID: 2591469332787700848}
   _activeBases: 6
+  _allBasesDestroyed: {fileID: 11400000, guid: 167e3732b4357e14b8a14f93580e3587, type: 2}
 --- !u!1001 &1414213893618425470
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using MissileCommand.Infrastructure.Events;
 using QFSW.QC;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,12 @@ namespace MissileCommand.Gameplay.Bases {
             {
                 _activeBases = value;
                 if (_activeBases <= 0)
-                    AllBasesDestroyed?.Invoke();
+                    _allBasesDestroyed.Raise();
             }
         }
 
-        public event Action AllBasesDestroyed;
+        [Header("Events")]
+        [SerializeField] private GameEvent _allBasesDestroyed;
 
         #region -- Start, OnValidate, OnDestroy --
         private void Start()
