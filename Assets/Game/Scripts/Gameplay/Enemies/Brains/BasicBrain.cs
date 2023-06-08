@@ -7,7 +7,7 @@ namespace MissileCommand.Gameplay.Enemies
     [CreateAssetMenu(fileName = "Basic Brain", menuName = "Brains/Basic")]
     public class BasicBrain : Brain
     {
-        public override void Think()
+        public override void Think(AIThinker thinker)
         {
             
         }

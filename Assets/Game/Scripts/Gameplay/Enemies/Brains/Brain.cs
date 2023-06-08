@@ -6,6 +6,6 @@ namespace MissileCommand.Gameplay.Enemies
 {
     public abstract class Brain : ScriptableObject
     {
-        public abstract void Think();
+        public abstract void Think(AIThinker thinker);
     }
 }
