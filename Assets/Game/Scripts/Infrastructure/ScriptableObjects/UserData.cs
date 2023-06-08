@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserData : MonoBehaviour
+public class UserData : ScriptableObject, ISerializationCallbackReceiver
 {
-    // Start is called before the first frame update
-    void Start()
+    public string Name;
+
+    public void OnAfterDeserialize()
     {
-        
+        // TODO: Save name to file
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnBeforeSerialize()
     {
-        
+        // TODO: Load name from file
+        throw new System.NotImplementedException();
     }
 }
