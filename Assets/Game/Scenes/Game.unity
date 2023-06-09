@@ -624,9 +624,10 @@ GameObject:
   - component: {fileID: 1191904766}
   - component: {fileID: 1191904765}
   - component: {fileID: 1191904764}
+  - component: {fileID: 1191904767}
+  - component: {fileID: 1191904768}
   - component: {fileID: 1191904763}
   - component: {fileID: 1191904762}
-  - component: {fileID: 1191904767}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Enemy
@@ -746,7 +747,7 @@ Transform:
   m_GameObject: {fileID: 1191904761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 308682091}
@@ -765,6 +766,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fae1c6ddf98e4489222657293a5e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 5
+--- !u!114 &1191904768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191904761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2f85e4f8060314c8b79436af37bad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _brain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
 --- !u!1 &1240530657
 GameObject:
   m_ObjectHideFlags: 0

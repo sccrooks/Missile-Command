@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b84f4b24bae6f04e8368828cc8063c4, type: 3}
   m_Name: Basic Brain
   m_EditorClassIdentifier: 
+  _targetTag: Base
+  _target: {fileID: 0}
