@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3483239280769828341
 Transform:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3483239281306083314
 Transform:
   m_ObjectHideFlags: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetContainer: {fileID: 11400000, guid: 01aa953e8afb7ab4f848c33f65bbe060, type: 2}
   _targetStateChanged: {fileID: 11400000, guid: a7b21fdfc1716474a987816b97e549e2, type: 2}
+  _active: 1
   _baseActive: {fileID: 3483239280769828340}
   _baseDestroyed: {fileID: 3483239281306083317}
 --- !u!114 &-1712831213116598377

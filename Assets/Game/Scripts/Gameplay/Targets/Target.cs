@@ -8,14 +8,16 @@ namespace MissileCommand.Gameplay.Targets
 {
     public class Target : MonoBehaviour
     {
+
+        [Header("Status")]
+        [SerializeField] private bool _active;
+        public bool Active { get { return _active; } private set { _active = value; } }
+
         [Header("Data")]
         [SerializeField] private TargetContainer _targetContainer;
 
         [Header("Events")]
         [SerializeField] private GameEvent _targetStateChanged;
-
-        private bool _active;
-        public bool Active { get; private set; } = true;
 
         /// <summary>
         /// Annoying onvalidate method to prevent errors while in editor.
