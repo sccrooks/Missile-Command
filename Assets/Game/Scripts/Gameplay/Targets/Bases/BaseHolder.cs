@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Bases
+namespace MissileCommand.Gameplay.Targets.Bases
 {
     public class BaseHolder : MonoBehaviour
     {
@@ -45,7 +45,7 @@ namespace MissileCommand.Gameplay.Bases
 
             foreach (Base @base in _bases)
             {
-                if (@base.IsActive)
+                if (@base.Active)
                     active++;
             }
 

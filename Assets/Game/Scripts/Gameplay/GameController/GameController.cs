@@ -1,4 +1,4 @@
-using MissileCommand.Gameplay.Bases;
+using MissileCommand.Gameplay.Targets.Bases;
 using MissileCommand.Gameplay.Reticle;
 using MissileCommand.Infrastructure.Events;
 using QFSW.QC;

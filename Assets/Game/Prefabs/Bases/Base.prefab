@@ -264,11 +264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2ffe339bfa88140bb648890f597abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetContainer: {fileID: 11400000, guid: 01aa953e8afb7ab4f848c33f65bbe060, type: 2}
+  _targetStateChanged: {fileID: 11400000, guid: a7b21fdfc1716474a987816b97e549e2, type: 2}
+  _active: 1
   _baseActive: {fileID: 3483239280769828340}
   _baseDestroyed: {fileID: 3483239281306083317}
-  _isActive: 1
-  _baseStateChanged: {fileID: 11400000, guid: a7b21fdfc1716474a987816b97e549e2, type: 2}
-  _baseContainer: {fileID: 11400000, guid: 01aa953e8afb7ab4f848c33f65bbe060, type: 2}
 --- !u!114 &-1712831213116598377
 MonoBehaviour:
   m_ObjectHideFlags: 0
