@@ -1,6 +1,5 @@
 using MissileCommand.Gameplay.Bases;
-using MissileCommand.Infrastructure.Events;
-using System.Collections;
+using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using UnityEditor;
 using UnityEngine;
 

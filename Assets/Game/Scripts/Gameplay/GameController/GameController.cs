@@ -1,6 +1,5 @@
 using MissileCommand.Gameplay.Targets.Bases;
-using MissileCommand.Gameplay.Reticle;
-using MissileCommand.Infrastructure.Events;
+using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using QFSW.QC;
 using UnityEngine;
 using UnityEngine.SceneManagement;

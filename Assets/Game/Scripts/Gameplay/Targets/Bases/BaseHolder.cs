@@ -1,8 +1,6 @@
-using MissileCommand.Infrastructure.Events;
+using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using QFSW.QC;
-using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Targets.Bases
