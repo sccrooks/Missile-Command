@@ -268,6 +268,7 @@ MonoBehaviour:
   _baseDestroyed: {fileID: 3483239281306083317}
   _isActive: 1
   _baseStateChanged: {fileID: 11400000, guid: a7b21fdfc1716474a987816b97e549e2, type: 2}
+  _baseContainer: {fileID: 11400000, guid: 01aa953e8afb7ab4f848c33f65bbe060, type: 2}
 --- !u!114 &-1712831213116598377
 MonoBehaviour:
   m_ObjectHideFlags: 0

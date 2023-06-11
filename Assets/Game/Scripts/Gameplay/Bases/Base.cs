@@ -1,5 +1,7 @@
 using MissileCommand.Infrastructure.Events;
+using QFSW.QC.Actions;
 using System;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,32 +18,14 @@ namespace MissileCommand.Gameplay.Bases
 
         [Header("Base Stats")]
         [SerializeField] private bool _isActive;
-        public bool IsActive 
-        { 
-            get { return _isActive; } 
-            private set 
-            {
-                // Prevent changing base active status if new value is the same as old
-                if (_isActive == value) return;
-
-                _isActive = value;
-                _baseStateChanged.Raise();
-
-                if (!_isActive)
-                {
-                    _baseDestroyed?.SetActive(true);
-                    _baseActive?.SetActive(false);
-                } else
-                {
-                    _baseDestroyed?.SetActive(false);
-                    _baseActive?.SetActive(true);
-                }
-            }
-        }
+        public bool IsActive { get { return _isActive; } }
 
 
         [Header("Events")]
         [SerializeField] private GameEvent _baseStateChanged;
+
+        [Header("Data")]
+        [SerializeField] private TargetContainer _baseContainer;
 
 
 #if UNITY_EDITOR
@@ -49,16 +33,36 @@ namespace MissileCommand.Gameplay.Bases
         private void _OnValidate()
         {
             if (!EditorApplication.isPlayingOrWillChangePlaymode)
-                IsActive = _isActive;
+                SetActive(_isActive);
         }
 #endif
+
+        private void OnEnable()
+        {
+            _baseContainer.Targets.Add(this.gameObject);
+
+            if (_isActive)
+                _baseContainer.ActiveTargets.Add(gameObject);
+            else
+                _baseContainer.DestroyedTargets.Add(gameObject);
+        }
+
+        private void OnDisable()
+        {
+            _baseContainer.Targets.Remove(this.gameObject);
+
+            if (_isActive)
+                _baseContainer.ActiveTargets.Remove(this.gameObject);
+            else
+                _baseContainer.DestroyedTargets.Remove(this.gameObject);
+        }
 
         /// <summary>
         /// Destroy the base
         /// </summary>
         public void Destroy()
         {
-            IsActive = false;
+            SetActive(false);
         }
 
         /// <summary>
@@ -66,7 +70,35 @@ namespace MissileCommand.Gameplay.Bases
         /// </summary>
         public void Repair()
         {
-            IsActive = true;
+            SetActive(true);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        public void SetActive(bool value)
+        {
+            // Prevent unncessary execution
+            if (_isActive == value) return;
+
+            _isActive = value;
+            _baseStateChanged.Raise();
+
+            if (!_isActive)
+            {
+                _baseDestroyed?.SetActive(true);
+                _baseActive?.SetActive(false);
+                _baseContainer.DestroyedTargets.Add(this.gameObject);
+                _baseContainer.ActiveTargets.Remove(this.gameObject);
+            }
+            else
+            {
+                _baseDestroyed?.SetActive(false);
+                _baseActive?.SetActive(true);
+                _baseContainer.DestroyedTargets.Remove(this.gameObject);
+                _baseContainer.ActiveTargets.Add(this.gameObject);
+            }
         }
     }
 }
