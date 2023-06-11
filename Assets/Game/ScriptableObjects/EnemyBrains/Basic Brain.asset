@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTag: Base
   _target: {fileID: 0}
+  _targetContainer: {fileID: 11400000, guid: 01aa953e8afb7ab4f848c33f65bbe060, type: 2}
