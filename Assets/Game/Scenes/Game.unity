@@ -767,6 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  AIThinker: {fileID: 1191904768}
 --- !u!114 &1191904768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,7 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2f85e4f8060314c8b79436af37bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _brain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
+  Brain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
 --- !u!1 &1240530657
 GameObject:
   m_ObjectHideFlags: 0

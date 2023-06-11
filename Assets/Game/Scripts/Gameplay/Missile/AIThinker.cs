@@ -7,12 +7,12 @@ namespace MissileCommand.Gameplay.Enemies
 {
     public class AIThinker : MonoBehaviour
     {
-        [SerializeField] private Brain _brain;
+        public Brain Brain;
 
         // Update is called once per frame
         void Update()
         {
-            _brain.Think(this);
+            Brain.Think(this);
         }
     }
 }

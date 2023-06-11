@@ -1,9 +1,5 @@
 using MissileCommand.Gameplay.Bases;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Zenject.Asteroids;
 
 namespace MissileCommand.Gameplay.Enemies
 {
@@ -19,12 +15,17 @@ namespace MissileCommand.Gameplay.Enemies
         {
             if (_target == null)
             {
-                int targetInt = Random.Range(0, _targetContainer.ActiveTargets.Count);
-                _target = _targetContainer.ActiveTargets[targetInt];
+                FindTarget();
             }
 
             Vector2 pos = new Vector2(_target.transform.position.x, _target.transform.position.y);
             thinker.GetComponent<Missile>().MoveTowardsTarget(pos);
+        }
+
+        public override void FindTarget()
+        {
+            int targetInt = Random.Range(0, _targetContainer.ActiveTargets.Count);
+            _target = _targetContainer.ActiveTargets.Items[targetInt];
         }
     }
 }

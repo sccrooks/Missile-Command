@@ -40,7 +40,7 @@ namespace MissileCommand.Gameplay.Targets
             if (Active)
                 _targetContainer.ActiveTargets.Add(this.gameObject);
             else
-                _targetContainer.DestroyedTargets.Add(this.gameObject);
+                _targetContainer.DeactivatedTargets.Add(this.gameObject);
         }
 
         private void OnDisable()
@@ -50,7 +50,7 @@ namespace MissileCommand.Gameplay.Targets
             if (Active)
                 _targetContainer.ActiveTargets.Remove(this.gameObject);
             else
-                _targetContainer.DestroyedTargets.Remove(this.gameObject);
+                _targetContainer.DeactivatedTargets.Remove(this.gameObject);
         }
 
         public virtual void SetActive(bool value)
@@ -63,11 +63,11 @@ namespace MissileCommand.Gameplay.Targets
             if (Active)
             {
                 _targetContainer.ActiveTargets.Add(this.gameObject);
-                _targetContainer.DestroyedTargets.Remove(this.gameObject);
+                _targetContainer.DeactivatedTargets.Remove(this.gameObject);
             } else
             {
                 _targetContainer.ActiveTargets.Remove(this.gameObject);
-                _targetContainer.DestroyedTargets.Add(gameObject);
+                _targetContainer.DeactivatedTargets.Add(gameObject);
             }
         }
     }
