@@ -25,7 +25,7 @@ namespace MissileCommand.Gameplay.Bases
         [SerializeField] private GameEvent _baseStateChanged;
 
         [Header("Data")]
-        [SerializeField] private BaseContainer _baseContainer;
+        [SerializeField] private TargetContainer _baseContainer;
 
 
 #if UNITY_EDITOR
@@ -39,18 +39,22 @@ namespace MissileCommand.Gameplay.Bases
 
         private void OnEnable()
         {
+            _baseContainer.Targets.Add(this.gameObject);
+
             if (_isActive)
-                _baseContainer.ActiveBases.Add(this);
+                _baseContainer.ActiveTargets.Add(gameObject);
             else
-                _baseContainer.DestroyedBases.Add(this);
+                _baseContainer.DestroyedTargets.Add(gameObject);
         }
 
         private void OnDisable()
         {
+            _baseContainer.Targets.Remove(this.gameObject);
+
             if (_isActive)
-                _baseContainer.ActiveBases.Remove(this);
+                _baseContainer.ActiveTargets.Remove(this.gameObject);
             else
-                _baseContainer.DestroyedBases.Remove(this);
+                _baseContainer.DestroyedTargets.Remove(this.gameObject);
         }
 
         /// <summary>
@@ -85,15 +89,15 @@ namespace MissileCommand.Gameplay.Bases
             {
                 _baseDestroyed?.SetActive(true);
                 _baseActive?.SetActive(false);
-                _baseContainer.DestroyedBases.Add(this);
-                _baseContainer.ActiveBases.Remove(this);
+                _baseContainer.DestroyedTargets.Add(this.gameObject);
+                _baseContainer.ActiveTargets.Remove(this.gameObject);
             }
             else
             {
                 _baseDestroyed?.SetActive(false);
                 _baseActive?.SetActive(true);
-                _baseContainer.DestroyedBases.Remove(this);
-                _baseContainer.ActiveBases.Add(this);
+                _baseContainer.DestroyedTargets.Remove(this.gameObject);
+                _baseContainer.ActiveTargets.Add(this.gameObject);
             }
         }
     }

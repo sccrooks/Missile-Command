@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3f98385703cf4f458e8d3e9f38122bb, type: 3}
-  m_Name: Base Container
+  m_Name: Target Container
   m_EditorClassIdentifier: 
   ActiveBases: []
   DestroyedBases: []
