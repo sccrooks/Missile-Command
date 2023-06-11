@@ -1,5 +1,6 @@
 using MissileCommand.Controls;
 using MissileCommand.Gameplay.GameController;
+using MissileCommand.Gameplay.Reticle;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Controls _controls;
+
+    [SerializeField] private ReticleController _reticle;
+    [SerializeField] private float speed;
 
     private void Awake()
     {
@@ -23,14 +27,10 @@ public class PlayerController : MonoBehaviour
         _controls.Disable();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
-        GameController.Instance.MoveReticle(_controls.Reticle.Move.ReadValue<Vector2>());
+        Vector2 movement = _controls.Reticle.Move.ReadValue<Vector2>();
+        _reticle.Transform.position += new Vector3(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime, 0);
 
         if (_controls.Reticle.Fire.triggered)
             Debug.Log("Fired missile");
