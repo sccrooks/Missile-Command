@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b742e4f1f747d34aaceb6ef41409b74, type: 3}
-  m_Name: Target Collection 1
+  m_Name: Target Collection
   m_EditorClassIdentifier: 
   Items: []
   ItemAdded: {fileID: 11400000, guid: 9b3850c84e1acc64b820a4941b8593bd, type: 2}

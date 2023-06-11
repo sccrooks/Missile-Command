@@ -7,9 +7,9 @@ namespace MissileCommand.Gameplay.Bases
     [CreateAssetMenu(fileName = "Target Container", menuName = "Gameplay/Target Container")]
     public class TargetContainer : ScriptableObject, ISerializationCallbackReceiver
     {
-        public RuntimeCollection<GameObject> Targets;
-        public RuntimeCollection<GameObject> ActiveTargets;
-        public RuntimeCollection<GameObject> DeactivatedTargets;
+        public TargetCollection Targets;
+        public TargetCollection ActiveTargets;
+        public TargetCollection DeactivatedTargets;
 
         public void OnAfterDeserialize()
         {

@@ -30,5 +30,13 @@ namespace MissileCommand.Infrastructure.ScriptableObjects
                 ItemRemoved?.Raise();
             }
         }
+
+        public void Clear()
+        {
+            Items.Clear();
+        }
+
+        public int Count => Items.Count;
+
     }
 }

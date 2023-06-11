@@ -25,7 +25,7 @@ namespace MissileCommand.Gameplay.Enemies
         public override void FindTarget()
         {
             int targetInt = Random.Range(0, _targetContainer.ActiveTargets.Count);
-            _target = _targetContainer.ActiveTargets[targetInt];
+            _target = _targetContainer.ActiveTargets.Items[targetInt];
         }
     }
 }

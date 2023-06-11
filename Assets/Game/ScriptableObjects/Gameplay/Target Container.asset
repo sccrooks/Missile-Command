@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f98385703cf4f458e8d3e9f38122bb, type: 3}
   m_Name: Target Container
   m_EditorClassIdentifier: 
-  ActiveBases: []
-  DestroyedBases: []
+  Targets: {fileID: 11400000, guid: 4c0898eefa1a5fb43aba8ecbf12dc0d5, type: 2}
+  ActiveTargets: {fileID: 11400000, guid: 09618086db9fa5848869383fe76f4df6, type: 2}
+  DeactivatedTargets: {fileID: 11400000, guid: 3ad40a20e91b5304189c09233e78c59e, type: 2}
