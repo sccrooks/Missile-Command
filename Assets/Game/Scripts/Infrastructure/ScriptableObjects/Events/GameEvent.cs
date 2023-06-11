@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.Events
+namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
     [CreateAssetMenu(fileName = "Game Event", menuName = "Infrastructure/Game Event")]
     public class GameEvent : ScriptableObject

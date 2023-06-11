@@ -1,7 +1,5 @@
-using MissileCommand.Infrastructure.Events;
-using System.Collections;
+using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects
