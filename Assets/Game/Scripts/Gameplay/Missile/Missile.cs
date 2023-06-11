@@ -14,6 +14,10 @@ public class Missile : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, _speed * Time.deltaTime);
     }
 
+    public void Destroy()
+    {
+    
+    }
 
     public void BaseCollision()
     {

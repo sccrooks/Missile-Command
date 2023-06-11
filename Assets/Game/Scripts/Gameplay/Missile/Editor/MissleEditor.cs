@@ -13,9 +13,12 @@ namespace MissileCommand.Gameplay.Enemies
         {
             base.OnInspectorGUI();
 
-            Missile brain = (Missile)target;
+            Missile missile = (Missile)target;
             if (GUILayout.Button("Find new Target"))
-                brain?.AIThinker.Brain.FindTarget();
+                missile?.AIThinker.Brain.FindTarget();
+
+            if (GUILayout.Button("Self Destruct"))
+                missile.Destroy();
         }
     }
 }
