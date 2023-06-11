@@ -1,3 +1,4 @@
+using MissileCommand.Gameplay.Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     [SerializeField] private float _speed;
+
+    public AIThinker AIThinker;
 
     public void MoveTowardsTarget(Vector2 target)
     {
