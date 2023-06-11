@@ -1,6 +1,7 @@
 using MissileCommand.Gameplay.Bases;
 using MissileCommand.Infrastructure.Events;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Targets
@@ -13,7 +14,22 @@ namespace MissileCommand.Gameplay.Targets
         [Header("Events")]
         [SerializeField] private GameEvent _targetStateChanged;
 
+        private bool _active;
         public bool Active { get; private set; } = true;
+
+        /// <summary>
+        /// Annoying onvalidate method to prevent errors while in editor.
+        /// </summary>
+        #region
+#if UNITY_EDITOR
+        private void OnValidate() { EditorApplication.delayCall += _OnValidate; }
+        private void _OnValidate()
+        {
+            if (!EditorApplication.isPlayingOrWillChangePlaymode)
+                SetActive(_active);
+        }
+#endif
+        #endregion
 
         private void OnEnable()
         {
@@ -40,6 +56,7 @@ namespace MissileCommand.Gameplay.Targets
             // Prevent unneccessary code execution
             if (value == Active) return;
             Active = value;
+            _targetStateChanged.Raise();
 
             if (Active)
             {
