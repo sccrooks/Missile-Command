@@ -1,4 +1,4 @@
-using MissileCommand.Gameplay.Bases;
+using MissileCommand.Gameplay.Targets;
 using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using UnityEditor;
 using UnityEngine;

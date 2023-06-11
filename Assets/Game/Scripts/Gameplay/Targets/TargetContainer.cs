@@ -2,7 +2,7 @@ using MissileCommand.Infrastructure.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Bases
+namespace MissileCommand.Gameplay.Targets
 {
     [CreateAssetMenu(fileName = "Target Container", menuName = "Gameplay/Target Container")]
     public class TargetContainer : ScriptableObject, ISerializationCallbackReceiver

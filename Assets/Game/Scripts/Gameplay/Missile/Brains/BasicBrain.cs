@@ -1,4 +1,4 @@
-using MissileCommand.Gameplay.Bases;
+using MissileCommand.Gameplay.Targets;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Enemies
