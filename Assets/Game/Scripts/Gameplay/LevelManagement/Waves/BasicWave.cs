@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
+    [CreateAssetMenu(fileName = "Basic Wave", menuName = "Gameplay/LevelManagement/BasicWave")]
     public class BasicWave : Wave
     {
         [SerializeField] private int _spawnDelay = 0;
