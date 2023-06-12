@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    public class GameObjectEvent : GenericEvent<GameObject>
+    public class GenericEvent<T> : UnityEvent<T>
     {
 
     }
