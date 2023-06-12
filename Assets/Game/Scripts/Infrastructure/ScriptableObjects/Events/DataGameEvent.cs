@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataGameEvent : MonoBehaviour
+namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    // Start is called before the first frame update
-    void Start()
+    public class DataGameEvent<T> : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
