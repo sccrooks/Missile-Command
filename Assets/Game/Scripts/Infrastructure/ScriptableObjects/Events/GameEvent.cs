@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
+    /// <summary>
+    /// Original: https://unity.com/how-to/architect-game-code-scriptable-objects
+    /// </summary>
     [CreateAssetMenu(fileName = "Game Event", menuName = "Infrastructure/Game Event")]
     public class GameEvent : ScriptableObject
     {
