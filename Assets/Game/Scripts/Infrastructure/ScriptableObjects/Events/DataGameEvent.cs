@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    public class DataGameEvent<T> : MonoBehaviour
+    public class DataGameEvent<T> : ScriptableObject
     {
         private List<DataGameEventListener<T>> listeners = new List<DataGameEventListener<T>>();
 
