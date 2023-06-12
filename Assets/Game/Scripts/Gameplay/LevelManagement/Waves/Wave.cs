@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Wave : MonoBehaviour
+public abstract class Wave : ScriptableObject
 {
 
 }
