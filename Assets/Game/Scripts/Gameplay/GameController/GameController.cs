@@ -30,10 +30,11 @@ namespace MissileCommand.Gameplay.GameController
         #endregion
 
 
+        [Command("Instantiate-Entity")]
         public void InstaniateEntity()
         {
             Debug.Log("Spawning entity");
-            Instantiate(_entitySpawnCollection.Items[0], _spawnLocation);
+            Instantiate(_entitySpawnCollection.Items[0], _spawnLocation.transform.position, Quaternion.identity, _spawnLocation.transform);
             _entitySpawnCollection.Remove(_entitySpawnCollection.Items[0]);
         }
 
