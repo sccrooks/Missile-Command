@@ -11,8 +11,10 @@ namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 
         public void Raise(GameObject data)
         {
+            Debug.Log("Event raised");
             for (int i = listeners.Count - 1; i >= 0; i--)
                 listeners[i].OnEventRaised(data);
+            Debug.Log("Event Finished");
         }
 
         public void RegisterListener(GameObjectGameEventListener listener)

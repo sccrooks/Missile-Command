@@ -1,4 +1,5 @@
 using MissileCommand.Gameplay.Targets.Bases;
+using MissileCommand.Infrastructure.ScriptableObjects;
 using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using QFSW.QC;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace MissileCommand.Gameplay.GameController
         [Header("Components")]
         [SerializeField] private SceneData _sceneData;
         [SerializeField] private Transform _spawnLocation;
+        [SerializeField] private GameObjectCollection _entitySpawnCollection;
 
         [Header("Game stats")]
         [SerializeField] private int score;
@@ -28,9 +30,11 @@ namespace MissileCommand.Gameplay.GameController
         #endregion
 
 
-        public void InstaniateEntity(GameObject entity)
+        public void InstaniateEntity()
         {
-            Instantiate(entity, _spawnLocation);
+            Debug.Log("Spawning entity");
+            Instantiate(_entitySpawnCollection.Items[0], _spawnLocation);
+            _entitySpawnCollection.Items.RemoveAt(0);
         }
 
 
