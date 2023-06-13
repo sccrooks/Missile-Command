@@ -12,8 +12,7 @@ namespace MissileCommand.Gameplay.GameController
 
         [Header("Components")]
         [SerializeField] private SceneData _sceneData;
-        [SerializeField] private ILevelController _levelController;
-        [SerializeField] private BaseHolder _baseHolder;
+        [SerializeField] private Transform _spawnLocation;
 
         [Header("Game stats")]
         [SerializeField] private int score;
@@ -27,6 +26,12 @@ namespace MissileCommand.Gameplay.GameController
             Instance = this;
         }
         #endregion
+
+
+        public void InstaniateEntity(GameObject entity)
+        {
+            Instantiate(entity, _spawnLocation);
+        }
 
 
         /// <summary>
