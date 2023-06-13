@@ -13,6 +13,6 @@ public class SpawnMissile : MonoBehaviour
     [Command("Spawn-Missile")]
     public void SpawnMissileCmd()
     {
-        _entityCollection.Items.Add(_missilePrefab);
+        _entityCollection.Add(_missilePrefab);
     }
 }

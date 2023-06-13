@@ -34,7 +34,7 @@ namespace MissileCommand.Gameplay.GameController
         {
             Debug.Log("Spawning entity");
             Instantiate(_entitySpawnCollection.Items[0], _spawnLocation);
-            _entitySpawnCollection.Items.RemoveAt(0);
+            _entitySpawnCollection.Remove(_entitySpawnCollection.Items[0]);
         }
 
 
