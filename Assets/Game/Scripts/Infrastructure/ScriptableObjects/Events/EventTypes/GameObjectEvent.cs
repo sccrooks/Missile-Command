@@ -3,7 +3,8 @@ using UnityEngine.Events;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    public class GameObjectEvent : GenericEvent<GameObject>
+    [System.Serializable]
+    public class GameObjectEvent : UnityEvent<GameObject>
     {
 
     }

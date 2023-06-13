@@ -4,8 +4,24 @@ using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    public class GameObjectGameEventListener : DataGameEventListener<GameObject>
+    public class GameObjectGameEventListener : MonoBehaviour
     {
+        public GameObjectGameEvent Event;
+        public GameObjectEvent Response;
 
+        private void OnEnable()
+        {
+            Event.RegisterListener(this);
+        }
+
+        private void OnDisable()
+        {
+            Event.UnregisterListener(this);
+        }
+
+        public void OnEventRaised(GameObject data)
+        {
+            Response.Invoke(data);
+        }
     }
 }
