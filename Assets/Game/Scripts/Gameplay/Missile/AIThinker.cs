@@ -7,7 +7,15 @@ namespace MissileCommand.Gameplay.Enemies
 {
     public class AIThinker : MonoBehaviour
     {
-        public Brain Brain;
+        [Header("AI Brain")]
+        [SerializeField] private Brain AIBrain;
+        [HideInInspector] public Brain Brain;
+
+        private void Start()
+        {
+            // Copy brain
+            Brain = Instantiate(AIBrain);
+        }
 
         // Update is called once per frame
         void Update()
