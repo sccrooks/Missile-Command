@@ -1,18 +1,29 @@
+using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatGameEventListener : MonoBehaviour
+namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FloatGameEventListener : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public FloatGameEvent Event;
+        public MyFloatEvent Response;
+
+        private void OnEnable()
+        {
+            Event.RegisterListener(this);
+        }
+
+        private void OnDisable()
+        {
+            Event.UnregisterListener(this);
+        }
+
+        public void OnEventRaised(float data)
+        {
+            Response.Invoke(data);
+        }
     }
 }

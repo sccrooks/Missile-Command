@@ -1,18 +1,27 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatGameEvent : MonoBehaviour
+namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "Float Event", menuName = "Infrastructure/Float event")]
+    public class FloatGameEvent : ScriptableObject
     {
-        
-    }
+        private List<FloatGameEventListener> listeners = new List<FloatGameEventListener>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Raise(float data)
+        {
+            for (int i = listeners.Count - 1; i >= 0; i--)
+                listeners[i].OnEventRaised(data);
+        }
+
+        public void RegisterListener(FloatGameEventListener listener)
+        {
+            listeners.Add(listener);
+        }
+
+        public void UnregisterListener(FloatGameEventListener listener)
+        {
+            listeners.Remove(listener);
+        }
     }
 }
