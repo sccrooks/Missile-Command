@@ -21,5 +21,6 @@ namespace MissileCommand.Gameplay.LevelManagement
         public abstract void Start();
         public abstract void End();
         public abstract void Update();
+        public abstract void OnWaveEnded();
     }
 }
