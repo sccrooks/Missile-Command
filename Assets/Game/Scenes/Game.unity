@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 130765639}
   - component: {fileID: 130765640}
   - component: {fileID: 130765641}
+  - component: {fileID: 130765642}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -286,6 +287,35 @@ MonoBehaviour:
           Assembly-CSharp
         m_MethodName: InstaniateEntity
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &130765642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130765636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37faf0a30a1a8f47b892fad6dae56c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: fc8d4429cdfbb934e95ef3596206ec6e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 130765638}
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.GameController.GameController,
+          Assembly-CSharp
+        m_MethodName: IncreaseScore
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
