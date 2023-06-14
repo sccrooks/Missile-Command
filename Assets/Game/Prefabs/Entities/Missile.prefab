@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _activeEntities: {fileID: 11400000, guid: dc39e4a33fef7c449a4b0a2cce0a4a75, type: 2}
   AIThinker: {fileID: 6250961424340799280}
 --- !u!114 &6250961424340799280
 MonoBehaviour:
