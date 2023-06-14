@@ -19,6 +19,8 @@ namespace MissileCommand.Gameplay.LevelManagement
         public override void OnlevelEnded()
         {
             _currentLevel++;
+            if (_currentLevel >= _levelList.Count)
+                _gameOverEvent.Raise();
         }
 
         public override void OnWaveEnded()

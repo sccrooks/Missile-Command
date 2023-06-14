@@ -1,4 +1,5 @@
 using MissileCommand.Infrastructure.ScriptableObjects;
+using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,9 @@ namespace MissileCommand.Gameplay.LevelManagement
 
         [Header("Level Controller Data")]
         [SerializeField] protected int _currentLevel;
+
+        [Header("Events")]
+        [SerializeField] protected GameEvent _gameOverEvent;
 
         public abstract void Start();
         public abstract void Update();
