@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &130765636
 GameObject:
@@ -418,7 +418,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866268754 stripped
 GameObject:
@@ -657,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1356841255507755548, guid: a89a3e2eeed980848aec1496b1c2bd8a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1356841255507755548, guid: a89a3e2eeed980848aec1496b1c2bd8a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 1984074371}
   - component: {fileID: 1984074370}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LevelController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -764,7 +764,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1984074369
 MonoBehaviour:
@@ -779,7 +779,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelList: []
-  _entitySpawnList: {fileID: 11400000, guid: f291c02df6713f142a1c4ecc967eaf03, type: 2}
   _currentLevel: 0
   _gameOverEvent: {fileID: 11400000, guid: 376f95c710701d94588be74971ca5f64, type: 2}
 --- !u!114 &1984074370
@@ -849,7 +848,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1204919813524824360, guid: 00e66b73c442a7145be5ac8377fc69a7, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1204919813524824360, guid: 00e66b73c442a7145be5ac8377fc69a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1042,7 +1041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329715153220865937, guid: 123c0f1603cf7504b9b3b994d95775a1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123c0f1603cf7504b9b3b994d95775a1, type: 3}
@@ -1063,7 +1062,7 @@ PrefabInstance:
       objectReference: {fileID: 452275231}
     - target: {fileID: 3939980554750928589, guid: 9d9c057053caa33489f9dcf1c9716490, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3939980554750928589, guid: 9d9c057053caa33489f9dcf1c9716490, type: 3}
       propertyPath: m_LocalPosition.x
