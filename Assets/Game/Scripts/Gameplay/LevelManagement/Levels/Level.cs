@@ -12,14 +12,15 @@ namespace MissileCommand.Gameplay.LevelManagement
         public List<Wave> Waves = new List<Wave>();
 
         [Header("Level Data")]
-        [SerializeField] private int _currentWave;
+        [SerializeField] protected int _currentWave;
 
         [Header("Events")]
-        [SerializeField] private GameEvent _levelStarted;
-        [SerializeField] private GameEvent _levelEnded;
+        [SerializeField] protected GameEvent _levelStarted;
+        [SerializeField] protected GameEvent _levelEnded;
 
         public abstract void Start();
         public abstract void End();
         public abstract void Update();
+        public abstract void OnWaveEnded();
     }
 }
