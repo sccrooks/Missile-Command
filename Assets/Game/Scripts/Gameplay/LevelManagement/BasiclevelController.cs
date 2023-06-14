@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
-    public class BasiclevelController : LevelController
+    public class BasicLevelController : LevelController
     {
         public override void Start()
         {

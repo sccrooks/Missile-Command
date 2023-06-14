@@ -742,6 +742,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1984074368}
   - component: {fileID: 1984074369}
+  - component: {fileID: 1984074371}
+  - component: {fileID: 1984074370}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -776,6 +778,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a011cb140ba8747911fbf5eb11ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelList: []
+  _entitySpawnList: {fileID: 11400000, guid: f291c02df6713f142a1c4ecc967eaf03, type: 2}
+  _currentLevel: 0
+  _gameOverEvent: {fileID: 11400000, guid: 376f95c710701d94588be74971ca5f64, type: 2}
+--- !u!114 &1984074370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984074366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 10a25309b4d464344a61034d92067989, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1984074369}
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.LevelManagement.BasicLevelController,
+          Assembly-CSharp
+        m_MethodName: OnWaveEnded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1984074371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984074366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1984074369}
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.LevelManagement.BasicLevelController,
+          Assembly-CSharp
+        m_MethodName: OnlevelEnded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1204919813073210678
 PrefabInstance:
   m_ObjectHideFlags: 0
