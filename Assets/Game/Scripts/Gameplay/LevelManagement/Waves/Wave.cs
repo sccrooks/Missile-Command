@@ -1,3 +1,4 @@
+using MissileCommand.Infrastructure.ScriptableObjects;
 using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,8 +19,12 @@ namespace MissileCommand.Gameplay.LevelManagement
         [SerializeField] protected GameEvent _waveStarted;
         [SerializeField] protected GameEvent _waveEnded;
 
+        [Header("Collections")]
+        [SerializeField] protected GameObjectCollection _spawnBuffer;
+
         public abstract void Start();
         public abstract void End();
+        public abstract void Update();
         public abstract void SpawnEntity();
     }
 }  

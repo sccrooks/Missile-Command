@@ -7,27 +7,13 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
-    [CreateAssetMenu(fileName = "Basic Wave", menuName = "Gameplay/LevelManagement/BasicWave")]
+    [CreateAssetMenu(fileName = "Basic Wave", menuName = "Gameplay/Level Management/Basic Wave")]
     public class BasicWave : Wave
     {
-        [SerializeField] private int _spawnDelay = 0;
-        [SerializeField] private int _spawnedEntites = 0;
-
-        [Header("Events")]
-        [SerializeField] private GameEvent _waveStarted;
-        [SerializeField] private GameEvent _waveEnded;
-        [SerializeField] private GameEvent _entitySpawnRequested;
-
-        public override void Start(GameEvent waveStarted, GameEvent waveEnded, GameEvent entitySpawnRequested)
+        public override void Start()
         {
-            // Get events
-            _waveStarted = waveStarted;
-            _waveEnded = waveEnded;
-            _entitySpawnRequested = entitySpawnRequested;
-
-            _spawnedEntites = 0;
+            _currentEntity = 0;
             _waveStarted?.Raise();
-            SpawnEntity();
         }
 
         public override void End()
@@ -35,13 +21,21 @@ namespace MissileCommand.Gameplay.LevelManagement
             _waveEnded?.Raise();
         }
 
-        public override async void SpawnEntity()
+        public override void Update()
         {
-            if (_spawnedEntites <= Entities.Count) return;
-            _spawnedEntites++;
-
-            await Task.Delay(_spawnDelay);
-            _entitySpawnRequested?.Raise();
+            if (_currentEntity >= Entities.Count) return;
+            SpawnEntity();
         }
+
+        public override void SpawnEntity()
+        {
+            foreach(GameObject entity in Entities)
+            {
+                _spawnBuffer.Add(entity);
+                _currentEntity++;
+            }
+        }
+
+        
     }
 }
