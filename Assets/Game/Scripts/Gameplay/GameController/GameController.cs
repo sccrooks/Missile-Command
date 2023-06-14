@@ -17,7 +17,7 @@ namespace MissileCommand.Gameplay.GameController
         [SerializeField] private GameObjectCollection _entitySpawnCollection;
 
         [Header("Game stats")]
-        [SerializeField] private int score;
+        [SerializeField] private float score;
 
         [Header("Events")]
         [SerializeField] private GameEvent _gameOverEvent;
@@ -55,6 +55,11 @@ namespace MissileCommand.Gameplay.GameController
         public void EndGame()
         {
             SceneManager.LoadScene(_sceneData.GameOver);
+        }
+
+        public void IncreaseScore(float score)
+        {
+            this.score += score;
         }
     }
 }
