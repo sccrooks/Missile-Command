@@ -773,11 +773,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1984074366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7242c9a4878354bb45520878598ff5, type: 3}
+  m_Script: {fileID: 11500000, guid: 09a011cb140ba8747911fbf5eb11ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _missilePrefab: {fileID: 6250961424340798665, guid: d0663010aea84144c93fd6054b7ced61, type: 3}
-  _entityCollection: {fileID: 11400000, guid: f291c02df6713f142a1c4ecc967eaf03, type: 2}
 --- !u!1001 &1204919813073210678
 PrefabInstance:
   m_ObjectHideFlags: 0
