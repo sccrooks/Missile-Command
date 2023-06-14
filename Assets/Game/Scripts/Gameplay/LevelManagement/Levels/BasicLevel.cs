@@ -20,7 +20,7 @@ namespace MissileCommand.Gameplay.LevelManagement
 
         public override void Update()
         {
-            
+            Waves[_currentWave].Update();
         }
 
         public override void OnWaveEnded()
