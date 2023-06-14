@@ -18,7 +18,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         [SerializeField] private GameEvent _waveEnded;
         [SerializeField] private GameEvent _entitySpawnRequested;
 
-        public override void StartWave(GameEvent waveStarted, GameEvent waveEnded, GameEvent entitySpawnRequested)
+        public override void Start(GameEvent waveStarted, GameEvent waveEnded, GameEvent entitySpawnRequested)
         {
             // Get events
             _waveStarted = waveStarted;
@@ -30,7 +30,7 @@ namespace MissileCommand.Gameplay.LevelManagement
             SpawnEntity();
         }
 
-        public override void EndWave()
+        public override void End()
         {
             _waveEnded?.Raise();
         }
