@@ -8,7 +8,7 @@ namespace MissileCommand.Gameplay.LevelManagement
     {
         public override void Start()
         {
-            throw new System.NotImplementedException();
+            _currentWave = 0;
         }
 
         public override void End()
