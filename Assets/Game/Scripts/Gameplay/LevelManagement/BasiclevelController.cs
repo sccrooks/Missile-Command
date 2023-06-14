@@ -8,12 +8,22 @@ namespace MissileCommand.Gameplay.LevelManagement
     {
         public override void Start()
         {
-            throw new System.NotImplementedException();
+            _currentLevel = 0;
         }
 
         public override void Update()
         {
-            throw new System.NotImplementedException();
+            _levelList[_currentLevel].Update();
+        }
+
+        public override void OnlevelEnded()
+        {
+            _currentLevel++;
+        }
+
+        public override void OnWaveEnded()
+        {
+            _levelList[_currentLevel].OnWaveEnded();
         }
     }
 }
