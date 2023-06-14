@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
+    [CreateAssetMenu(fileName = "Basic Level", menuName = "Level Management/Basic Level")]
     public class BasicLevel : Level
     {
         public override void Start()
@@ -20,6 +21,13 @@ namespace MissileCommand.Gameplay.LevelManagement
         public override void Update()
         {
             
+        }
+
+        public override void OnWaveEnded()
+        {
+            _currentWave++;
+            if (_currentWave >= Waves.Count)
+                End();
         }
     }
 }
