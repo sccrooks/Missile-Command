@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Entities:
   - {fileID: 6250961424340798665, guid: d0663010aea84144c93fd6054b7ced61, type: 3}
-  _currentEntity: 0
+  - {fileID: 6250961424340798665, guid: d0663010aea84144c93fd6054b7ced61, type: 3}
+  _currentEntity: 2
   _waveStarted: {fileID: 11400000, guid: a88e53c6d2d33c94a9b4885271cf59fa, type: 2}
   _waveEnded: {fileID: 11400000, guid: 10a25309b4d464344a61034d92067989, type: 2}
   _spawnBuffer: {fileID: 11400000, guid: f291c02df6713f142a1c4ecc967eaf03, type: 2}
