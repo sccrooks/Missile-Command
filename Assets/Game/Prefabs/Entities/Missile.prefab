@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2f85e4f8060314c8b79436af37bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AIBrain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
   Brain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
 --- !u!114 &6250961424340798667
 MonoBehaviour:
