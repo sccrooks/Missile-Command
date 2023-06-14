@@ -11,9 +11,6 @@ namespace MissileCommand.Gameplay.LevelManagement
         [Header("Levels")]
         [SerializeField] protected List<Level> _levelList = new List<Level>();
 
-        [Header("Components")]
-        [SerializeField] protected GameObjectCollection _entitySpawnList;
-
         [Header("Level Controller Data")]
         [SerializeField] protected int _currentLevel;
 
