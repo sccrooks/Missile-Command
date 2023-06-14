@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
-    [CreateAssetMenu(fileName = "Basic Wave", menuName = "Gameplay/Level Management/Basic Wave")]
+    [CreateAssetMenu(fileName = "Basic Wave", menuName = "Level Management/Basic Wave")]
     public class BasicWave : Wave
     {
         public override void Start()
