@@ -23,7 +23,12 @@ namespace MissileCommand.Gameplay.LevelManagement
 
         public override void Update()
         {
-            if (_currentEntity >= Entities.Count) return;
+            if (_currentEntity >= Entities.Count)
+            {
+                End();
+                return;
+            }
+
             SpawnEntity();
         }
 
@@ -35,7 +40,5 @@ namespace MissileCommand.Gameplay.LevelManagement
                 _currentEntity++;
             }
         }
-
-        
     }
 }
