@@ -29,8 +29,8 @@ public class Missile : MonoBehaviour
 
     public void Destroy()
     {
-        _activeEntities.Remove(this.gameObject);
         _missileDestroyed.Raise(_reward);
+        _activeEntities.Remove(this.gameObject);
         Destroy(gameObject);
     }
 

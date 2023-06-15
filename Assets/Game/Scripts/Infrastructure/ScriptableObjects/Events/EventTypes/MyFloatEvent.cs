@@ -4,7 +4,4 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class MyFloatEvent : UnityEvent<float>
-{
-
-}
+public class MyFloatEvent : UnityEngine.Events.UnityEvent<float> {}

@@ -59,6 +59,7 @@ namespace MissileCommand.Gameplay.GameController
 
         public void IncreaseScore(float score)
         {
+            Debug.Log($"Raising score by: {score}");
             this.score += score;
         }
     }
