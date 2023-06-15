@@ -31,7 +31,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         {
             foreach(GameObject entity in Entities)
             {
-                _spawnBuffer.Add(entity);
+                _spawnRequested.Raise(entity);
                 _currentEntity++;
             }
         }

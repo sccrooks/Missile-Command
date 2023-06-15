@@ -19,4 +19,4 @@ MonoBehaviour:
   _currentEntity: 0
   _waveStarted: {fileID: 11400000, guid: a88e53c6d2d33c94a9b4885271cf59fa, type: 2}
   _waveEnded: {fileID: 11400000, guid: 10a25309b4d464344a61034d92067989, type: 2}
-  _spawnBuffer: {fileID: 11400000, guid: f291c02df6713f142a1c4ecc967eaf03, type: 2}
+  _spawnRequested: {fileID: 11400000, guid: 1ded0b8ca9b4353409be52cf42d24412, type: 2}
