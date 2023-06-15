@@ -17,9 +17,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         [Header("Events")]
         [SerializeField] protected GameEvent _waveStarted;
         [SerializeField] protected GameEvent _waveEnded;
-
-        [Header("Collections")]
-        [SerializeField] protected GameObjectCollection _spawnBuffer;
+        [SerializeField] protected GameObjectEvent _spawnRequested;
 
         public abstract void Start();
         public abstract void End();

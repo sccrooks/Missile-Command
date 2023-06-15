@@ -5,9 +5,9 @@ using UnityEngine;
 namespace Sccrooks.Utility.ScriptableObjects.Events
 {
     [CreateAssetMenu(fileName = "GameObject Event", menuName = "Infrastructure/GameObject event")]
-    public class GameObjectGameEvent : ScriptableObject
+    public class GameObjectEvent : ScriptableObject
     {
-        private List<GameObjectGameEventListener> listeners = new List<GameObjectGameEventListener>();
+        private List<GameObjectEventListener> listeners = new List<GameObjectEventListener>();
 
         public void Raise(GameObject data)
         {
@@ -17,12 +17,12 @@ namespace Sccrooks.Utility.ScriptableObjects.Events
             Debug.Log("Event Finished");
         }
 
-        public void RegisterListener(GameObjectGameEventListener listener)
+        public void RegisterListener(GameObjectEventListener listener)
         {
             listeners.Add(listener);
         }
 
-        public void UnregisterListener(GameObjectGameEventListener listener)
+        public void UnregisterListener(GameObjectEventListener listener)
         {
             listeners.Remove(listener);
         }

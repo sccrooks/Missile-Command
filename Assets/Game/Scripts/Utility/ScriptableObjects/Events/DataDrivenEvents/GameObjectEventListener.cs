@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Sccrooks.Utility.ScriptableObjects.Events
 {
-    public class GameObjectGameEventListener : MonoBehaviour
+    public class GameObjectEventListener : MonoBehaviour
     {
         [Tooltip("Event to reguster with.")]
-        public GameObjectGameEvent Event;
+        public GameObjectEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
-        public GameObjectEvent Response;
+        public MyGameObjectEvent Response;
 
         private void OnEnable()
         {
