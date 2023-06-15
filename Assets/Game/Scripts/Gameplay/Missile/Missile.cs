@@ -13,7 +13,7 @@ public class Missile : MonoBehaviour
     [SerializeField] private GameObjectCollection _activeEntities;
 
     [Header("Events")]
-    [SerializeField] private FloatGameEvent _missileDestroyed;
+    [SerializeField] private FloatEvent _missileDestroyed;
 
     public AIThinker AIThinker;
 

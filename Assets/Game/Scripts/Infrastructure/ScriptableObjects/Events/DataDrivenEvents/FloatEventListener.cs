@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    public class FloatGameEventListener : MonoBehaviour
+    public class FloatEventListener : MonoBehaviour
     {
         [Tooltip("Event to reguster with.")]
-        public FloatGameEvent Event;
+        public FloatEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
         public MyFloatEvent Response;

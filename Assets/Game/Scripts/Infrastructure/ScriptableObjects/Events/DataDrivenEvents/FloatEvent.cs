@@ -5,9 +5,9 @@ using UnityEngine;
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
     [CreateAssetMenu(fileName = "Float Event", menuName = "Infrastructure/Float event"), System.Serializable]
-    public class FloatGameEvent : ScriptableObject
+    public class FloatEvent : ScriptableObject
     {
-        private List<FloatGameEventListener> listeners = new List<FloatGameEventListener>();
+        private List<FloatEventListener> listeners = new List<FloatEventListener>();
 
         public virtual void Raise(float data)
         {
@@ -15,12 +15,12 @@ namespace MissileCommand.Infrastructure.ScriptableObjects.Events
                 listeners[i].OnEventRaised(data);
         }
 
-        public virtual void RegisterListener(FloatGameEventListener listener)
+        public virtual void RegisterListener(FloatEventListener listener)
         {
             listeners.Add(listener);
         }
 
-        public virtual void UnregisterListener(FloatGameEventListener listener)
+        public virtual void UnregisterListener(FloatEventListener listener)
         {
             listeners.Remove(listener);
         }
