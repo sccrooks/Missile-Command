@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects
+namespace Sccrooks.Utility.ScriptableObjects.Variables
 {
     [CreateAssetMenu(fileName = "Float Variable", menuName = "Infrastructure/Float Variable")]
     public class IntVariable : ScriptableObject, ISerializationCallbackReceiver

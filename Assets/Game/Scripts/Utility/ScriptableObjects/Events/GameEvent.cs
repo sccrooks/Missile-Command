@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects.Events
+namespace Sccrooks.Utility.ScriptableObjects.Events
 {
     /// <summary>
     /// Original: https://unity.com/how-to/architect-game-code-scriptable-objects

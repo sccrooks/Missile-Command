@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
-
-[System.Serializable]
-public class MyFloatEvent : UnityEngine.Events.UnityEvent<float> {}
+namespace Sccrooks.Utility.ScriptableObjects.Events
+{
+    [System.Serializable]
+    public class MyFloatEvent : UnityEngine.Events.UnityEvent<float> { }
+}

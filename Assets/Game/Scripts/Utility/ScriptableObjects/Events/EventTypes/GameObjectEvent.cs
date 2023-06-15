@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.Events;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects.Events
+namespace Sccrooks.Utility.ScriptableObjects.Events
 {
     [System.Serializable]
-    public class GameObjectEvent : UnityEvent<GameObject>
+    public class GameObjectEvent : UnityEngine.Events.UnityEvent<GameObject>
     {
 
     }

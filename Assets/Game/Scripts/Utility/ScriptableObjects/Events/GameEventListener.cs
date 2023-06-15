@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects.Events
+namespace Sccrooks.Utility.ScriptableObjects.Events
 {
     public class GameEventListener : MonoBehaviour
     {

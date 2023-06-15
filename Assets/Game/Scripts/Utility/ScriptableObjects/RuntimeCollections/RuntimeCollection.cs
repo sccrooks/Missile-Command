@@ -2,7 +2,7 @@ using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects
+namespace Sccrooks.Utility.ScriptableObjects.RuntimeCollections
 {
     public abstract class RuntimeCollection<T> : ScriptableObject
     {
