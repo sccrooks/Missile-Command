@@ -15,7 +15,6 @@ namespace MissileCommand.Gameplay.LevelManagement
 
         public override void End()
         {
-            Debug.LogWarning("Level Ended");
             _levelEnded.Raise();
         }
 

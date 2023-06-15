@@ -11,10 +11,8 @@ namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 
         public virtual void Raise(float data)
         {
-            Debug.Log($"Event Raised with float: {data}");
             for (int i = listeners.Count - 1; i >= 0; i--)
                 listeners[i].OnEventRaised(data);
-            Debug.Log($"Event finished with float: {data}");
         }
 
         public virtual void RegisterListener(FloatGameEventListener listener)
