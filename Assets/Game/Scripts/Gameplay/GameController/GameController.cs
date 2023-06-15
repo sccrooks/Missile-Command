@@ -1,3 +1,4 @@
+using MissileCommand.Gameplay.Targets;
 using MissileCommand.Gameplay.Targets.Bases;
 using MissileCommand.Infrastructure.ScriptableObjects;
 using MissileCommand.Infrastructure.ScriptableObjects.Events;
@@ -14,10 +15,14 @@ namespace MissileCommand.Gameplay.GameController
         [Header("Components")]
         [SerializeField] private SceneData _sceneData;
         [SerializeField] private Transform _spawnLocation;
-        [SerializeField] private GameObjectCollection _entitySpawnCollection;
+        
+        [Header("Stats/Settings")]
+        [SerializeField] private float _score;
+        [SerializeField] private bool _respawnBasesOnLevelEnd;
 
-        [Header("Game stats")]
-        [SerializeField] private float score;
+        [Header("Collections")]
+        [SerializeField] private GameObjectCollection _entitySpawnCollection;
+        [SerializeField] private GameObjectCollection _targetCollection;
 
         [Header("Events")]
         [SerializeField] private GameEvent _gameOverEvent;
@@ -48,6 +53,17 @@ namespace MissileCommand.Gameplay.GameController
             _gameOverEvent.Raise();
         }
 
+        public void OnLevelEnded()
+        {
+            if(_respawnBasesOnLevelEnd)
+            {
+                foreach (GameObject item in _targetCollection.Items)
+                {
+                    item.GetComponent<Target>().SetActive(true);
+                }
+            }
+        }
+
         /// <summary>
         /// Attempts to end the game
         /// </summary>
@@ -60,7 +76,7 @@ namespace MissileCommand.Gameplay.GameController
         public void IncreaseScore(float score)
         {
             Debug.Log($"Raising score by: {score}");
-            this.score += score;
+            this._score += score;
         }
     }
 }

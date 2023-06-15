@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 130765640}
   - component: {fileID: 130765641}
   - component: {fileID: 130765642}
+  - component: {fileID: 130765643}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -205,8 +206,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
   _spawnLocation: {fileID: 1970179238}
+  _score: 0
+  _respawnBasesOnLevelEnd: 0
   _entitySpawnCollection: {fileID: 11400000, guid: f291c02df6713f142a1c4ecc967eaf03, type: 2}
-  score: 0
+  _targetCollection: {fileID: 11400000, guid: 4c0898eefa1a5fb43aba8ecbf12dc0d5, type: 2}
   _gameOverEvent: {fileID: 11400000, guid: 376f95c710701d94588be74971ca5f64, type: 2}
 --- !u!114 &130765639
 MonoBehaviour:
@@ -316,6 +319,35 @@ MonoBehaviour:
           Assembly-CSharp
         m_MethodName: IncreaseScore
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &130765643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130765636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 130765638}
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.GameController.GameController,
+          Assembly-CSharp
+        m_MethodName: OnLevelEnded
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
