@@ -24,9 +24,7 @@ namespace Sccrooks.Utility.ScriptableObjects.Events
 
         public void OnEventRaised(GameObject data)
         {
-            Debug.Log("Response invoked");
             Response.Invoke(data);
-            Debug.Log("Response completed");
         }
     }
 }
