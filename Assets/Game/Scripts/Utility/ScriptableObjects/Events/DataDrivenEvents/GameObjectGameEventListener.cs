@@ -6,7 +6,10 @@ namespace Sccrooks.Utility.ScriptableObjects.Events
 {
     public class GameObjectGameEventListener : MonoBehaviour
     {
+        [Tooltip("Event to reguster with.")]
         public GameObjectGameEvent Event;
+
+        [Tooltip("Response to invoke when Event is raised.")]
         public GameObjectEvent Response;
 
         private void OnEnable()
