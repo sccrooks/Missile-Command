@@ -3,7 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MyFloatEvent : UnityEvent<float>
-{
-
-}
+[System.Serializable]
+public class MyFloatEvent : UnityEngine.Events.UnityEvent<float> {}

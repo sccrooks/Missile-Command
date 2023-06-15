@@ -1,25 +1,28 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 {
-    [CreateAssetMenu(fileName = "Float Event", menuName = "Infrastructure/Float event")]
+    [CreateAssetMenu(fileName = "Float Event", menuName = "Infrastructure/Float event"), System.Serializable]
     public class FloatGameEvent : ScriptableObject
     {
         private List<FloatGameEventListener> listeners = new List<FloatGameEventListener>();
 
-        public void Raise(float data)
+        public virtual void Raise(float data)
         {
+            Debug.Log($"Event Raised with float: {data}");
             for (int i = listeners.Count - 1; i >= 0; i--)
                 listeners[i].OnEventRaised(data);
+            Debug.Log($"Event finished with float: {data}");
         }
 
-        public void RegisterListener(FloatGameEventListener listener)
+        public virtual void RegisterListener(FloatGameEventListener listener)
         {
             listeners.Add(listener);
         }
 
-        public void UnregisterListener(FloatGameEventListener listener)
+        public virtual void UnregisterListener(FloatGameEventListener listener)
         {
             listeners.Remove(listener);
         }
