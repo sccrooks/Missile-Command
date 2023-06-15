@@ -65,7 +65,7 @@ namespace MissileCommand.Gameplay.Targets
             } else
             {
                 _targetContainer.ActiveTargets.Remove(this.gameObject);
-                _targetContainer.DeactivatedTargets.Add(gameObject);
+                _targetContainer.DeactivatedTargets.Add(this.gameObject);
             }
         }
     }

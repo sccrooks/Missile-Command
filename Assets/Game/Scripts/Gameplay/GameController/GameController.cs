@@ -21,9 +21,11 @@ namespace MissileCommand.Gameplay.GameController
 
         [Header("Collections")]
         [SerializeField] private GameObjectCollection _targetCollection;
+        [SerializeField] private GameObjectCollection _activeTargetCollection;
 
         [Header("Events")]
         [SerializeField] private GameEvent _gameOverEvent;
+        [SerializeField] private GameEvent _allTargetsDestroyedEvent;
 
         #region -- Awake/Start/OnDestroy --
         private void Awake()
@@ -32,6 +34,17 @@ namespace MissileCommand.Gameplay.GameController
         }
         #endregion
 
+        /// <summary>
+        /// Called when target is destroyed, if there
+        /// are no remaining targets we end game
+        /// </summary>
+        public void OnActiveTargetDestroyed()
+        {
+            if (_activeTargetCollection.Count <= 0)
+            {
+                _allTargetsDestroyedEvent.Raise();
+            }
+        }
 
         /// <summary>
         /// Event listener for BaseHolder.AllBasesDestroyed.

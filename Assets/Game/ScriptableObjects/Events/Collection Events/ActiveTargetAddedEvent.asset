@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b742e4f1f747d34aaceb6ef41409b74, type: 3}
-  m_Name: Active Targets Collection
+  m_Script: {fileID: 11500000, guid: 7bfd5ea492348244da66fa83fc7481f4, type: 3}
+  m_Name: ActiveTargetAddedEvent
   m_EditorClassIdentifier: 
-  Items: []
-  ItemAdded: {fileID: 11400000, guid: 746d4ad2a39fe8c4bb350368926422ed, type: 2}
-  ItemRemoved: {fileID: 11400000, guid: 1a226049c7a791c43998a47fcb3f9452, type: 2}
