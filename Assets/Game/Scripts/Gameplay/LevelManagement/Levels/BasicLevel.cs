@@ -15,19 +15,24 @@ namespace MissileCommand.Gameplay.LevelManagement
 
         public override void End()
         {
+            Debug.LogWarning("Level Ended");
             _levelEnded.Raise();
         }
 
         public override void Update()
         {
+            if (_currentWave >= Waves.Count)
+            {
+                End();
+                return;
+            }
+
             Waves[_currentWave].Update();
         }
 
         public override void OnWaveEnded()
         {
-            _currentWave++;
-            if (_currentWave >= Waves.Count)
-                End();
+            _currentWave++; 
         }
     }
 }
