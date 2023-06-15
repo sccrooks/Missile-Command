@@ -1,5 +1,4 @@
-using MissileCommand.Gameplay.Targets;
-using MissileCommand.Infrastructure.ScriptableObjects.Events;
+using Sccrooks.Utility.ScriptableObjects.Events;
 using UnityEditor;
 using UnityEngine;
 

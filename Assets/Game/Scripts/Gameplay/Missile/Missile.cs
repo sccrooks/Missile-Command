@@ -1,9 +1,7 @@
 using MissileCommand.Gameplay.Enemies;
-using MissileCommand.Infrastructure.ScriptableObjects;
-using MissileCommand.Infrastructure.ScriptableObjects.Events;
-using System.Collections;
+using Sccrooks.Utility.ScriptableObjects.Events;
+using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Missile : MonoBehaviour
@@ -13,7 +11,7 @@ public class Missile : MonoBehaviour
     [SerializeField] private GameObjectCollection _activeEntities;
 
     [Header("Events")]
-    [SerializeField] private FloatGameEvent _missileDestroyed;
+    [SerializeField] private FloatEvent _missileDestroyed;
 
     public AIThinker AIThinker;
 

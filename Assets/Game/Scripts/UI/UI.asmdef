@@ -1,0 +1,17 @@
+{
+    "name": "UI",
+    "rootNamespace": "MissileCommand.UI",
+    "references": [
+        "GUID:fb24642277b1db2449da7ac148ce939d",
+        "GUID:3c9c60eab6136604f9ea585833bbd5d1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

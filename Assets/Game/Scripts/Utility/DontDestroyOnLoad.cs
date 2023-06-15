@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.Utils
+namespace Sccrooks.Utility
 {
     public class DontDestroyOnLoad : MonoBehaviour
     {

@@ -1,31 +1,32 @@
-using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects.Events
+namespace Sccrooks.Utility.ScriptableObjects.Events
 {
-    public class FloatGameEventListener : MonoBehaviour
+    public class GameObjectGameEventListener : MonoBehaviour
     {
         [Tooltip("Event to reguster with.")]
-        public FloatGameEvent Event;
+        public GameObjectGameEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
-        public MyFloatEvent Response;
+        public GameObjectEvent Response;
 
         private void OnEnable()
         {
             Event.RegisterListener(this);
         }
-        
+
         private void OnDisable()
         {
             Event.UnregisterListener(this);
         }
 
-        public void OnEventRaised(float data)
+        public void OnEventRaised(GameObject data)
         {
+            Debug.Log("Response invoked");
             Response.Invoke(data);
+            Debug.Log("Response completed");
         }
     }
 }
