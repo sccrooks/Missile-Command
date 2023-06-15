@@ -36,7 +36,6 @@ public class Missile : MonoBehaviour
 
     public void BaseCollision()
     {
-        Debug.Log("Collided with Base");
         Destroy();
     }
 

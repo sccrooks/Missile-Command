@@ -25,7 +25,6 @@ namespace MissileCommand.Infrastructure.ScriptableObjects.Events
 
         public void OnEventRaised(float data)
         {
-            Debug.Log($"Event Invoked with float: {data}");
             Response.Invoke(data);
         }
     }

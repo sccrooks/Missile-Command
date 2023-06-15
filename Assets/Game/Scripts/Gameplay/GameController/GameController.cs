@@ -38,7 +38,6 @@ namespace MissileCommand.Gameplay.GameController
         [Command("Instantiate-Entity")]
         public void InstaniateEntity()
         {
-            Debug.Log("Spawning entity");
             Instantiate(_entitySpawnCollection.Items[0], _spawnLocation.transform.position, Quaternion.identity, _spawnLocation.transform);
             _entitySpawnCollection.Remove(_entitySpawnCollection.Items[0]);
         }
@@ -75,7 +74,6 @@ namespace MissileCommand.Gameplay.GameController
 
         public void IncreaseScore(float score)
         {
-            Debug.Log($"Raising score by: {score}");
             this._score += score;
         }
     }
