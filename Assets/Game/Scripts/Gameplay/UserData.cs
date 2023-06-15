@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Sccrooks.Utility.ScriptableObjects.Variables;
 using UnityEngine;
 
 namespace MissileCommand.Infrastructure.ScriptableObjects

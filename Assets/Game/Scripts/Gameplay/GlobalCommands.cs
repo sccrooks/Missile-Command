@@ -1,5 +1,5 @@
-using MissileCommand.Infrastructure.ScriptableObjects.Events;
 using QFSW.QC;
+using Sccrooks.Utility.ScriptableObjects.Events;
 using UnityEngine;
 
 namespace MissileCommand.Utils
