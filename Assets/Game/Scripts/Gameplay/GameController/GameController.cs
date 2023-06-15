@@ -33,13 +33,6 @@ namespace MissileCommand.Gameplay.GameController
         #endregion
 
 
-        [Command("Instantiate-Entity")]
-        public void InstaniateEntity(GameObject entity)
-        {
-            Instantiate(entity, _spawnLocation.transform.position, Quaternion.identity, _spawnLocation.transform);
-        }
-
-
         /// <summary>
         /// Event listener for BaseHolder.AllBasesDestroyed.
         /// We want to attempt to end game once this event has triggered
