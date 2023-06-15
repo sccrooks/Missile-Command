@@ -20,7 +20,6 @@ namespace MissileCommand.Gameplay.GameController
         [SerializeField] private bool _respawnBasesOnLevelEnd;
 
         [Header("Collections")]
-        [SerializeField] private GameObjectCollection _entitySpawnCollection;
         [SerializeField] private GameObjectCollection _targetCollection;
 
         [Header("Events")]
@@ -35,10 +34,9 @@ namespace MissileCommand.Gameplay.GameController
 
 
         [Command("Instantiate-Entity")]
-        public void InstaniateEntity()
+        public void InstaniateEntity(GameObject entity)
         {
-            Instantiate(_entitySpawnCollection.Items[0], _spawnLocation.transform.position, Quaternion.identity, _spawnLocation.transform);
-            _entitySpawnCollection.Remove(_entitySpawnCollection.Items[0]);
+            Instantiate(entity, _spawnLocation.transform.position, Quaternion.identity, _spawnLocation.transform);
         }
 
 
