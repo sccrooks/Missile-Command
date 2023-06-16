@@ -11,6 +11,9 @@ namespace MissileCommand.Gameplay.LevelManagement
 
         [Header("Level Data")]
         [SerializeField] protected int _currentWave;
+        [SerializeField] protected Color _primaryColour;
+        [SerializeField] protected Color _secondaryColour;
+        [SerializeField] protected Color _accentColour;
 
         [Header("Events")]
         [SerializeField] protected GameEvent _levelStarted;
