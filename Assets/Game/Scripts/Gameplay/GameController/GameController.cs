@@ -4,6 +4,7 @@ using Sccrooks.Utility.ScriptableObjects.Events;
 using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace MissileCommand.Gameplay.GameController
 {
@@ -16,7 +17,7 @@ namespace MissileCommand.Gameplay.GameController
         [SerializeField] private Transform _spawnLocation;
         
         [Header("Stats/Settings")]
-        [SerializeField] private float _score;
+        [SerializeField] private int _score;
         [SerializeField] private bool _respawnBasesOnLevelEnd;
 
         [Header("Collections")]
@@ -26,11 +27,18 @@ namespace MissileCommand.Gameplay.GameController
         [Header("Events")]
         [SerializeField] private GameEvent _gameOverEvent;
         [SerializeField] private GameEvent _allTargetsDestroyedEvent;
+        [SerializeField] private IntEvent _scoreUpdatedEvent;
 
         #region -- Awake/Start/OnDestroy --
         private void Awake()
         {
             Instance = this;
+        }
+
+        private void Start()
+        {
+            _score = 0;
+            _scoreUpdatedEvent.Raise(_score);
         }
         #endregion
 
@@ -77,7 +85,8 @@ namespace MissileCommand.Gameplay.GameController
 
         public void IncreaseScore(float score)
         {
-            this._score += score;
+            this._score += (int)score;
+            _scoreUpdatedEvent.Raise(this._score);
         }
     }
 }

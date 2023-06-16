@@ -1731,6 +1731,10 @@ PrefabInstance:
       propertyPath: _spawnLocation
       value: 
       objectReference: {fileID: 1970179238}
+    - target: {fileID: 8389499888507464588, guid: 6ebefd2b4db5f354a8793e446ee9c2d7, type: 3}
+      propertyPath: _scoreUpdatedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: b9a63e0cbcc2ff445a1c20e5fe2ca839, type: 2}
     - target: {fileID: 8389499888507464590, guid: 6ebefd2b4db5f354a8793e446ee9c2d7, type: 3}
       propertyPath: m_Name
       value: GameController
