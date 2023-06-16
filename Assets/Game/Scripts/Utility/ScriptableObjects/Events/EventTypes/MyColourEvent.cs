@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 namespace Sccrooks.Utility
 {
+    [System.Serializable]
     public class MyColourEvent : UnityEvent<Color>
     {
 

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class ColourChanger : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _renderer;
+    [SerializeField]
+    private SpriteRenderer _renderer;
 
     private void Start()
     {
