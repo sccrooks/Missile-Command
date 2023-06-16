@@ -164,8 +164,10 @@ GameObject:
   m_Component:
   - component: {fileID: 72850368}
   - component: {fileID: 72850369}
+  - component: {fileID: 72850371}
+  - component: {fileID: 72850370}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,6 +240,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &72850370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72850367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39665907de42c746a93153a530e27b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4d2338d35812ea94ca4358439b7fc5a6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 72850371}
+        m_TargetAssemblyTypeName: ColourChanger, Gameplay
+        m_MethodName: ChangeColour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &72850371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72850367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082f1768a058f944fbb041f6f568f8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 72850369}
 --- !u!1 &139136566
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,12 +312,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &214838485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1204919813524824363, guid: 00e66b73c442a7145be5ac8377fc69a7, type: 3}
+  m_PrefabInstance: {fileID: 1204919813073210678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &452275231 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1204919813524824361, guid: 00e66b73c442a7145be5ac8377fc69a7, type: 3}
   m_PrefabInstance: {fileID: 1204919813073210678}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 214838485}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdef5c977ddf455429c471b24b63b577, type: 3}
@@ -321,6 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 796801069}
   - component: {fileID: 796801070}
+  - component: {fileID: 796801071}
   m_Layer: 0
   m_Name: CannonBase
   m_TagString: Untagged
@@ -397,6 +446,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &796801071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796801068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c962f535be8bf348b1014308378cdb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _barrelAxis: {fileID: 796801068}
+  _reticle: {fileID: 214838485}
+  _angleModifier: 90
 --- !u!1 &807865787
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +628,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1172674770}
   - component: {fileID: 1172674771}
+  - component: {fileID: 1172674773}
+  - component: {fileID: 1172674772}
   m_Layer: 0
   m_Name: TurretBase
   m_TagString: Untagged
@@ -638,6 +704,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1172674772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172674769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39665907de42c746a93153a530e27b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 88543817b0c3eb54ab191ea9c3ddd0b7, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1172674773}
+        m_TargetAssemblyTypeName: ColourChanger, Gameplay
+        m_MethodName: ChangeColour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1172674773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172674769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082f1768a058f944fbb041f6f568f8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 1172674771}
 --- !u!1 &1240530657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1353,10 @@ PrefabInstance:
     - target: {fileID: 6147498940328966854, guid: b1714c0631f5f394aa3682fa9358451b, type: 3}
       propertyPath: m_Name
       value: EntitySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6147498940328966854, guid: b1714c0631f5f394aa3682fa9358451b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6147498940858629677, guid: b1714c0631f5f394aa3682fa9358451b, type: 3}
       propertyPath: m_Enabled
