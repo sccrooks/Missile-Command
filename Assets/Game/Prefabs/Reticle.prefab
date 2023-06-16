@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204919813207315528}
   - component: {fileID: 1204919813207315529}
+  - component: {fileID: 2558843449419965831}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -84,6 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2558843449419965831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204919813207315531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082f1768a058f944fbb041f6f568f8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
 --- !u!1 &1204919813524824363
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204919813524824360}
   - component: {fileID: 1204919813524824361}
+  - component: {fileID: 5172950276897308144}
   m_Layer: 0
   m_Name: Reticle
   m_TagString: Untagged
@@ -129,3 +144,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdef5c977ddf455429c471b24b63b577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5172950276897308144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204919813524824363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39665907de42c746a93153a530e27b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4d2338d35812ea94ca4358439b7fc5a6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2558843449419965831}
+        m_TargetAssemblyTypeName: ColourChanger, Gameplay
+        m_MethodName: ChangeColour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
