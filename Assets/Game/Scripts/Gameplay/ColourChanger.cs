@@ -8,7 +8,7 @@ public class ColourChanger : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _renderer;
 
-    private void Start()
+    private void OnValidate()
     {
         _renderer = this.gameObject.GetComponent<SpriteRenderer>();
     }

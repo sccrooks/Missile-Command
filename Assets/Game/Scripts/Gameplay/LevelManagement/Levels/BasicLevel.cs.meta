@@ -7,7 +7,7 @@ MonoImporter:
   - _levelStarted: {fileID: 11400000, guid: 6d61c284d7314e148a8a768c7de01260, type: 2}
   - _levelEnded: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}
   - _primaryColourChanged: {fileID: 11400000, guid: 4d2338d35812ea94ca4358439b7fc5a6, type: 2}
-  - _SecondaryColourChanged: {fileID: 11400000, guid: 88543817b0c3eb54ab191ea9c3ddd0b7, type: 2}
+  - _secondaryColourChanged: {fileID: 11400000, guid: 88543817b0c3eb54ab191ea9c3ddd0b7, type: 2}
   - _accentColourChanged: {fileID: 11400000, guid: da4993ec9cb6b74489e77c613de6a79d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

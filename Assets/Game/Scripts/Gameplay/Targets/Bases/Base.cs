@@ -32,7 +32,7 @@ namespace MissileCommand.Gameplay.Targets.Bases
         /// 
         /// </summary>
         /// <param name="value"></param>
-        public override void SetActive(bool value)
+        public void SetActive(bool value)
         {
             base.SetActive(value);
 

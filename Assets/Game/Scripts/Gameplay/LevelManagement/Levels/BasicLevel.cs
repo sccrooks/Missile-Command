@@ -1,11 +1,29 @@
+using Sccrooks.Utility.ScriptableObjects.Events;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
     [CreateAssetMenu(fileName = "Basic Level", menuName = "Level Management/Basic Level")]
-    public class BasicLevel : Level
+    public class BasicLevel : ScriptableObject
     {
-        public override void Start()
+        [Header("Waves")]
+        public List<Wave> Waves = new List<Wave>();
+
+        [Header("Level Data")]
+        [SerializeField] protected int _currentWave;
+        [SerializeField] protected Color _primaryColour;
+        [SerializeField] protected Color _secondaryColour;
+        [SerializeField] protected Color _accentColour;
+
+        [Header("Events")]
+        [SerializeField] protected GameEvent _levelStarted;
+        [SerializeField] protected GameEvent _levelEnded;
+        [SerializeField] protected ColourEvent _primaryColourChanged;
+        [SerializeField] protected ColourEvent _secondaryColourChanged;
+        [SerializeField] protected ColourEvent _accentColourChanged;
+
+        public void Start()
         {
             _currentWave = 0;
             _levelStarted.Raise();
@@ -14,12 +32,12 @@ namespace MissileCommand.Gameplay.LevelManagement
             _accentColourChanged.Raise(_accentColour);
         }
 
-        public override void End()
+        public void End()
         {
             _levelEnded.Raise();
         }
 
-        public override void Update()
+        public void Update()
         {
             if (_currentWave >= Waves.Count)
             {
@@ -30,7 +48,7 @@ namespace MissileCommand.Gameplay.LevelManagement
             Waves[_currentWave].Update();
         }
 
-        public override void OnWaveEnded()
+        public void OnWaveEnded()
         {
             _currentWave++; 
         }
