@@ -10,7 +10,7 @@ public class ColourChanger : MonoBehaviour
 
     private void Start()
     {
-        _renderer = GetComponent<SpriteRenderer>();
+        _renderer = this.gameObject.GetComponent<SpriteRenderer>();
     }
 
     public void ChangeColour(Color colour)

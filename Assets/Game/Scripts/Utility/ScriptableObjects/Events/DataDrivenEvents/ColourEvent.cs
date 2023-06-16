@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Sccrooks.Utility.ScriptableObjects.Events
 {
-    [CreateAssetMenu(fileName = "GameObject Event", menuName = "Infrastructure/Events/Color event")]
+    [CreateAssetMenu(fileName = "Color Event", menuName = "Infrastructure/Events/Color event")]
     public class ColourEvent : ScriptableObject
     {
         private List<ColourEventListener> listeners = new List<ColourEventListener>();

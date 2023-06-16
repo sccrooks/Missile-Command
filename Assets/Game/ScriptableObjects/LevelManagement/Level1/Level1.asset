@@ -16,8 +16,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 560773ec640e4284ab39bc910d974212, type: 2}
   - {fileID: 11400000, guid: f21b8017176628540a3b2ea6a0398ddb, type: 2}
   _currentWave: 0
-  _primaryColour: {r: 0, g: 0, b: 0, a: 0}
-  _secondaryColour: {r: 0, g: 0, b: 0, a: 0}
+  _primaryColour: {r: 0.64705884, g: 0.52156866, b: 0.5686275, a: 0}
+  _secondaryColour: {r: 0.92941177, g: 0.81960785, b: 0.54509807, a: 0}
   _accentColour: {r: 0, g: 0, b: 0, a: 0}
   _levelStarted: {fileID: 11400000, guid: 6d61c284d7314e148a8a768c7de01260, type: 2}
   _levelEnded: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}

@@ -10,7 +10,7 @@ namespace MissileCommand.Gameplay.LevelManagement
             _currentWave = 0;
             _levelStarted.Raise();
             _primaryColourChanged.Raise(_primaryColour);
-            _SecondaryColourChanged.Raise(_secondaryColour);
+            _secondaryColourChanged.Raise(_secondaryColour);
             _accentColourChanged.Raise(_accentColour);
         }
 

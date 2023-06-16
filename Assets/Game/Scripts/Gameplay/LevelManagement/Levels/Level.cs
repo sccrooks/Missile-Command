@@ -19,7 +19,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         [SerializeField] protected GameEvent _levelStarted;
         [SerializeField] protected GameEvent _levelEnded;
         [SerializeField] protected ColourEvent _primaryColourChanged;
-        [SerializeField] protected ColourEvent _SecondaryColourChanged;
+        [SerializeField] protected ColourEvent _secondaryColourChanged;
         [SerializeField] protected ColourEvent _accentColourChanged;
 
         public abstract void Start();
