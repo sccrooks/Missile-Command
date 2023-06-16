@@ -16,5 +16,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 560773ec640e4284ab39bc910d974212, type: 2}
   - {fileID: 11400000, guid: f21b8017176628540a3b2ea6a0398ddb, type: 2}
   _currentWave: 0
+  _primaryColour: {r: 0, g: 0, b: 0, a: 0}
+  _secondaryColour: {r: 0, g: 0, b: 0, a: 0}
+  _accentColour: {r: 0, g: 0, b: 0, a: 0}
   _levelStarted: {fileID: 11400000, guid: 6d61c284d7314e148a8a768c7de01260, type: 2}
   _levelEnded: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}
+  _primaryColourChanged: {fileID: 11400000, guid: 4d2338d35812ea94ca4358439b7fc5a6, type: 2}
+  _SecondaryColourChanged: {fileID: 11400000, guid: 88543817b0c3eb54ab191ea9c3ddd0b7, type: 2}
+  _accentColourChanged: {fileID: 11400000, guid: da4993ec9cb6b74489e77c613de6a79d, type: 2}
