@@ -1,6 +1,6 @@
 {
     "name": "Gameplay",
-    "rootNamespace": "",
+    "rootNamespace": "MissileCommand.Gameplay",
     "references": [
         "GUID:fb24642277b1db2449da7ac148ce939d",
         "GUID:5502607ec5653de4f8167a4a821e0ab4"
