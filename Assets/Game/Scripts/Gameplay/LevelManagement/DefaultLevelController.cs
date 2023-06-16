@@ -4,39 +4,44 @@ namespace MissileCommand.Gameplay.LevelManagement
     {
         public override void Start()
         {
-            _nextLevelRequested = false;
-            _currentLevel = 0;
+            _nextLevelRequested = true;
+            _currentLevel = -1;
+            ChangeLevel();
+            _levelList[_currentLevel].Start();
         }
 
         public override void Update()
         {
             if (_nextLevelRequested)
-            {
-                if (_activeEntities.Count > 0) return;
-                else
-                {
-                    _currentLevel++;
-                    _nextLevelRequested = false;
-
-                    if (_currentLevel >= _levelList.Count)
-                        _gameOverEvent.Raise();
-                }
-
-                return;
-            }
-                
-            _levelList[_currentLevel].Update();
+                ChangeLevel();
+            else
+                _levelList[_currentLevel].Update();
         }
 
         public override void OnlevelEnded()
         {
-            _nextLevelRequested = true;
-            
+            _nextLevelRequested = true;  
         }
 
         public override void OnWaveEnded()
         {
             _levelList[_currentLevel].OnWaveEnded();
+        }
+
+        public void ChangeLevel()
+        {
+            if (_activeEntities.Count > 0) return;
+            else if (_currentLevel + 1 >= _levelList.Count)
+            {
+                _gameOverEvent.Raise();
+                return;
+            }
+            else
+            {
+                _nextLevelRequested = false;
+                _currentLevel++;
+                _levelList[_currentLevel].Start();
+            }
         }
     }
 }

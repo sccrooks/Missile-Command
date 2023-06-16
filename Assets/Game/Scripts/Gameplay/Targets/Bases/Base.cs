@@ -8,8 +8,9 @@ namespace MissileCommand.Gameplay.Targets.Bases
     public class Base : Target
     {
         [Header("Base Art")]
-        [SerializeField] private GameObject _baseActive;
-        [SerializeField] private GameObject _baseDestroyed;
+        [SerializeField] private Sprite _baseActive;
+        [SerializeField] private Sprite _baseDestroyed;
+        [SerializeField] private SpriteRenderer _graphics;
 
         /// <summary>
         /// Destroy the base
@@ -31,20 +32,18 @@ namespace MissileCommand.Gameplay.Targets.Bases
         /// 
         /// </summary>
         /// <param name="value"></param>
-        public override void SetActive(bool value)
+        public void SetActive(bool value)
         {
             base.SetActive(value);
 
             // Change base graphics
             if (Active)
             {
-                _baseActive?.SetActive(true);
-                _baseDestroyed?.SetActive(false);
+                _graphics.sprite = _baseActive;
             }
             else
             {
-                _baseActive?.SetActive(false);
-                _baseDestroyed?.SetActive(true);
+                _graphics.sprite = _baseDestroyed;
             }
         }
     }

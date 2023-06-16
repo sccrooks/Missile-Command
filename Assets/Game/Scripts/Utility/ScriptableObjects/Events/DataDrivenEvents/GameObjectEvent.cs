@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Sccrooks.Utility.ScriptableObjects.Events
 {
-    [CreateAssetMenu(fileName = "GameObject Event", menuName = "Infrastructure/GameObject event")]
+    [CreateAssetMenu(fileName = "GameObject Event", menuName = "Infrastructure/Events/GameObject event")]
     public class GameObjectEvent : ScriptableObject
     {
         private List<GameObjectEventListener> listeners = new List<GameObjectEventListener>();

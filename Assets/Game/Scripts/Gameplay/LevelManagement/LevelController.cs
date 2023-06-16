@@ -8,7 +8,7 @@ namespace MissileCommand.Gameplay.LevelManagement
     public abstract class LevelController : MonoBehaviour
     {
         [Header("Levels")]
-        [SerializeField] protected List<Level> _levelList = new List<Level>();
+        [SerializeField] protected List<BasicLevel> _levelList = new List<BasicLevel>();
 
         [Header("Components")]
         [SerializeField] protected GameObjectCollection _activeEntities;
