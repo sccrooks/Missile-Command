@@ -5,34 +5,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace MissileCommand.Controls
 {
-    private Controls _controls;
-
-    [SerializeField] private ReticleController _reticle;
-    [SerializeField] private float speed;
-
-    private void Awake()
+    public class PlayerController : MonoBehaviour
     {
-        _controls = new Controls();
-    }
+        private Controls _controls;
 
-    private void OnEnable()
-    {
-        _controls.Enable();
-    }
+        [SerializeField] private ReticleController _reticle;
+        [SerializeField] private float speed;
 
-    private void OnDisable()
-    {
-        _controls.Disable();
-    }
+        private void Awake()
+        {
+            _controls = new Controls();
+        }
 
-    private void Update()
-    {
-        Vector2 movement = _controls.Reticle.Move.ReadValue<Vector2>();
-        _reticle.Transform.position += new Vector3(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime, 0);
+        private void OnEnable()
+        {
+            _controls.Enable();
+        }
 
-        if (_controls.Reticle.Fire.triggered)
-            Debug.Log("Fired missile");
+        private void OnDisable()
+        {
+            _controls.Disable();
+        }
+
+        private void Update()
+        {
+            Vector2 movement = _controls.Reticle.Move.ReadValue<Vector2>();
+            _reticle.Transform.position += new Vector3(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime, 0);
+
+            if (_controls.Reticle.Fire.triggered)
+                Debug.Log("Fired missile");
+        }
     }
 }
