@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 6250961424340798667}
   - component: {fileID: 6250961424340798666}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: BasicMissile
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,11 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fae1c6ddf98e4489222657293a5e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reward: 1000
-  _speed: 5
   _activeEntities: {fileID: 11400000, guid: dc39e4a33fef7c449a4b0a2cce0a4a75, type: 2}
-  _missileDestroyed: {fileID: 11400000, guid: fc8d4429cdfbb934e95ef3596206ec6e, type: 2}
-  AIThinker: {fileID: 6250961424340799280}
+  _aiLogicController: {fileID: 6250961424340799280}
+  _reward: 1000
+  _aiEntityDestroyed: {fileID: 11400000, guid: fc8d4429cdfbb934e95ef3596206ec6e, type: 2}
 --- !u!114 &6250961424340799280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AIBrain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
-  Brain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
+  _speed: 10
 --- !u!114 &6250961424340798667
 MonoBehaviour:
   m_ObjectHideFlags: 0
