@@ -2,6 +2,7 @@ using MissileCommand.Gameplay.Targets;
 using QFSW.QC;
 using Sccrooks.Utility.ScriptableObjects.Events;
 using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
+using Sccrooks.Utility.ScriptableObjects.Variables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
@@ -17,7 +18,7 @@ namespace MissileCommand.Gameplay.GameController
         [SerializeField] private Transform _spawnLocation;
         
         [Header("Stats/Settings")]
-        [SerializeField] private int _score;
+        [SerializeField] private IntVariable _score;
         [SerializeField] private bool _respawnBasesOnLevelEnd;
 
         [Header("Collections")]
@@ -37,8 +38,8 @@ namespace MissileCommand.Gameplay.GameController
 
         private void Start()
         {
-            _score = 0;
-            _scoreUpdatedEvent.Raise(_score);
+            _score.RunTimeValue = 0;
+            _scoreUpdatedEvent.Raise(_score.RunTimeValue);
         }
         #endregion
 
@@ -85,8 +86,8 @@ namespace MissileCommand.Gameplay.GameController
 
         public void IncreaseScore(float score)
         {
-            this._score += (int)score;
-            _scoreUpdatedEvent.Raise(this._score);
+            this._score.RunTimeValue += (int)score;
+            _scoreUpdatedEvent.Raise(this._score.RunTimeValue);
         }
     }
 }

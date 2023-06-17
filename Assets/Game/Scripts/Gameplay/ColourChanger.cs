@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColourChanger : MonoBehaviour
+namespace MissileCommand.Gameplay
 {
-    [SerializeField]
-    private SpriteRenderer _renderer;
-
-    private void OnValidate()
+    public class ColourChanger : MonoBehaviour
     {
-        _renderer = this.gameObject.GetComponent<SpriteRenderer>();
-    }
+        [SerializeField]
+        private SpriteRenderer _renderer;
 
-    public void ChangeColour(Color colour)
-    {
-        _renderer.color = colour;
+        private void OnValidate()
+        {
+            _renderer = this.gameObject.GetComponent<SpriteRenderer>();
+        }
+
+        public void ChangeColour(Color colour)
+        {
+            _renderer.color = colour;
+        }
     }
 }
