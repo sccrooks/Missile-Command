@@ -12,6 +12,15 @@ namespace MissileCommand.Gameplay.Targets
         [SerializeField] private Sprite _baseDestroyed;
         [SerializeField] private SpriteRenderer _graphics;
 
+        [Header("Sounds")]
+        [SerializeField] private AudioSource _audioSource;
+
+        public override void _OnValidate()
+        {
+            base._OnValidate();
+            _audioSource = this.gameObject.GetComponent<AudioSource>();
+        }
+
         /// <summary>
         /// Destroy the base
         /// </summary>
@@ -44,6 +53,7 @@ namespace MissileCommand.Gameplay.Targets
             else
             {
                 _graphics.sprite = _baseDestroyed;
+                _audioSource.Play(0);
             }
         }
     }

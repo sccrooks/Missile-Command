@@ -23,7 +23,7 @@ namespace MissileCommand.Gameplay.Targets
         #region
 #if UNITY_EDITOR
         private void OnValidate() { EditorApplication.delayCall += _OnValidate; }
-        private void _OnValidate()
+        public virtual void _OnValidate()
         {
             if (!EditorApplication.isPlayingOrWillChangePlaymode)
                 SetActive(_active);
