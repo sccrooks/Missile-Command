@@ -5,7 +5,7 @@ namespace MissileCommand.Gameplay.Entities
     public class AILogicController : MonoBehaviour
     {
         [Header("AI Brain")]
-        [SerializeField] private Brain AIBrain;
+        [SerializeField] public Brain AIBrain;
 
         [Header("Stats")]
         [SerializeField] private float _speed;
@@ -22,6 +22,10 @@ namespace MissileCommand.Gameplay.Entities
             AIBrain.Think(this);
         }
 
+        /// <summary>
+        /// Move towards specified Vector2 target
+        /// </summary>
+        /// <param name="target">Position to move towards</param>
         public void MoveTowardsTarget(Vector2 target)
         {
             transform.position = Vector2.MoveTowards(transform.position, target, _speed * Time.deltaTime);

@@ -1,23 +1,20 @@
-using MissileCommand.Gameplay;
-using MissileCommand.Gameplay.Enemies;
 using Sccrooks.Utility.ScriptableObjects.Events;
-using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Entities
 {
     public class AIEntity : Entity
     {
+        [Header("Components")]
+        [SerializeField] public AILogicController _aiLogicController;
+
+        [Header("Reward")]
         [SerializeField] private float _reward;
-        
 
         [Header("Events")]
-        [SerializeField] private FloatEvent _missileDestroyed;
+        [SerializeField] private FloatEvent _aiEntityDestroyed;
 
-        public AILogicController AIThinker;
-
-        #region -- Start / OnDestroy --
+        #region -- Start / OnDestroy / Onvalidate --
         public override void Start()
         {
             base.Start();
@@ -26,7 +23,12 @@ namespace MissileCommand.Gameplay.Entities
         public override void OnDestroy()
         {
             base.OnDestroy();
-            _missileDestroyed.Raise(_reward);
+            _aiEntityDestroyed.Raise(_reward);
+        }
+
+        private void OnValidate()
+        {
+            _aiLogicController = this.gameObject.GetComponent<AILogicController>();
         }
         #endregion
 
@@ -42,7 +44,6 @@ namespace MissileCommand.Gameplay.Entities
 
         public void EnvironmentCollision()
         {
-            Debug.Log("Collided with environment");
             Destroy();
         }
     }

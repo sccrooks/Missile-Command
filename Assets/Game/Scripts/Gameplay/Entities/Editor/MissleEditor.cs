@@ -1,21 +1,21 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Enemies
+namespace MissileCommand.Gameplay.Entities
 {
     [CustomEditor(typeof(AIEntity))]
-    public class MissleEditor : Editor
+    public class AIEntityEditor : Editor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            AIEntity missile = (AIEntity)target;
+            AIEntity aiEntity = (AIEntity)target;
             if (GUILayout.Button("Find new Target"))
-                missile?.AIThinker.Brain.FindTarget();
+                aiEntity?._aiLogicController.AIBrain.FindTarget();
 
             if (GUILayout.Button("Self Destruct"))
-                missile.Destroy();
+                aiEntity.Destroy();
         }
     }
 }
