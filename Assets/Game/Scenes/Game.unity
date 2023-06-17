@@ -1728,6 +1728,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8389499888507464588, guid: 6ebefd2b4db5f354a8793e446ee9c2d7, type: 3}
+      propertyPath: _score
+      value: 
+      objectReference: {fileID: 11400000, guid: 253a70f5e9031d94da061bc33b622bbc, type: 2}
+    - target: {fileID: 8389499888507464588, guid: 6ebefd2b4db5f354a8793e446ee9c2d7, type: 3}
       propertyPath: _spawnLocation
       value: 
       objectReference: {fileID: 1970179238}
