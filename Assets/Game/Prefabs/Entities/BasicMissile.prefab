@@ -183,8 +183,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _activeEntities: {fileID: 11400000, guid: dc39e4a33fef7c449a4b0a2cce0a4a75, type: 2}
   _aiLogicController: {fileID: 6250961424340799280}
-  _reward: 1000
+  _explosionEffect: {fileID: 0}
   _aiEntityDestroyed: {fileID: 11400000, guid: fc8d4429cdfbb934e95ef3596206ec6e, type: 2}
+  _entitySpawnRequestedEvent: {fileID: 11400000, guid: 1ded0b8ca9b4353409be52cf42d24412, type: 2}
+  _reward: 1000
+  _createExplosion: 0
 --- !u!114 &6250961424340799280
 MonoBehaviour:
   m_ObjectHideFlags: 0

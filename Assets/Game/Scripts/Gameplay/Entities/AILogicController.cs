@@ -31,6 +31,9 @@ namespace MissileCommand.Gameplay.Entities
             transform.position = Vector2.MoveTowards(transform.position, target, _speed * Time.deltaTime);
         }
 
+        /// <summary>
+        /// Destroys parent gameobject
+        /// </summary>
         public void SelfDestruct()
         {
             Destroy(this.gameObject);

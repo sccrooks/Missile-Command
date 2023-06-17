@@ -7,23 +7,23 @@ namespace MissileCommand.Gameplay.Entities
     {
         [Header("Components")]
         [SerializeField] public AILogicController _aiLogicController;
-
-        [Header("Reward")]
-        [SerializeField] private float _reward;
+        [SerializeField] private GameObject _explosionEffect;
 
         [Header("Events")]
         [SerializeField] private FloatEvent _aiEntityDestroyed;
+        [SerializeField] private GameObjectEvent _entitySpawnRequestedEvent;
 
-        #region -- Start / OnDestroy / Onvalidate --
-        public override void Start()
-        {
-            base.Start();
-        }
+        [Header("Settings")]
+        [SerializeField] private float _reward;
+        [SerializeField] private bool _createExplosion;
 
+        #region -- Onvalidate --
         public override void OnDestroy()
         {
+            if (_createExplosion)
+                _entitySpawnRequestedEvent.Raise(_explosionEffect);
+
             base.OnDestroy();
-            _aiEntityDestroyed.Raise(_reward);
         }
 
         private void OnValidate()
@@ -32,19 +32,20 @@ namespace MissileCommand.Gameplay.Entities
         }
         #endregion
 
+        /// <summary>
+        /// Basic Destruction. I.e no reward granted
+        /// </summary>
         public override void Destroy()
         {
             base.Destroy();
         }
 
-        public void BaseCollision()
+        /// <summary>
+        /// Grant a reward when destroyed
+        /// </summary>
+        public void DestroyWithReward()
         {
-            Destroy();
-        }
-
-        public void EnvironmentCollision()
-        {
-            Destroy();
+            _aiEntityDestroyed.Raise(_reward);
         }
     }
 }

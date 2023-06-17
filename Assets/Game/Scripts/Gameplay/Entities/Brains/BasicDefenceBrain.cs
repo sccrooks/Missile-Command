@@ -26,7 +26,7 @@ namespace MissileCommand.Gameplay.Entities
             thinker.MoveTowardsTarget(_target);
 
             if (Vector3.Distance(thinker.gameObject.transform.position, _target) <= 1)
-                thinker.SelfDestruct(); 
+                thinker.SelfDestruct();
         }
     }
 }
