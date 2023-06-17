@@ -11,7 +11,7 @@ namespace MissileCommand.Gameplay.Enemies
 
         public TargetContainer _targetContainer;
 
-        public override void Think(AIThinker thinker)
+        public override void Think(AILogicController thinker)
         {
             if (_target == null)
             {

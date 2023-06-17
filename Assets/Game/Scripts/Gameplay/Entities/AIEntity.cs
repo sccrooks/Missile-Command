@@ -13,7 +13,7 @@ public class AIEntity : Entity
     [Header("Events")]
     [SerializeField] private FloatEvent _missileDestroyed;
 
-    public AIThinker AIThinker;
+    public AILogicController AIThinker;
 
     #region -- Start / OnDestroy --
     public override void Start()

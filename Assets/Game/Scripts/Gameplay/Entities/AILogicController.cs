@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.Enemies
 {
-    public class AIThinker : MonoBehaviour
+    public class AILogicController : MonoBehaviour
     {
         [Header("AI Brain")]
         [SerializeField] private Brain AIBrain;
