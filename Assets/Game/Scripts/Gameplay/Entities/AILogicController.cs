@@ -8,7 +8,7 @@ namespace MissileCommand.Gameplay.Entities
         [SerializeField] public Brain AIBrain;
 
         [Header("Stats")]
-        [SerializeField] private float _speed;
+        [Min(0), SerializeField] private float _speed;
 
         private void Start()
         {
