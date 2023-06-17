@@ -21,7 +21,7 @@ namespace MissileCommand.Gameplay.Entities
         public override void OnDestroy()
         {
             if (_createExplosion)
-                _entitySpawnRequestedEvent.Raise(_explosionEffect);
+                Instantiate(_explosionEffect, this.gameObject.transform.position, Quaternion.identity);
 
             base.OnDestroy();
         }
@@ -46,6 +46,7 @@ namespace MissileCommand.Gameplay.Entities
         public void DestroyWithReward()
         {
             _aiEntityDestroyed.Raise(_reward);
+            base.Destroy();
         }
     }
 }

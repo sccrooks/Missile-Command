@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 6250961424340799280}
   - component: {fileID: 6250961424340798667}
   - component: {fileID: 6250961424340798666}
+  - component: {fileID: -6112971088284684278}
   m_Layer: 0
   m_Name: BasicMissile
   m_TagString: Enemy
@@ -219,8 +220,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6250961424340798671}
-        m_TargetAssemblyTypeName: Missile, Assembly-CSharp
-        m_MethodName: BaseCollision
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.Entities.AIEntity, Gameplay
+        m_MethodName: Destroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -247,8 +248,36 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6250961424340798671}
-        m_TargetAssemblyTypeName: Missile, Assembly-CSharp
-        m_MethodName: EnvironmentCollision
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.Entities.AIEntity, Gameplay
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-6112971088284684278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250961424340798665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9101092e48844624ba3e51430366a31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Explosion
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6250961424340798671}
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.Entities.AIEntity, Gameplay
+        m_MethodName: DestroyWithReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
