@@ -1130,6 +1130,8 @@ GameObject:
   - component: {fileID: 1886078856}
   - component: {fileID: 1886078858}
   - component: {fileID: 1886078857}
+  - component: {fileID: 1886078860}
+  - component: {fileID: 1886078859}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -1254,6 +1256,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886078855}
   m_CullTransparentMesh: 1
+--- !u!114 &1886078859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886078855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39665907de42c746a93153a530e27b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4d2338d35812ea94ca4358439b7fc5a6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1886078860}
+        m_TargetAssemblyTypeName: MissileCommand.UI.ColourChangerText, UI
+        m_MethodName: ChangeColour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1886078860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886078855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28dd840e85b53343b59bcb363ccabd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tmpText: {fileID: 1886078857}
 --- !u!4 &1970179238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6147498940328966853, guid: b1714c0631f5f394aa3682fa9358451b, type: 3}
