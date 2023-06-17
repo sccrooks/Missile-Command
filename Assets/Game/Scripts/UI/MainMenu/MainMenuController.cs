@@ -3,33 +3,35 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-
-public class MainMenuController : MonoBehaviour
+namespace MissileCommand.UI.MainMenu
 {
-    [SerializeField]
-    private SceneData _sceneData;
-
-    /// <summary>
-    /// Starts the game
-    /// </summary>
-    [Command("Start")]
-    public void StartGame()
+    public class MainMenuController : MonoBehaviour
     {
-        SceneManager.LoadScene(_sceneData.Game, LoadSceneMode.Single);
-    }
+        [SerializeField]
+        private SceneData _sceneData;
 
-    /// <summary>
-    /// Starts the game in endless mode
-    /// </summary>
-    [Command("Start-Endless")]
-    public void StartEndless()
-    {
-        SceneManager.LoadScene(_sceneData.Endless, LoadSceneMode.Single);
-    }
+        /// <summary>
+        /// Starts the game
+        /// </summary>
+        [Command("Start")]
+        public void StartGame()
+        {
+            SceneManager.LoadScene(_sceneData.Game, LoadSceneMode.Single);
+        }
 
-    [Command]
-    public void GameOver()
-    {
-        throw new System.NotImplementedException();
+        /// <summary>
+        /// Starts the game in endless mode
+        /// </summary>
+        [Command("Start-Endless")]
+        public void StartEndless()
+        {
+            SceneManager.LoadScene(_sceneData.Endless, LoadSceneMode.Single);
+        }
+
+        [Command]
+        public void GameOver()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
