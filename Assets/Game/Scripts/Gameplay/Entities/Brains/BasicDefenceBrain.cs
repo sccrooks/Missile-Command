@@ -9,13 +9,12 @@ namespace MissileCommand.Gameplay.Entities
     public class BasicDefenceBrain : Brain
     {
         [SerializeField] private GameObjectVariable _reticle;
-        private Vector2 _target;
+        private Vector3 _target;
         private bool _foundTarget = false;
 
         public override void FindTarget()
         {
-            Vector3 reticlePosition = _reticle.RunTimeValue.gameObject.transform.position;
-            _target = new Vector2(reticlePosition.x, reticlePosition.y);
+            _target = _reticle.RunTimeValue.gameObject.transform.position;
             _foundTarget = true;
         }
 
@@ -25,6 +24,9 @@ namespace MissileCommand.Gameplay.Entities
                 FindTarget();
 
             thinker.MoveTowardsTarget(_target);
+
+            if (Vector3.Distance(thinker.gameObject.transform.position, _target) <= 1)
+                thinker.SelfDestruct(); 
         }
     }
 }
