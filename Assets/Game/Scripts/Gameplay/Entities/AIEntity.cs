@@ -5,7 +5,7 @@ using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile : Entity
+public class AIEntity : Entity
 {
     [SerializeField] private float _reward;
     [SerializeField] private float _speed;

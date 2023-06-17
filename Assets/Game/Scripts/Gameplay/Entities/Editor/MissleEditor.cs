@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.Enemies
 {
-    [CustomEditor(typeof(Missile))]
+    [CustomEditor(typeof(AIEntity))]
     public class MissleEditor : Editor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            Missile missile = (Missile)target;
+            AIEntity missile = (AIEntity)target;
             if (GUILayout.Button("Find new Target"))
                 missile?.AIThinker.Brain.FindTarget();
 
