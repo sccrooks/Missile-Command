@@ -804,6 +804,10 @@ PrefabInstance:
       propertyPath: _reticle
       value: 
       objectReference: {fileID: 452275231}
+    - target: {fileID: 3939980554750928588, guid: 9d9c057053caa33489f9dcf1c9716490, type: 3}
+      propertyPath: _cannonFireRequestedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: e210901cf4b52574984a27131fdc7824, type: 2}
     - target: {fileID: 3939980554750928589, guid: 9d9c057053caa33489f9dcf1c9716490, type: 3}
       propertyPath: m_RootOrder
       value: 10
