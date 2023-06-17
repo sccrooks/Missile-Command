@@ -1,23 +1,22 @@
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Enemies
+namespace MissileCommand.Gameplay.Entities
 {
     public class AILogicController : MonoBehaviour
     {
         [Header("AI Brain")]
         [SerializeField] private Brain AIBrain;
-        [HideInInspector] public Brain Brain;
 
         private void Start()
         {
             // Copy brain
-            Brain = Instantiate(AIBrain);
+            AIBrain = Instantiate(AIBrain);
         }
 
         // Update is called once per frame
         void Update()
         {
-            Brain.Think(this);
+            AIBrain.Think(this);
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Enemies
+namespace MissileCommand.Gameplay.Entities
 {
     public abstract class Brain : ScriptableObject
     {

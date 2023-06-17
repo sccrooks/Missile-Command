@@ -1,7 +1,7 @@
 using MissileCommand.Gameplay.Targets;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Enemies
+namespace MissileCommand.Gameplay.Entities
 {
     [CreateAssetMenu(fileName = "Basic Brain", menuName = "Brains/Basic")]
     public class BasicBrain : Brain

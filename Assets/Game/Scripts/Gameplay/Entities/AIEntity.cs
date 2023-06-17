@@ -5,47 +5,50 @@ using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIEntity : Entity
+namespace MissileCommand.Gameplay.Entities
 {
-    [SerializeField] private float _reward;
-    [SerializeField] private float _speed;
-
-    [Header("Events")]
-    [SerializeField] private FloatEvent _missileDestroyed;
-
-    public AILogicController AIThinker;
-
-    #region -- Start / OnDestroy --
-    public override void Start()
+    public class AIEntity : Entity
     {
-        base.Start();
-    }
+        [SerializeField] private float _reward;
+        [SerializeField] private float _speed;
 
-    public override void OnDestroy()
-    {
-        base.OnDestroy();
-        _missileDestroyed.Raise(_reward);
-    }
-    #endregion
+        [Header("Events")]
+        [SerializeField] private FloatEvent _missileDestroyed;
 
-    public override void Destroy()
-    {
-        base.Destroy();
-    }
+        public AILogicController AIThinker;
 
-    public void MoveTowardsTarget(Vector2 target)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, _speed * Time.deltaTime);
-    }
+        #region -- Start / OnDestroy --
+        public override void Start()
+        {
+            base.Start();
+        }
 
-    public void BaseCollision()
-    {
-        Destroy();
-    }
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            _missileDestroyed.Raise(_reward);
+        }
+        #endregion
 
-    public void EnvironmentCollision()
-    {
-        Debug.Log("Collided with environment");
-        Destroy();
+        public override void Destroy()
+        {
+            base.Destroy();
+        }
+
+        public void MoveTowardsTarget(Vector2 target)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, _speed * Time.deltaTime);
+        }
+
+        public void BaseCollision()
+        {
+            Destroy();
+        }
+
+        public void EnvironmentCollision()
+        {
+            Debug.Log("Collided with environment");
+            Destroy();
+        }
     }
 }
