@@ -1,6 +1,7 @@
 using MissileCommand.Controls;
 using MissileCommand.Gameplay.GameController;
 using MissileCommand.Gameplay.Reticle;
+using Sccrooks.Utility.ScriptableObjects.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ namespace MissileCommand.Controls
 
         [SerializeField] private ReticleController _reticle;
         [SerializeField] private float speed;
+
+        [Header("Events")]
+        [SerializeField] private GameEvent _cannonFireRequestedEvent;
 
         private void Awake()
         {
@@ -35,7 +39,7 @@ namespace MissileCommand.Controls
             _reticle.Transform.position += new Vector3(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime, 0);
 
             if (_controls.Reticle.Fire.triggered)
-                Debug.Log("Fired missile");
+                _cannonFireRequestedEvent.Raise();
         }
     }
 }

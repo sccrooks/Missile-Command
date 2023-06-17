@@ -731,6 +731,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1734627793413458973, guid: cd317c3a90ee3a44893b82db0f5fe2be, type: 3}
+      propertyPath: _reticle
+      value: 
+      objectReference: {fileID: 214838485}
+    - target: {fileID: 1734627793413458973, guid: cd317c3a90ee3a44893b82db0f5fe2be, type: 3}
+      propertyPath: _defenceMissile
+      value: 
+      objectReference: {fileID: 1036546842862586491, guid: 6d1965ebe49bd26439ef274de234cb4e, type: 3}
     - target: {fileID: 3239985286219084132, guid: cd317c3a90ee3a44893b82db0f5fe2be, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -800,6 +808,10 @@ PrefabInstance:
       propertyPath: _reticle
       value: 
       objectReference: {fileID: 452275231}
+    - target: {fileID: 3939980554750928588, guid: 9d9c057053caa33489f9dcf1c9716490, type: 3}
+      propertyPath: _cannonFireRequestedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: e210901cf4b52574984a27131fdc7824, type: 2}
     - target: {fileID: 3939980554750928589, guid: 9d9c057053caa33489f9dcf1c9716490, type: 3}
       propertyPath: m_RootOrder
       value: 10
