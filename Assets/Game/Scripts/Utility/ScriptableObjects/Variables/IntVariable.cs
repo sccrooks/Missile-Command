@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Sccrooks.Utility.ScriptableObjects.Variables
 {
-    [CreateAssetMenu(fileName = "Float Variable", menuName = "Infrastructure/Float Variable")]
+    [CreateAssetMenu(fileName = "Float Variable", menuName = "Infrastructure/Variables/Float Variable")]
     public class IntVariable : ScriptableObject, ISerializationCallbackReceiver
     {
         public int InitialValue;

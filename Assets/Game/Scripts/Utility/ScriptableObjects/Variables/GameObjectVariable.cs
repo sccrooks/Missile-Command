@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Sccrooks.Utility.ScriptableObjects.Variables
 {
+    [CreateAssetMenu(fileName = "GameObject Variable", menuName = "Infrastructure/Variables/GameObject Variable")]
     public class GameObjectVariable : ScriptableObject, ISerializationCallbackReceiver
     {
         public GameObject InitialValue;
