@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Targets.Bases
+namespace MissileCommand.Gameplay.Targets
 {
     /// <summary>
     /// Used for storing base data and individual base actions.

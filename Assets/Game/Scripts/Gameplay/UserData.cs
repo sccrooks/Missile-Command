@@ -1,7 +1,7 @@
 using Sccrooks.Utility.ScriptableObjects.Variables;
 using UnityEngine;
 
-namespace MissileCommand.Infrastructure.ScriptableObjects
+namespace MissileCommand.Gameplay
 {
     [CreateAssetMenu(fileName = "User Data", menuName = ("Infrastructure/User Data"))]
     public class UserData : ScriptableObject, ISerializationCallbackReceiver
