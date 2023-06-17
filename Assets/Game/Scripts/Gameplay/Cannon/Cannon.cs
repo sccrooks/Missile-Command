@@ -7,9 +7,18 @@ namespace MissileCommand.Gameplay.Cannon
         [Header("Components")]
         [SerializeField] private GameObject _barrelAxis;
         [SerializeField] private GameObject _reticle;
+        [SerializeField] private GameObject _barrelTip;
+
+        [Header("Audio")]
+        [SerializeField] private AudioSource _audioSource;
 
         [Header("Settings")]
         [SerializeField] private float _angleModifier;
+
+        private void OnValidate()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
 
         private void Update()
         {
@@ -19,5 +28,12 @@ namespace MissileCommand.Gameplay.Cannon
             _barrelAxis.transform.Rotate(Vector3.forward, _angleModifier);
         }
 
+        /// <summary>
+        /// Fire event listener
+        /// </summary>
+        public void OnFireEvent()
+        {
+            _audioSource.Play(0);
+        }
     }
 }
