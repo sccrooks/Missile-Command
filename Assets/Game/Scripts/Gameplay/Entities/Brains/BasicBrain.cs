@@ -1,7 +1,7 @@
 using MissileCommand.Gameplay.Targets;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Enemies
+namespace MissileCommand.Gameplay.Entities
 {
     [CreateAssetMenu(fileName = "Basic Brain", menuName = "Brains/Basic")]
     public class BasicBrain : Brain
@@ -11,7 +11,7 @@ namespace MissileCommand.Gameplay.Enemies
 
         public TargetContainer _targetContainer;
 
-        public override void Think(AIThinker thinker)
+        public override void Think(AILogicController thinker)
         {
             if (_target == null)
             {
@@ -19,7 +19,7 @@ namespace MissileCommand.Gameplay.Enemies
             }
 
             Vector2 pos = new Vector2(_target.transform.position.x, _target.transform.position.y);
-            thinker.GetComponent<Missile>().MoveTowardsTarget(pos);
+            thinker.MoveTowardsTarget(pos);
         }
 
         public override void FindTarget()

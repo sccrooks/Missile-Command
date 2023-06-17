@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace MissileCommand.Gameplay.Enemies
+namespace MissileCommand.Gameplay.Entities
 {
     public abstract class Brain : ScriptableObject
     {
-        public abstract void Think(AIThinker thinker);
+        public abstract void Think(AILogicController thinker);
         public abstract void FindTarget();
     }
 }
