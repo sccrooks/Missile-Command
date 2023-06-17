@@ -138,6 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 2379507585897575694}
   _collider: {fileID: 0}
-  _effectDuration: 3
-  _damageDuration: 2
+  _effectDuration: 2
+  _damageDuration: 0.1
   _size: 2
