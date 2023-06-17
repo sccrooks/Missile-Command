@@ -2,7 +2,7 @@ using QFSW.QC;
 using Sccrooks.Utility.ScriptableObjects.Events;
 using UnityEngine;
 
-namespace MissileCommand.Utils
+namespace MissileCommand.Gameplay
 {
     public class GlobalCommands : MonoBehaviour
     {

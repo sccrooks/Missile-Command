@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace sccrooks.Infrastructure
+namespace MissileCommand.Gameplay
 {
     public class LoadGame : MonoBehaviour
     {
