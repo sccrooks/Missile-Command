@@ -154,69 +154,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &81016655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 81016658}
-  - component: {fileID: 81016657}
-  - component: {fileID: 81016656}
-  m_Layer: 0
-  m_Name: BasicDefenceMissile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &81016656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81016655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2f85e4f8060314c8b79436af37bad5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AIBrain: {fileID: 0}
-  _speed: 5
---- !u!114 &81016657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81016655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4fae1c6ddf98e4489222657293a5e90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _activeEntities: {fileID: 11400000, guid: dc39e4a33fef7c449a4b0a2cce0a4a75, type: 2}
-  _aiLogicController: {fileID: 81016656}
-  _reward: 0
-  _aiEntityDestroyed: {fileID: 11400000, guid: fc8d4429cdfbb934e95ef3596206ec6e, type: 2}
---- !u!4 &81016658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81016655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &139136566
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +735,10 @@ PrefabInstance:
       propertyPath: _reticle
       value: 
       objectReference: {fileID: 214838485}
+    - target: {fileID: 1734627793413458973, guid: cd317c3a90ee3a44893b82db0f5fe2be, type: 3}
+      propertyPath: _defenceMissile
+      value: 
+      objectReference: {fileID: 1036546842862586491, guid: 6d1965ebe49bd26439ef274de234cb4e, type: 3}
     - target: {fileID: 3239985286219084132, guid: cd317c3a90ee3a44893b82db0f5fe2be, type: 3}
       propertyPath: m_RootOrder
       value: 11
