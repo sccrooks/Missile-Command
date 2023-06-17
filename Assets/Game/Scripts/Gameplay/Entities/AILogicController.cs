@@ -7,6 +7,9 @@ namespace MissileCommand.Gameplay.Entities
         [Header("AI Brain")]
         [SerializeField] private Brain AIBrain;
 
+        [Header("Stats")]
+        [SerializeField] private float _speed;
+
         private void Start()
         {
             // Copy brain
@@ -17,6 +20,11 @@ namespace MissileCommand.Gameplay.Entities
         void Update()
         {
             AIBrain.Think(this);
+        }
+
+        public void MoveTowardsTarget(Vector2 target)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, _speed * Time.deltaTime);
         }
     }
 }

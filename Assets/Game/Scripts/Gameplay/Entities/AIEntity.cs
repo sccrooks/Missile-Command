@@ -10,7 +10,7 @@ namespace MissileCommand.Gameplay.Entities
     public class AIEntity : Entity
     {
         [SerializeField] private float _reward;
-        [SerializeField] private float _speed;
+        
 
         [Header("Events")]
         [SerializeField] private FloatEvent _missileDestroyed;
@@ -33,11 +33,6 @@ namespace MissileCommand.Gameplay.Entities
         public override void Destroy()
         {
             base.Destroy();
-        }
-
-        public void MoveTowardsTarget(Vector2 target)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target, _speed * Time.deltaTime);
         }
 
         public void BaseCollision()

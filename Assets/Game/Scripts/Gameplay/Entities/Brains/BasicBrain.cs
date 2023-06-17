@@ -19,7 +19,7 @@ namespace MissileCommand.Gameplay.Entities
             }
 
             Vector2 pos = new Vector2(_target.transform.position.x, _target.transform.position.y);
-            thinker.GetComponent<AIEntity>().MoveTowardsTarget(pos);
+            thinker.MoveTowardsTarget(pos);
         }
 
         public override void FindTarget()
