@@ -14,6 +14,7 @@ namespace MissileCommand.Gameplay.Cannon
 
         [Header("Settings")]
         [SerializeField] private float _angleModifier;
+        [SerializeField] private GameObject _defenceMissile;
 
         private void OnValidate()
         {
@@ -34,6 +35,7 @@ namespace MissileCommand.Gameplay.Cannon
         public void OnFireEvent()
         {
             _audioSource.Play(0);
+            Instantiate(_defenceMissile, _barrelTip.transform.position, Quaternion.identity, this.gameObject.transform);
         }
     }
 }
