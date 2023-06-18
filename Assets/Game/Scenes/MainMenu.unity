@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 699022906}
   - component: {fileID: 699022905}
   - component: {fileID: 699022904}
+  - component: {fileID: 699022907}
   m_Layer: 5
   m_Name: BtnSettings
   m_TagString: Untagged
@@ -622,6 +623,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699022902}
   m_CullTransparentMesh: 1
+--- !u!114 &699022907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699022902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3bf966ff5f13647a85a075aa3bbe7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 699022904}
+  _tmpText: {fileID: 58970552}
+  _size: 32
+  _hoverSize: 48
+  _text: SETTINGS
+  _hoverText: '- SETTINGS -'
+  _startSelected: 0
 --- !u!1 &896978213
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +654,7 @@ GameObject:
   - component: {fileID: 896978217}
   - component: {fileID: 896978216}
   - component: {fileID: 896978215}
+  - component: {fileID: 896978218}
   m_Layer: 5
   m_Name: BtnEndless
   m_TagString: Untagged
@@ -744,6 +765,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896978213}
   m_CullTransparentMesh: 1
+--- !u!114 &896978218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896978213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3bf966ff5f13647a85a075aa3bbe7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 896978215}
+  _tmpText: {fileID: 1949333676}
+  _size: 32
+  _hoverSize: 48
+  _text: ENDLESS
+  _hoverText: '- ENDLESS -'
+  _startSelected: 0
 --- !u!1 &1014918516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1206,7 @@ MonoBehaviour:
   _hoverSize: 38
   _text: PLAY
   _hoverText: '- PLAY -'
-  _selected: 1
+  _startSelected: 0
 --- !u!1 &1469449844
 GameObject:
   m_ObjectHideFlags: 0
