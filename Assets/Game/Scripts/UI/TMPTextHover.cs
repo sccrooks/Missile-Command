@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MissileCommand.UI.MainMenu
+namespace MissileCommand.UI
 {
-    public class MainMenuButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class TMPTextHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("Components")]
         [SerializeField] private TMP_Text _tmpText;
