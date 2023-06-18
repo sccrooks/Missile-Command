@@ -638,7 +638,7 @@ MonoBehaviour:
   _button: {fileID: 699022904}
   _tmpText: {fileID: 58970552}
   _size: 32
-  _hoverSize: 48
+  _hoverSize: 38
   _text: SETTINGS
   _hoverText: '- SETTINGS -'
   _startSelected: 0
@@ -780,7 +780,7 @@ MonoBehaviour:
   _button: {fileID: 896978215}
   _tmpText: {fileID: 1949333676}
   _size: 32
-  _hoverSize: 48
+  _hoverSize: 38
   _text: ENDLESS
   _hoverText: '- ENDLESS -'
   _startSelected: 0
