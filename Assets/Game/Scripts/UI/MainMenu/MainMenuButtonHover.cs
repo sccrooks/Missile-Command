@@ -15,7 +15,7 @@ namespace MissileCommand.UI.MainMenu
 
         [Header("Settings")]
         [SerializeField] private float _size = 32f;
-        [SerializeField] private float _hoverSize = 48f;
+        [SerializeField] private float _hoverSize = 38f;
         [SerializeField] private string _text;
         [SerializeField] private string _hoverText;
         [SerializeField] private bool _startSelected;
