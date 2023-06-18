@@ -15,11 +15,13 @@ namespace MissileCommand.Gameplay.Targets
         [Header("Sounds")]
         [SerializeField] private AudioSource _audioSource;
 
+#if UNITY_EDITOR
         public override void _OnValidate()
         {
             base._OnValidate();
             _audioSource = this.gameObject.GetComponent<AudioSource>();
         }
+#endif
 
         /// <summary>
         /// Destroy the base

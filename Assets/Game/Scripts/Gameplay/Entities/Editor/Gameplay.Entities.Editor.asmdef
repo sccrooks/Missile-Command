@@ -1,0 +1,18 @@
+{
+    "name": "Gameplay.Entities.Editor",
+    "rootNamespace": "MissileCommand.Gameplay.Entities",
+    "references": [
+        "GUID:3c9c60eab6136604f9ea585833bbd5d1"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
