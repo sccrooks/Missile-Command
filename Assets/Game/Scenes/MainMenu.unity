@@ -635,7 +635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3bf966ff5f13647a85a075aa3bbe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 699022904}
   _tmpText: {fileID: 58970552}
   _size: 32
   _hoverSize: 38
@@ -779,7 +778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3bf966ff5f13647a85a075aa3bbe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 896978215}
   _tmpText: {fileID: 1949333676}
   _size: 32
   _hoverSize: 38
@@ -1204,7 +1202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3bf966ff5f13647a85a075aa3bbe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 1367828443}
   _tmpText: {fileID: 347744108}
   _size: 32
   _hoverSize: 38
@@ -1525,6 +1522,7 @@ GameObject:
   - component: {fileID: 1965462582}
   - component: {fileID: 1965462584}
   - component: {fileID: 1965462583}
+  - component: {fileID: 1965462585}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1649,6 +1647,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965462581}
   m_CullTransparentMesh: 1
+--- !u!114 &1965462585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965462581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3bf966ff5f13647a85a075aa3bbe7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tmpText: {fileID: 1965462583}
+  _size: 48
+  _hoverSize: 48
+  _text: MISSILE COMMAND
+  _hoverText: '- MISSILE COMMAND -'
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _hoverColor: {r: 1, g: 0.3254902, b: 0.31764707, a: 1}
+  _startSelected: 0
 --- !u!1 &1978670921
 GameObject:
   m_ObjectHideFlags: 0
