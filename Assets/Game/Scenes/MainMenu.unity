@@ -1166,6 +1166,7 @@ MonoBehaviour:
   _hoverSize: 38
   _text: PLAY
   _hoverText: '- PLAY -'
+  _selected: 1
 --- !u!1 &1469449844
 GameObject:
   m_ObjectHideFlags: 0

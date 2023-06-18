@@ -18,6 +18,16 @@ namespace MissileCommand.UI.MainMenu
         [SerializeField] private float _hoverSize = 48f;
         [SerializeField] private string _text;
         [SerializeField] private string _hoverText;
+        [SerializeField] private bool _selected;
+
+        private void Start()
+        {
+            if (_selected)
+            {
+                _tmpText.text = _hoverText;
+                _tmpText.fontSize = _hoverSize;
+            }
+        }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
