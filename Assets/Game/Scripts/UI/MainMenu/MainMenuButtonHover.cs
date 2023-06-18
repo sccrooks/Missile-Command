@@ -10,7 +10,6 @@ namespace MissileCommand.UI.MainMenu
     public class MainMenuButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("Components")]
-        [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _tmpText;
 
         [Header("Settings")]
@@ -22,7 +21,7 @@ namespace MissileCommand.UI.MainMenu
         [SerializeField] private Color _hoverColor = Color.white;
         [SerializeField] private bool _startSelected;
 
-        private void Start()
+        private void OnValidate()
         {
             if (_startSelected)
             {

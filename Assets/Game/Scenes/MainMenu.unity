@@ -423,7 +423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: '- PLAY -'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f7763754476c04895427e102333942, type: 2}
   m_sharedMaterial: {fileID: 7680934567261375755, guid: 99f7763754476c04895427e102333942, type: 2}
@@ -432,8 +432,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4283519999
+  m_fontColor: {r: 1, g: 0.3254902, b: 0.31764707, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -450,8 +450,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -641,8 +641,8 @@ MonoBehaviour:
   _hoverSize: 38
   _text: SETTINGS
   _hoverText: '- SETTINGS -'
-  _color: {r: 0, g: 0, b: 0, a: 0}
-  _hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _hoverColor: {r: 1, g: 0.3254902, b: 0.31764707, a: 1}
   _startSelected: 0
 --- !u!1 &896978213
 GameObject:
@@ -785,8 +785,8 @@ MonoBehaviour:
   _hoverSize: 38
   _text: ENDLESS
   _hoverText: '- ENDLESS -'
-  _color: {r: 0, g: 0, b: 0, a: 0}
-  _hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _hoverColor: {r: 1, g: 0.3254902, b: 0.31764707, a: 1}
   _startSelected: 0
 --- !u!1 &1014918516
 GameObject:
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   _text: PLAY
   _hoverText: '- PLAY -'
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _hoverColor: {r: 0.9333334, g: 0.5294118, b: 0.1254902, a: 1}
+  _hoverColor: {r: 1, g: 0.3254902, b: 0.31764707, a: 1}
   _startSelected: 1
 --- !u!1 &1469449844
 GameObject:
