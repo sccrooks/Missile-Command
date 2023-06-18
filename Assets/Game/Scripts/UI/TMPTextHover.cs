@@ -18,7 +18,9 @@ namespace MissileCommand.UI
         [SerializeField] private string _text;
         [SerializeField] private string _hoverText;
         [SerializeField] private Color _color = Color.white;
-        [SerializeField] private Color _hoverColor = Color.white;
+        [SerializeField] private Color _hoverColor = new Color(255, 83, 81, 255);
+
+        [Header("Toggles")]
         [SerializeField] private bool _startSelected;
 
         private void OnValidate()
