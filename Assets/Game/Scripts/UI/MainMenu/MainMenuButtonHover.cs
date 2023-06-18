@@ -19,7 +19,7 @@ namespace MissileCommand.UI.MainMenu
         [SerializeField] private string _text;
         [SerializeField] private string _hoverText;
         [SerializeField] private Color _color = Color.white;
-        [SerializeField] private Color _hoverColor;
+        [SerializeField] private Color _hoverColor = Color.white;
         [SerializeField] private bool _startSelected;
 
         private void Start()
@@ -29,6 +29,12 @@ namespace MissileCommand.UI.MainMenu
                 _tmpText.text = _hoverText;
                 _tmpText.fontSize = _hoverSize;
                 _tmpText.color = _hoverColor;
+            }
+            else
+            {
+                _tmpText.text = _text;
+                _tmpText.fontSize = _size;
+                _tmpText.color = _color;
             }
         }
 

@@ -641,6 +641,8 @@ MonoBehaviour:
   _hoverSize: 38
   _text: SETTINGS
   _hoverText: '- SETTINGS -'
+  _color: {r: 0, g: 0, b: 0, a: 0}
+  _hoverColor: {r: 0, g: 0, b: 0, a: 0}
   _startSelected: 0
 --- !u!1 &896978213
 GameObject:
@@ -783,6 +785,8 @@ MonoBehaviour:
   _hoverSize: 38
   _text: ENDLESS
   _hoverText: '- ENDLESS -'
+  _color: {r: 0, g: 0, b: 0, a: 0}
+  _hoverColor: {r: 0, g: 0, b: 0, a: 0}
   _startSelected: 0
 --- !u!1 &1014918516
 GameObject:
@@ -1206,7 +1210,9 @@ MonoBehaviour:
   _hoverSize: 38
   _text: PLAY
   _hoverText: '- PLAY -'
-  _startSelected: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _hoverColor: {r: 0.9333334, g: 0.5294118, b: 0.1254902, a: 1}
+  _startSelected: 1
 --- !u!1 &1469449844
 GameObject:
   m_ObjectHideFlags: 0
