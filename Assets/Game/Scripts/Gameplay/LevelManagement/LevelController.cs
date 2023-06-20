@@ -5,24 +5,93 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
-    public abstract class LevelController : MonoBehaviour
+    /// <summary>
+    /// Default level controller used for default game mode.
+    /// This level controller runs through hand crafted levels
+    /// Not to be confused with EndlessLevelController
+    /// </summary>
+    public class LevelController : MonoBehaviour
     {
         [Header("Levels")]
-        [SerializeField] protected List<BasicLevel> _levelList = new List<BasicLevel>();
+        [SerializeField] private List<BasicLevel> _levelList = new List<BasicLevel>();
 
         [Header("Components")]
-        [SerializeField] protected GameObjectCollection _activeEntities;
+        [SerializeField] private GameObjectCollection _activeEntities;
 
         [Header("Level Controller Data")]
-        [SerializeField] protected int _currentLevel;
-        [SerializeField] protected bool _nextLevelRequested;
+        [SerializeField] private int _currentLevel;
+        [SerializeField] private bool _nextLevelRequested;
 
         [Header("Events")]
-        [SerializeField] protected GameEvent _gameOverEvent;
+        [SerializeField] private GameEvent _gameOverEvent;
 
-        public abstract void Start();
-        public abstract void Update();
-        public abstract void OnlevelEnded();
-        public abstract void OnWaveEnded();
+        #region -- Start / Update --
+        public void Start()
+        {
+            // Set the controller to the first level
+            _currentLevel = 0;
+            _levelList[_currentLevel].Start();
+        }
+
+        public void Update()
+        {
+            if (_nextLevelRequested)
+                ChangeLevel();
+            else
+                _levelList[_currentLevel].Update();
+        }
+        #endregion
+
+        public void ChangeLevel()
+        {
+            if (_activeEntities.Count > 0) return;
+            else if (_currentLevel + 1 >= _levelList.Count)
+            {
+                _gameOverEvent.Raise();
+                return;
+            }
+            else
+            {
+                _nextLevelRequested = false;
+                _currentLevel++;
+                _levelList[_currentLevel].Start();
+            }
+        }
+
+        /// <summary>
+        /// Force start the next level
+        /// </summary>
+        public void ForceNextLevel()
+        {
+            _nextLevelRequested = false;
+            _currentLevel++;
+            _levelList[_currentLevel].Start();
+        }
+
+        /// <summary>
+        /// Requests the next level
+        /// </summary>
+        public void RequestNextLevel()
+        {
+            _nextLevelRequested = true;
+        }
+
+        #region -- Event Listeners --
+        /// <summary>
+        /// Event Listener for LevelEndedEvent
+        /// </summary>
+        public void OnlevelEnded()
+        {
+            _nextLevelRequested = true;
+        }
+
+        /// <summary>
+        /// Event listener for WaveEndedEvent
+        /// </summary>
+        public void OnWaveEnded()
+        {
+            _levelList[_currentLevel].OnWaveEnded();
+        }
+        #endregion
     }
 }
