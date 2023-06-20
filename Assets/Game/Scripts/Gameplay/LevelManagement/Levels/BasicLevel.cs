@@ -23,6 +23,9 @@ namespace MissileCommand.Gameplay.LevelManagement
         [SerializeField] protected ColourEvent _secondaryColourChanged;
         [SerializeField] protected ColourEvent _accentColourChanged;
 
+        /// <summary>
+        /// Called when wave is ended
+        /// </summary>
         public void Start()
         {
             _currentWave = 0;
@@ -32,25 +35,32 @@ namespace MissileCommand.Gameplay.LevelManagement
             _accentColourChanged.Raise(_accentColour);
         }
 
+        /// <summary>
+        /// Called when there are no waves left
+        /// </summary>
         public void End()
         {
             _levelEnded.Raise();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Update()
         {
             if (_currentWave >= Waves.Count)
-            {
                 End();
-                return;
-            }
-
-            Waves[_currentWave].Update();
+            else
+                Waves[_currentWave].Update();
         }
 
+        /// <summary>
+        /// Attempt to start the next wave
+        /// </summary>
         public void OnWaveEnded()
         {
-            _currentWave++; 
+            _currentWave++;
+            Waves[_currentWave].Start();
         }
     }
 }

@@ -1,6 +1,7 @@
 using Sccrooks.Utility.ScriptableObjects.Events;
 using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
@@ -16,7 +17,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         [SerializeField] private List<BasicLevel> _levelList = new List<BasicLevel>();
 
         [Header("Components")]
-        [SerializeField] private GameObjectCollection _activeEntities;
+        [SerializeField, DisallowNull] private GameObjectCollection _activeEntities;
 
         [Header("Level Controller Data")]
         [SerializeField] private int _currentLevel;
@@ -29,6 +30,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         public void Start()
         {
             // Set the controller to the first level
+            _nextLevelRequested = false;
             _currentLevel = 0;
             _levelList[_currentLevel].Start();
         }
