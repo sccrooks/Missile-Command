@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
-    [CreateAssetMenu(fileName = "Basic Level", menuName = "Level Management/Basic Level")]
-    public class BasicLevel : ScriptableObject
+    [CreateAssetMenu(fileName = "Level", menuName = "Level Management/Level")]
+    public class Level : ScriptableObject
     {
         [Header("Waves")]
         public List<Wave> Waves = new List<Wave>();
@@ -30,6 +30,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         {
             _currentWave = 0;
             Waves[_currentWave].Start();
+
             _levelStarted.Raise();
             _primaryColourChanged.Raise(_primaryColour);
             _secondaryColourChanged.Raise(_secondaryColour);
