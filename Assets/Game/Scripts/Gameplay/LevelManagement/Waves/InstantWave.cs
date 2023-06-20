@@ -3,27 +3,15 @@ using UnityEngine;
 namespace MissileCommand.Gameplay.LevelManagement
 {
     [CreateAssetMenu(fileName = "Basic Wave", menuName = "Level Management/Basic Wave")]
-    public class BasicWave : Wave
+    public class InstantWave : Wave
     {
-        public override void Start()
-        {
-            _currentEntity = 0;
-            _waveStarted?.Raise();
-        }
+        public override void Start() => base.Start();
 
-        public override void End()
-        {
-            _waveEnded?.Raise();
-        }
+        public override void End() => base.End();
 
         public override void Update()
         {
-            if (_currentEntity >= Entities.Count)
-            {
-                End();
-                return;
-            }
-
+            base.Update();
             SpawnEntity();
         }
 

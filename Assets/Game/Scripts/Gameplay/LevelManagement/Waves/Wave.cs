@@ -1,10 +1,11 @@
+using MissileCommand.Gameplay.Entities;
 using Sccrooks.Utility.ScriptableObjects.Events;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.LevelManagement
 {
-    public abstract class Wave : ScriptableObject
+    public class Wave : ScriptableObject
     {
         [Header("Entity list")]
         [SerializeField]
@@ -18,9 +19,42 @@ namespace MissileCommand.Gameplay.LevelManagement
         [SerializeField] protected GameEvent _waveEnded;
         [SerializeField] protected GameObjectEvent _spawnRequested;
 
-        public abstract void Start();
-        public abstract void End();
-        public abstract void Update();
-        public abstract void SpawnEntity();
+        /// <summary>
+        /// Resets wave stats, called on wave start
+        /// </summary>
+        public virtual void Start()
+        {
+            _currentEntity = 0;
+            _waveStarted?.Raise();
+        }
+        
+        /// <summary>
+        /// Called on wave end, raises _waveEnded event
+        /// </summary>
+        public virtual void End()
+        {
+            _waveEnded?.Raise();
+        }
+
+        /// <summary>
+        /// Called every frame, controls wave logic
+        /// </summary>
+        public virtual void Update()
+        {
+            if (_currentEntity >= Entities.Count)
+            {
+                End();
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Spawns a wave entity.
+        /// By default will spawn the current entity specified in _currentEntity
+        /// </summary>
+        public virtual void SpawnEntity()
+        {
+            _spawnRequested.Raise(Entities[_currentEntity]);
+        }
     }
 }  
