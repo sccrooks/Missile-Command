@@ -29,6 +29,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         public void Start()
         {
             _currentWave = 0;
+            Waves[_currentWave].Start();
             _levelStarted.Raise();
             _primaryColourChanged.Raise(_primaryColour);
             _secondaryColourChanged.Raise(_secondaryColour);
