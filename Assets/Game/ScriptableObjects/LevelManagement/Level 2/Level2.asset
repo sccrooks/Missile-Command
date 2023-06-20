@@ -15,6 +15,7 @@ MonoBehaviour:
   Waves:
   - {fileID: 11400000, guid: 86fd6780a5c7c1843892705bce37b961, type: 2}
   - {fileID: 11400000, guid: f0cbfa8a2d5851942b647d126558af40, type: 2}
+  - {fileID: 11400000, guid: 332483717075a974eb06a7611a7af862, type: 2}
   _currentWave: 0
   _primaryColour: {r: 0.39607844, g: 0.29411766, b: 0.4117647, a: 1}
   _secondaryColour: {r: 0.4392157, g: 0.70980394, b: 0.48235294, a: 1}
