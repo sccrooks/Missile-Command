@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 833f7ea245711f546978fd18ef236ad2, type: 3}
-  m_Name: Level2
+  m_Name: Level3
   m_EditorClassIdentifier: 
   Waves:
-  - {fileID: 11400000, guid: 86fd6780a5c7c1843892705bce37b961, type: 2}
-  - {fileID: 11400000, guid: f0cbfa8a2d5851942b647d126558af40, type: 2}
-  - {fileID: 11400000, guid: 332483717075a974eb06a7611a7af862, type: 2}
+  - {fileID: 11400000, guid: d87e309ae5d09cc4da1f81b3b581f20f, type: 2}
+  - {fileID: 11400000, guid: fc32d211286766e49a6e6d6e3a1f9618, type: 2}
+  - {fileID: 11400000, guid: bacd818c52ab6e342a6ba1564be624e9, type: 2}
   _currentWave: 0
-  _primaryColour: {r: 0.39607844, g: 0.29411766, b: 0.4117647, a: 1}
-  _secondaryColour: {r: 0.4392157, g: 0.70980394, b: 0.48235294, a: 1}
+  _primaryColour: {r: 0.4117647, g: 0.31764707, b: 0.30588236, a: 1}
+  _secondaryColour: {r: 0.46666667, g: 0.69803923, b: 0.7137255, a: 1}
   _accentColour: {r: 0, g: 0, b: 0, a: 1}
   _levelStarted: {fileID: 11400000, guid: 6d61c284d7314e148a8a768c7de01260, type: 2}
   _levelEnded: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}
