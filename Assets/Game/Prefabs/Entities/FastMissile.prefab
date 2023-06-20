@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6250961424340798666}
   - component: {fileID: -6112971088284684278}
   m_Layer: 0
-  m_Name: BasicMissile
+  m_Name: FastMissile
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AIBrain: {fileID: 11400000, guid: 1252f5e6cafab384986a9043d0a54132, type: 2}
-  _speed: 2.5
+  _speed: 5
 --- !u!114 &6250961424340798667
 MonoBehaviour:
   m_ObjectHideFlags: 0

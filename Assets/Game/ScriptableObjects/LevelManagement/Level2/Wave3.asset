@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0be5c87230813524fae74c825e4855dd, type: 3}
-  m_Name: Wave2
+  m_Name: Wave3
   m_EditorClassIdentifier: 
   Entities:
   - {fileID: 6250961424340798665, guid: d0663010aea84144c93fd6054b7ced61, type: 3}
