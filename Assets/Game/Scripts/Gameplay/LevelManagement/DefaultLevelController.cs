@@ -1,7 +1,15 @@
 namespace MissileCommand.Gameplay.LevelManagement
 {
+    /// <summary>
+    /// Default level controller used for default game mode.
+    /// This level controller runs through hand crafted levels
+    /// Not to be confused with EndlessLevelController
+    /// </summary>
     public class DefaultLevelController : LevelController
     {
+
+
+        #region -- Start / Update --
         public override void Start()
         {
             _nextLevelRequested = true;
@@ -17,16 +25,9 @@ namespace MissileCommand.Gameplay.LevelManagement
             else
                 _levelList[_currentLevel].Update();
         }
+        #endregion
 
-        public override void OnlevelEnded()
-        {
-            _nextLevelRequested = true;  
-        }
-
-        public override void OnWaveEnded()
-        {
-            _levelList[_currentLevel].OnWaveEnded();
-        }
+        
 
         public void ChangeLevel()
         {
@@ -61,5 +62,23 @@ namespace MissileCommand.Gameplay.LevelManagement
         {
             _nextLevelRequested = true;
         }
+
+        #region -- Event Listeners --
+        /// <summary>
+        /// Event Listener for LevelEndedEvent
+        /// </summary>
+        public override void OnlevelEnded()
+        {
+            _nextLevelRequested = true;
+        }
+
+        /// <summary>
+        /// Event listener for WaveEndedEvent
+        /// </summary>
+        public override void OnWaveEnded()
+        {
+            _levelList[_currentLevel].OnWaveEnded();
+        }
+        #endregion
     }
 }
