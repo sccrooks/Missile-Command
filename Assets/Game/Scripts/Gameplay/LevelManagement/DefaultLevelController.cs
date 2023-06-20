@@ -1,3 +1,8 @@
+using Sccrooks.Utility.ScriptableObjects.Events;
+using Sccrooks.Utility.ScriptableObjects.RuntimeCollections;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace MissileCommand.Gameplay.LevelManagement
 {
     /// <summary>
@@ -5,20 +10,30 @@ namespace MissileCommand.Gameplay.LevelManagement
     /// This level controller runs through hand crafted levels
     /// Not to be confused with EndlessLevelController
     /// </summary>
-    public class DefaultLevelController : LevelController
+    public class DefaultLevelController : MonoBehaviour
     {
+        [Header("Levels")]
+        [SerializeField] private List<BasicLevel> _levelList = new List<BasicLevel>();
 
+        [Header("Components")]
+        [SerializeField] private GameObjectCollection _activeEntities;
+
+        [Header("Level Controller Data")]
+        [SerializeField] private int _currentLevel;
+        [SerializeField] private bool _nextLevelRequested;
+
+        [Header("Events")]
+        [SerializeField] private GameEvent _gameOverEvent;
 
         #region -- Start / Update --
-        public override void Start()
+        public void Start()
         {
-            _nextLevelRequested = true;
-            _currentLevel = -1;
-            ChangeLevel();
+            // Set the controller to the first level
+            _currentLevel = 0;
             _levelList[_currentLevel].Start();
         }
 
-        public override void Update()
+        public void Update()
         {
             if (_nextLevelRequested)
                 ChangeLevel();
@@ -67,7 +82,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         /// <summary>
         /// Event Listener for LevelEndedEvent
         /// </summary>
-        public override void OnlevelEnded()
+        public void OnlevelEnded()
         {
             _nextLevelRequested = true;
         }
@@ -75,7 +90,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         /// <summary>
         /// Event listener for WaveEndedEvent
         /// </summary>
-        public override void OnWaveEnded()
+        public void OnWaveEnded()
         {
             _levelList[_currentLevel].OnWaveEnded();
         }
