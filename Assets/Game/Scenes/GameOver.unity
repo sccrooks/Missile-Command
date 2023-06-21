@@ -1351,7 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tmpText: {fileID: 1649917163}
-  _score: {fileID: 0}
+  _score: {fileID: 11400000, guid: 253a70f5e9031d94da061bc33b622bbc, type: 2}
 --- !u!1 &1657881169
 GameObject:
   m_ObjectHideFlags: 0
