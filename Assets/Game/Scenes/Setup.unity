@@ -796,6 +796,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverEvent: {fileID: 11400000, guid: 376f95c710701d94588be74971ca5f64, type: 2}
   _quitGameEvent: {fileID: 11400000, guid: 44c33bfa5718f9445ad089638ffb0d5e, type: 2}
+  _increaseScoreEvent: {fileID: 11400000, guid: b9a63e0cbcc2ff445a1c20e5fe2ca839, type: 2}
+  _endLevelEvent: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}
+  _endWaveEvent: {fileID: 11400000, guid: 10a25309b4d464344a61034d92067989, type: 2}
 --- !u!114 &1156243059
 MonoBehaviour:
   m_ObjectHideFlags: 0
