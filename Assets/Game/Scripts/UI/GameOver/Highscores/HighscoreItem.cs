@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-namespace MissileCommand.UI
+namespace MissileCommand.UI.GameOver
 {
     public class HighscoreItem : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [Header("Components")]
+        [SerializeField] private TMP_Text _usernameText;
+        [SerializeField] private TMP_Text _scoreText;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        public TMP_Text UsernameText
+        { get { return _usernameText; } set { _usernameText = value; } }
+        public TMP_Text ScoreText
+        { get { return _scoreText; } set { _scoreText = value; } }
     }
 }
