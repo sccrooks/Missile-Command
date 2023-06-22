@@ -11,9 +11,10 @@ namespace MissileCommand.UI.GameOver
         [SerializeField] private TMP_Text _usernameText;
         [SerializeField] private TMP_Text _scoreText;
 
-        public TMP_Text UsernameText
-        { get { return _usernameText; } set { _usernameText = value; } }
-        public TMP_Text ScoreText
-        { get { return _scoreText; } set { _scoreText = value; } }
+        public void SetContent(string username, int score)
+        {
+            _usernameText.text = username;
+            _scoreText.text = score.ToString();
+        }
     }
 }
