@@ -41,18 +41,21 @@ namespace MissileCommand.Gameplay
 #endif
         }
 
+        [Command]
         public void IncreaseScore(int score)
         {
             Debug.Log($"Raising score by {score}.");
             _increaseScoreEvent.Raise(score);
         }
 
+        [Command]
         public void EndLevel()
         {
             Debug.Log("Ending level.");
             _endLevelEvent.Raise();
         }
 
+        [Command]
         public void EndWave()
         {
             Debug.Log("Ending wave.");
