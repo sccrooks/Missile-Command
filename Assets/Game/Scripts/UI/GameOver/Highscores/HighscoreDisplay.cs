@@ -32,7 +32,7 @@ namespace MissileCommand.UI.GameOver
 
             for (int i = 0; i < _highscoreItems.Count; i++)
             {
-                
+                _highscoreItems[i].SetContent(_highscores[i].User, _highscores[i].Score);
             }    
         }
     }
