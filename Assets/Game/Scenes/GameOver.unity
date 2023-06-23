@@ -323,6 +323,7 @@ MonoBehaviour:
   - {fileID: 2029150211}
   - {fileID: 530833228}
   - {fileID: 151009315}
+  _scoreData: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
 --- !u!1001 &225240730
 PrefabInstance:
   m_ObjectHideFlags: 0
