@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay
 {
+    [System.Serializable]
     public struct Score
     {
         public Score(string user, int value)
