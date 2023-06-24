@@ -1,6 +1,7 @@
 using QFSW.QC;
 using Sccrooks.Utility.ScriptableObjects.Events;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace MissileCommand.Gameplay
 {
@@ -12,6 +13,9 @@ namespace MissileCommand.Gameplay
         [Header("Events")]
         [SerializeField] private GameEvent _gameOverEvent;
         [SerializeField] private GameEvent _quitGameEvent;
+        [SerializeField] private IntEvent _increaseScoreEvent;
+        [SerializeField] private GameEvent _endLevelEvent;
+        [SerializeField] private GameEvent _endWaveEvent;
 
 
         [Command("End-Game")]
@@ -35,6 +39,27 @@ namespace MissileCommand.Gameplay
 #else
                 Application.Quit();
 #endif
+        }
+
+        [Command]
+        public void IncreaseScore(int score)
+        {
+            Debug.Log($"Raising score by {score}.");
+            _increaseScoreEvent.Raise(score);
+        }
+
+        [Command]
+        public void EndLevel()
+        {
+            Debug.Log("Ending level.");
+            _endLevelEvent.Raise();
+        }
+
+        [Command]
+        public void EndWave()
+        {
+            Debug.Log("Ending wave.");
+            _endWaveEvent.Raise();
         }
     }
 }
