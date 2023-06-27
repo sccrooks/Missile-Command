@@ -8,7 +8,6 @@ namespace MissileCommand.Gameplay.Entities
         [Header("Components")]
         [SerializeField] private SpriteRenderer _renderer;
         [SerializeField] private CircleCollider2D _collider;
-        [SerializeField] private List<Sprite> _explosionFrames = new List<Sprite>();
 
         [Header("Settings")]
         [SerializeField, Min(0)] private float _effectDuration = 0f;
