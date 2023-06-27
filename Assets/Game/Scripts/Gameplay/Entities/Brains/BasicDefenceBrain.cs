@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay.Entities
 {
-    [CreateAssetMenu(fileName = "Basic Brain", menuName = "Brains/Defense Basic Brain")]
+    [CreateAssetMenu(fileName = "Basic Defense Brain", menuName = "Brains/Defense Basic Brain")]
     public class BasicDefenceBrain : Brain
     {
         [SerializeField] private GameObjectVariable _reticle;
