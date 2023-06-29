@@ -1,4 +1,6 @@
+using MissileCommand.Gameplay;
 using QFSW.QC;
+using Sccrooks.Utility.ScriptableObjects.Variables;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +11,8 @@ namespace MissileCommand.UI.GameOver
     public class GameOverMenuController : MonoBehaviour
     {
         [SerializeField] private SceneData _sceneData;
+        [SerializeField] private ScoreData _highscores;
+        [SerializeField] private IntVariable _score;
 
         /// <summary>
         /// Restarts the game
