@@ -10,6 +10,11 @@ namespace MissileCommand.UI.GameOver
 {
     public class GameOverMenuController : MonoBehaviour
     {
+        [Header("Menus")]
+        [SerializeField] private Canvas _newHighscoreMenu;
+        [SerializeField] private Canvas _gameOverMenu;
+
+        [Header("Data")]
         [SerializeField] private SceneData _sceneData;
         [SerializeField] private ScoreData _highscores;
         [SerializeField] private IntVariable _score;
