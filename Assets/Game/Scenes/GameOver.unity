@@ -1579,6 +1579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b69b05f2d175c44aead0f94087c610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _newHighscoreMenu: {fileID: 290554836}
+  _gameOverMenu: {fileID: 404271236}
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
   _highscores: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
   _score: {fileID: 11400000, guid: 253a70f5e9031d94da061bc33b622bbc, type: 2}
