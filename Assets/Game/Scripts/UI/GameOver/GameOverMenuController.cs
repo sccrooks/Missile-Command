@@ -11,13 +11,33 @@ namespace MissileCommand.UI.GameOver
     public class GameOverMenuController : MonoBehaviour
     {
         [Header("Menus")]
-        [SerializeField] private Canvas _newHighscoreMenu;
-        [SerializeField] private Canvas _gameOverMenu;
+        [SerializeField] private GameObject _newHighscoreMenu;
+        [SerializeField] private GameObject _gameOverMenu;
 
         [Header("Data")]
         [SerializeField] private SceneData _sceneData;
         [SerializeField] private ScoreData _highscores;
         [SerializeField] private IntVariable _score;
+
+        private bool _newHighscore = false;
+
+        private void Start()
+        {
+            _newHighscore = false;
+
+            foreach (Score score in _highscores._highscores)
+            {
+                if (_score.RunTimeValue > score.Value)
+                {
+                    _newHighscore = true;
+                }
+            }
+
+            if (_newHighscore)
+                _newHighscoreMenu.SetActive(true);
+            else
+                _gameOverMenu.SetActive(true);
+        }
 
         /// <summary>
         /// Restarts the game
