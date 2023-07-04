@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 404271235}
   - component: {fileID: 404271234}
   m_Layer: 5
-  m_Name: GameOverStats
+  m_Name: GameOverMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _newHighscoreMenu: {fileID: 290554836}
-  _gameOverMenu: {fileID: 404271236}
+  _gameOverMenu: {fileID: 404271232}
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
   _highscores: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
   _score: {fileID: 11400000, guid: 253a70f5e9031d94da061bc33b622bbc, type: 2}
