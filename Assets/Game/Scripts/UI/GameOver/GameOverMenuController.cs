@@ -11,8 +11,9 @@ namespace MissileCommand.UI.GameOver
     public class GameOverMenuController : MonoBehaviour
     {
         [Header("Menus")]
-        [SerializeField] private GameObject _newHighscoreMenu;
         [SerializeField] private GameObject _gameOverMenu;
+        [SerializeField] private GameObject _newHighscoreMenu;
+        [SerializeField] private GameObject _addHighscoreMenu;
 
         [Header("Data")]
         [SerializeField] private SceneData _sceneData;
@@ -37,6 +38,22 @@ namespace MissileCommand.UI.GameOver
                 _newHighscoreMenu.SetActive(true);
             else
                 _gameOverMenu.SetActive(true);
+        }
+
+        public void DisplayGameOverMenu()
+        {
+            _gameOverMenu.SetActive(true);
+        }
+
+        public void DisplayNewHighscoreMenu()
+        {
+            _newHighscoreMenu.SetActive(true);
+        }
+
+        
+        public void DisplayAddHighscoreMenu()
+        {
+            _addHighscoreMenu.SetActive(true);
         }
 
         /// <summary>
