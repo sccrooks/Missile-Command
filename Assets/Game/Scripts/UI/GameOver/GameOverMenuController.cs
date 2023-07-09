@@ -1,4 +1,6 @@
+using MissileCommand.Gameplay;
 using QFSW.QC;
+using Sccrooks.Utility.ScriptableObjects.Variables;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +10,51 @@ namespace MissileCommand.UI.GameOver
 {
     public class GameOverMenuController : MonoBehaviour
     {
+        [Header("Menus")]
+        [SerializeField] private GameObject _gameOverMenu;
+        [SerializeField] private GameObject _newHighscoreMenu;
+        [SerializeField] private GameObject _addHighscoreMenu;
+
+        [Header("Data")]
         [SerializeField] private SceneData _sceneData;
+        [SerializeField] private ScoreData _highscores;
+        [SerializeField] private IntVariable _score;
+
+        private bool _newHighscore = false;
+
+        private void Start()
+        {
+            _newHighscore = false;
+
+            foreach (Score score in _highscores._highscores)
+            {
+                if (_score.RunTimeValue > score.Value)
+                {
+                    _newHighscore = true;
+                }
+            }
+
+            if (_newHighscore)
+                _newHighscoreMenu.SetActive(true);
+            else
+                _gameOverMenu.SetActive(true);
+        }
+
+        public void DisplayGameOverMenu()
+        {
+            _gameOverMenu.SetActive(true);
+        }
+
+        public void DisplayNewHighscoreMenu()
+        {
+            _newHighscoreMenu.SetActive(true);
+        }
+
+        
+        public void DisplayAddHighscoreMenu()
+        {
+            _addHighscoreMenu.SetActive(true);
+        }
 
         /// <summary>
         /// Restarts the game
