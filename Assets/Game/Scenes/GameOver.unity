@@ -1022,7 +1022,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348832851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1358634396}
+        m_TargetAssemblyTypeName: MissileCommand.UI.GameOver.GameOverMenuController,
+          UI
+        m_MethodName: SaveHighscore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &348832851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2162,7 +2175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter text...
+  m_text: Enter username...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3269,7 +3282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverMenu: {fileID: 404271232}
   _newHighscoreMenu: {fileID: 290554832}
-  _addHighscoreMenu: {fileID: 707065519}
+  _saveHighscoreMenu: {fileID: 0}
+  _nameInputField: {fileID: 0}
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
   _highscores: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
   _score: {fileID: 11400000, guid: 253a70f5e9031d94da061bc33b622bbc, type: 2}
@@ -4540,7 +4554,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2118346662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1358634396}
+        m_TargetAssemblyTypeName: MissileCommand.UI.GameOver.GameOverMenuController,
+          UI
+        m_MethodName: DisplayGameOverMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2118346662
 MonoBehaviour:
   m_ObjectHideFlags: 0

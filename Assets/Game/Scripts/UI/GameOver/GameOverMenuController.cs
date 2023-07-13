@@ -3,6 +3,7 @@ using QFSW.QC;
 using Sccrooks.Utility.ScriptableObjects.Variables;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +18,7 @@ namespace MissileCommand.UI.GameOver
         [SerializeField] private GameObject _saveHighscoreMenu;
 
         [Header("Components")]
-        [SerializeField] private InputField _nameInputField;
+        [SerializeField] private TMP_InputField _nameInputField;
 
         [Header("Data")]
         [SerializeField] private SceneData _sceneData;
