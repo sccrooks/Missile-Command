@@ -68,15 +68,27 @@ namespace MissileCommand.UI.GameOver
         #endregion
 
         #region Save Highscore menu
+        /// <summary>
+        /// Displays save highscore menu
+        /// </summary>
         public void DisplaySaveHighscoreMenu()
         {
             _saveHighscoreMenu.SetActive(true);
         }
 
+        /// <summary>
+        /// Attempts to save a highscore
+        /// </summary>
         public void SaveHighscore()
         {
+            string name = _nameInputField.text.Trim();
 
+            if (name.Length == 0)
+                return;
+            else
+                return;
         }
+        #endregion
 
         /// <summary>
         /// Restarts the game
