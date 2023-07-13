@@ -14,7 +14,7 @@ namespace MissileCommand.UI.GameOver
         [Header("Menus")]
         [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private GameObject _newHighscoreMenu;
-        [SerializeField] private GameObject _addHighscoreMenu;
+        [SerializeField] private GameObject _saveHighscoreMenu;
 
         [Header("Components")]
         [SerializeField] private InputField _nameInputField;
@@ -51,7 +51,7 @@ namespace MissileCommand.UI.GameOver
         public void DisplayGameOverMenu()
         {
             _newHighscoreMenu.SetActive(false);
-            _addHighscoreMenu.SetActive(false);
+            _saveHighscoreMenu.SetActive(false);
 
             _gameOverMenu.SetActive(true);
         }
@@ -61,15 +61,16 @@ namespace MissileCommand.UI.GameOver
         public void DisplayNewHighscoreMenu()
         {
             _gameOverMenu.SetActive(false);
-            _addHighscoreMenu.SetActive(false);
+            _saveHighscoreMenu.SetActive(false);
 
             _newHighscoreMenu.SetActive(true);
         }
+        #endregion
 
-        
-        public void DisplayAddHighscoreMenu()
+        #region Save Highscore menu
+        public void DisplaySaveHighscoreMenu()
         {
-            _addHighscoreMenu.SetActive(true);
+            _saveHighscoreMenu.SetActive(true);
         }
 
         public void SaveHighscore()
