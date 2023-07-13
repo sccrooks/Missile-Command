@@ -3,8 +3,10 @@ using QFSW.QC;
 using Sccrooks.Utility.ScriptableObjects.Variables;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace MissileCommand.UI.GameOver
 {
@@ -13,7 +15,10 @@ namespace MissileCommand.UI.GameOver
         [Header("Menus")]
         [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private GameObject _newHighscoreMenu;
-        [SerializeField] private GameObject _addHighscoreMenu;
+        [SerializeField] private GameObject _saveHighscoreMenu;
+
+        [Header("Components")]
+        [SerializeField] private TMP_InputField _nameInputField;
 
         [Header("Data")]
         [SerializeField] private SceneData _sceneData;
@@ -35,26 +40,59 @@ namespace MissileCommand.UI.GameOver
             }
 
             if (_newHighscore)
-                _newHighscoreMenu.SetActive(true);
+                DisplayNewHighscoreMenu();
             else
-                _gameOverMenu.SetActive(true);
+                DisplayGameOverMenu();
         }
 
+        #region - Game over menu -
+        /// <summary>
+        /// Display game over menu
+        /// </summary>
         public void DisplayGameOverMenu()
         {
+            _newHighscoreMenu.SetActive(false);
+            _saveHighscoreMenu.SetActive(false);
+
             _gameOverMenu.SetActive(true);
         }
+        #endregion
 
+        #region - New highscore menu -
         public void DisplayNewHighscoreMenu()
         {
+            _gameOverMenu.SetActive(false);
+            _saveHighscoreMenu.SetActive(false);
+
             _newHighscoreMenu.SetActive(true);
         }
+        #endregion
 
-        
-        public void DisplayAddHighscoreMenu()
+        #region Save Highscore menu
+        /// <summary>
+        /// Displays save highscore menu
+        /// </summary>
+        public void DisplaySaveHighscoreMenu()
         {
-            _addHighscoreMenu.SetActive(true);
+            _gameOverMenu.SetActive(false);
+            _newHighscoreMenu.SetActive(false);
+
+            _saveHighscoreMenu.SetActive(true);
         }
+
+        /// <summary>
+        /// Attempts to save a highscore
+        /// </summary>
+        public void SaveHighscore()
+        {
+            string name = _nameInputField.text.Trim();
+
+            if (name.Length == 0)
+                return;
+            else
+                return;
+        }
+        #endregion
 
         /// <summary>
         /// Restarts the game
