@@ -74,6 +74,9 @@ namespace MissileCommand.UI.GameOver
         /// </summary>
         public void DisplaySaveHighscoreMenu()
         {
+            _gameOverMenu.SetActive(false);
+            _newHighscoreMenu.SetActive(false);
+
             _saveHighscoreMenu.SetActive(true);
         }
 
