@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace MissileCommand.UI.GameOver
 {
@@ -14,6 +15,9 @@ namespace MissileCommand.UI.GameOver
         [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private GameObject _newHighscoreMenu;
         [SerializeField] private GameObject _addHighscoreMenu;
+
+        [Header("Components")]
+        [SerializeField] private InputField _nameInputField;
 
         [Header("Data")]
         [SerializeField] private SceneData _sceneData;
@@ -35,18 +39,30 @@ namespace MissileCommand.UI.GameOver
             }
 
             if (_newHighscore)
-                _newHighscoreMenu.SetActive(true);
+                DisplayNewHighscoreMenu();
             else
-                _gameOverMenu.SetActive(true);
+                DisplayGameOverMenu();
         }
 
+        #region - Game over menu -
+        /// <summary>
+        /// Display game over menu
+        /// </summary>
         public void DisplayGameOverMenu()
         {
+            _newHighscoreMenu.SetActive(false);
+            _addHighscoreMenu.SetActive(false);
+
             _gameOverMenu.SetActive(true);
         }
+        #endregion
 
+        #region - New highscore menu -
         public void DisplayNewHighscoreMenu()
         {
+            _gameOverMenu.SetActive(false);
+            _addHighscoreMenu.SetActive(false);
+
             _newHighscoreMenu.SetActive(true);
         }
 
@@ -54,6 +70,11 @@ namespace MissileCommand.UI.GameOver
         public void DisplayAddHighscoreMenu()
         {
             _addHighscoreMenu.SetActive(true);
+        }
+
+        public void SaveHighscore()
+        {
+
         }
 
         /// <summary>

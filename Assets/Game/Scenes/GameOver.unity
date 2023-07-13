@@ -413,7 +413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Save
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f7763754476c04895427e102333942, type: 2}
   m_sharedMaterial: {fileID: 7680934567261375755, guid: 99f7763754476c04895427e102333942, type: 2}
@@ -957,7 +957,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348832849
 MonoBehaviour:
@@ -974,8 +974,8 @@ MonoBehaviour:
   _tmpText: {fileID: 143682957}
   _size: 24
   _hoverSize: 24
-  _text: Continue
-  _hoverText: Continue
+  _text: Save
+  _hoverText: Save
   _color: {r: 1, g: 1, b: 1, a: 1}
   _hoverColor: {r: 1, g: 0.3254902, b: 0.31764707, a: 255}
   _startSelected: 0
@@ -2297,7 +2297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Cancel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f7763754476c04895427e102333942, type: 2}
   m_sharedMaterial: {fileID: 7680934567261375755, guid: 99f7763754476c04895427e102333942, type: 2}
@@ -2939,7 +2939,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 82.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080072365
 MonoBehaviour:
@@ -3075,7 +3075,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_SizeDelta: {x: 0, y: 45.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252418627
 MonoBehaviour:
@@ -3092,7 +3092,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 10
     m_Right: 10
-    m_Top: 20
+    m_Top: 5
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
@@ -4475,7 +4475,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118346660
 MonoBehaviour:
@@ -4492,8 +4492,8 @@ MonoBehaviour:
   _tmpText: {fileID: 959609721}
   _size: 24
   _hoverSize: 24
-  _text: Continue
-  _hoverText: Continue
+  _text: Cancel
+  _hoverText: Cancel
   _color: {r: 1, g: 1, b: 1, a: 1}
   _hoverColor: {r: 1, g: 0.3254902, b: 0.31764707, a: 255}
   _startSelected: 0
