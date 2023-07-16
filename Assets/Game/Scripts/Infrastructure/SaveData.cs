@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class SaveData
+namespace MissileCommand.Infrastructure
 {
-    public ScoreData _scoreData;
+    [System.Serializable]
+    public class SaveData
+    {
+        public ScoreData _scoreData;
+    }
 }

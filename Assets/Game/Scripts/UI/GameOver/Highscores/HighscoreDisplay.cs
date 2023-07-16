@@ -17,7 +17,7 @@ namespace MissileCommand.UI.GameOver
 
             for (int i = 0; i < _highscoreItems.Count; i++)
             {
-                _highscoreItems[i].SetContent(_scoreData._highscores[i].User, _scoreData._highscores[i].Value);
+                _highscoreItems[i].SetContent(_scoreData.Highscores[i].User, _scoreData.Highscores[i].Value);
             }    
         }
     }

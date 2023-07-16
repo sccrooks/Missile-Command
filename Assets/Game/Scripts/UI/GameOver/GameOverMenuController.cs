@@ -31,7 +31,7 @@ namespace MissileCommand.UI.GameOver
         {
             _newHighscore = false;
 
-            foreach (Score score in _highscores._highscores)
+            foreach (Score score in _highscores.Highscores)
             {
                 if (_score.RunTimeValue > score.Value)
                 {
