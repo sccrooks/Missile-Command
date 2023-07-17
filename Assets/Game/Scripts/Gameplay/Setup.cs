@@ -12,15 +12,17 @@ namespace MissileCommand.Gameplay
         // Start is called before the first frame update
         void Start()
         {
+            LoadData();
             SceneManager.LoadScene(_sceneData.MainMenu, LoadSceneMode.Single);
         }
 
-        private void LoadGame()
+        private void LoadData()
         {
+            Debug.Log("Loading save data...");
             SaveData saveData = SaveDataManager.LoadGameData();
             if (saveData != null)
             {
-                _scoreData = saveData._scoreData;
+                _scoreData.Highscores = saveData.ScoreData.Highscores;
             }
         }
     }

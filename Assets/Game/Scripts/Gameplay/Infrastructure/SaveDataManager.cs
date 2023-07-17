@@ -35,11 +35,15 @@ namespace MissileCommand.Infrastructure
                 }
                 catch
                 {
-
+                    return null;
                 }
             }
             else
-                return null;
+            {
+                SaveData tempData = new SaveData();
+                SaveGameData(tempData);
+                return tempData;
+            }
         }
     }
 }

@@ -3,8 +3,7 @@
     "rootNamespace": "MissileCommand.Gameplay",
     "references": [
         "GUID:fb24642277b1db2449da7ac148ce939d",
-        "GUID:5502607ec5653de4f8167a4a821e0ab4",
-        "GUID:d06dde88e8af6784293b062ef080c030"
+        "GUID:5502607ec5653de4f8167a4a821e0ab4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
