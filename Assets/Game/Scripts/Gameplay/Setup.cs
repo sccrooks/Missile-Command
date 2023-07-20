@@ -22,8 +22,9 @@ namespace MissileCommand.Gameplay
             SaveData saveData = SaveDataManager.LoadGameData();
             if (saveData != null)
             {
-                _scoreData.Highscores = saveData.ScoreData.Highscores;
+                _scoreData.Highscores = saveData.ScoreData;
             }
+            Debug.Log("Loaded save data.");
         }
     }
 }
