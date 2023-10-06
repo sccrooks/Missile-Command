@@ -660,6 +660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 679351598}
+  - component: {fileID: 679351599}
   - component: {fileID: 679351597}
   m_Layer: 0
   m_Name: PersistantDataManager
@@ -680,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2c1a85d5eafc04fb4f27d494ade61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreData: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
+  _highscoreData: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
 --- !u!4 &679351598
 Transform:
   m_ObjectHideFlags: 0
@@ -696,6 +697,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679351599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679351596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06ced6a4d8ca784590f2cd670933bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &681426849
 GameObject:
   m_ObjectHideFlags: 0
