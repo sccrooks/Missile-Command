@@ -14,7 +14,6 @@ namespace MissileCommand.Gameplay.GameController
 
         [Header("Components")]
         [SerializeField] private SceneData _sceneData;
-        [SerializeField] private Transform _spawnLocation;
         
         [Header("Stats/Settings")]
         [SerializeField] private IntVariable _score;
