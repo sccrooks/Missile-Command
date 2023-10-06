@@ -22,7 +22,7 @@ namespace MissileCommand.UI.GameOver
 
         [Header("Data")]
         [SerializeField] private SceneData _sceneData;
-        [SerializeField] private ScoreData _highscores;
+        [SerializeField] private HighscoreData _highscores;
         [SerializeField] private IntVariable _score;
 
         private bool _newHighscore = false;

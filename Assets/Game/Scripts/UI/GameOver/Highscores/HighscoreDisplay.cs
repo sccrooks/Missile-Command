@@ -10,7 +10,7 @@ namespace MissileCommand.UI.GameOver
     {
         [SerializeField] private List<HighscoreItem> _highscoreItems = new List<HighscoreItem>();
 
-        [SerializeField] private ScoreData _scoreData;
+        [SerializeField] private HighscoreData _scoreData;
 
         private void Start()
         {

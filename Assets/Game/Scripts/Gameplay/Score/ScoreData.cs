@@ -18,8 +18,8 @@ namespace MissileCommand.Gameplay
         public int Value;
     }
 
-    [System.Serializable, CreateAssetMenu(fileName = "Score Data", menuName = "ScoreData")]
-    public class ScoreData : ScriptableObject
+    [System.Serializable, CreateAssetMenu(fileName = "HighscoreData", menuName = "HighscoreData")]
+    public class HighscoreData : ScriptableObject
     {
         public List<Score> Highscores = new List<Score>();
     }
