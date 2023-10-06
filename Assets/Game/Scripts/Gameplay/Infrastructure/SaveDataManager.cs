@@ -36,6 +36,7 @@ namespace MissileCommand.Infrastructure
             }
             else
             {
+                Debug.LogWarning("Save data could not be found!");
                 SaveData tempData = new SaveData();
                 SaveGameData(tempData);
                 return tempData;
