@@ -22,6 +22,7 @@ namespace MissileCommand.Gameplay
         }
 
         [SerializeField] private HighscoreData _highscoreData;
+        [SerializeField] private GameEvent _quitGameRequest;
 
         private void Start()
         {
@@ -32,6 +33,15 @@ namespace MissileCommand.Gameplay
                 _highscoreData.Highscores = saveData.ScoreData;
             }
             Debug.Log("Loaded save data.");
+        }
+
+        private void OnDestroy()
+        {
+            Debug.Log("Saving save data...");
+            SaveData saveData = new SaveData();
+            saveData.ScoreData = _highscoreData.Highscores;
+            SaveDataManager.SaveGameData(saveData);
+            Debug.Log("Saved save data.");
         }
     }
 }
