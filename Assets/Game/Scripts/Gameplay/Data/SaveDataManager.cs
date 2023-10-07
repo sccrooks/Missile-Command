@@ -8,6 +8,10 @@ namespace MissileCommand.Gameplay.Data
     {
         public static readonly string fileName = "/SaveData.save";
 
+        /// <summary>
+        /// Attempts to save game data
+        /// </summary>
+        /// <param name="saveData"></param>
         public static void SaveGameData(SaveData saveData)
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -17,6 +21,10 @@ namespace MissileCommand.Gameplay.Data
             file.Close();
         }
 
+        /// <summary>
+        /// Attempts to load game data
+        /// </summary>
+        /// <returns></returns>
         public static SaveData LoadGameData()
         {
             if (File.Exists(Application.persistentDataPath + fileName))

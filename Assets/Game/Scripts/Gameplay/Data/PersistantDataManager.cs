@@ -32,6 +32,9 @@ namespace MissileCommand.Gameplay.Data
             SaveGameData();
         }
 
+        /// <summary>
+        /// Attempts to load game data from disk
+        /// </summary>
         public void LoadGameData()
         {
             Debug.Log("Loading save data...");
@@ -45,6 +48,9 @@ namespace MissileCommand.Gameplay.Data
             _gameLoadedEvent.Raise();
         }
 
+        /// <summary>
+        /// Attempts to save game data to disk
+        /// </summary>
         public void SaveGameData()
         {
             Debug.Log("Saving save data...");
