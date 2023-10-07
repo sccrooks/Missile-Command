@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +18,9 @@ namespace MissileCommand.Gameplay
         public int Value;
     }
 
-    [CreateAssetMenu(fileName = "Score Data", menuName = "ScoreData")]
-    public class ScoreData : ScriptableObject
+    [System.Serializable, CreateAssetMenu(fileName = "HighscoreData", menuName = "HighscoreData")]
+    public class HighscoreData : ScriptableObject
     {
-        public List<Score> _highscores = new List<Score>();
+        public List<Score> Highscores = new List<Score>();
     }
 }

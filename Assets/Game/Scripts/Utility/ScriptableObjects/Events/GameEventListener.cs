@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace Sccrooks.Utility.ScriptableObjects.Events
         public void OnEventRaised()
         {
             Response?.Invoke();
+            Debug.Log(gameObject.name);
         }
     }
 }
