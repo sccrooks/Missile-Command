@@ -27,11 +27,6 @@ namespace MissileCommand.Gameplay.Data
             LoadGameData();
         }
 
-        private void OnDestroy()
-        {
-            SaveGameData();
-        }
-
         /// <summary>
         /// Attempts to load game data from disk
         /// </summary>
