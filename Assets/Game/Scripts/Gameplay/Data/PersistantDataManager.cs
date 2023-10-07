@@ -19,9 +19,20 @@ namespace MissileCommand.Gameplay.Data
         }
 
         [SerializeField] private HighscoreData _highscoreData;
-        [SerializeField] private GameEvent _quitGameRequest;
+        [SerializeField] private GameEvent _gameLoadedEvent;
+        [SerializeField] private GameEvent _gameSavedEvent;
 
         private void Awake()
+        {
+            
+        }
+
+        private void OnDestroy()
+        {
+            
+        }
+
+        public void LoadGameData()
         {
             Debug.Log("Loading save data...");
             SaveData saveData = SaveDataManager.LoadGameData();
@@ -29,16 +40,20 @@ namespace MissileCommand.Gameplay.Data
             {
                 _highscoreData.Highscores = saveData.HighscoreData;
             }
+
             Debug.Log("Loaded save data.");
+            _gameLoadedEvent.Raise();
         }
 
-        private void OnDestroy()
+        public void SaveGameData()
         {
             Debug.Log("Saving save data...");
             SaveData saveData = new SaveData();
             saveData.HighscoreData = _highscoreData.Highscores;
             SaveDataManager.SaveGameData(saveData);
+
             Debug.Log("Saved save data.");
+            _gameSavedEvent.Raise();
         }
     }
 }

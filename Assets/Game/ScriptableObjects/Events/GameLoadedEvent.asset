@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a4f1f2b6cc66249944b75da636ddb0, type: 3}
-  m_Name: Highscores
+  m_Script: {fileID: 11500000, guid: 7bfd5ea492348244da66fa83fc7481f4, type: 3}
+  m_Name: GameLoadedEvent
   m_EditorClassIdentifier: 
-  Highscores: []
