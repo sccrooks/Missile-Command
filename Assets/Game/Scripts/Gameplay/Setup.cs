@@ -7,7 +7,6 @@ namespace MissileCommand.Gameplay
     {
         [SerializeField] private SceneData _sceneData;
         
-
         // Start is called before the first frame update
         void Start()
         {

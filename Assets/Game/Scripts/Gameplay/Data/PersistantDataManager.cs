@@ -21,7 +21,7 @@ namespace MissileCommand.Gameplay.Data
         [SerializeField] private HighscoreData _highscoreData;
         [SerializeField] private GameEvent _quitGameRequest;
 
-        private void Start()
+        private void Awake()
         {
             Debug.Log("Loading save data...");
             SaveData saveData = SaveDataManager.LoadGameData();

@@ -1,7 +1,6 @@
 using QFSW.QC;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Zenject;
 
 namespace MissileCommand.UI.MainMenu
 {
