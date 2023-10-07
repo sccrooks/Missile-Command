@@ -24,12 +24,12 @@ namespace MissileCommand.Gameplay.Data
 
         private void Awake()
         {
-            
+            LoadGameData();
         }
 
         private void OnDestroy()
         {
-            
+            SaveGameData();
         }
 
         public void LoadGameData()
