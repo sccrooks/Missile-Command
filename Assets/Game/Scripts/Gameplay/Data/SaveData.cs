@@ -1,9 +1,6 @@
-using MissileCommand.Gameplay;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace MissileCommand.Infrastructure
+namespace MissileCommand.Gameplay.Data
 {
     [System.Serializable]
     public class SaveData

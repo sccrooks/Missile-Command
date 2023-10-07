@@ -1,10 +1,7 @@
-using MissileCommand.Infrastructure;
 using Sccrooks.Utility.ScriptableObjects.Events;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay
+namespace MissileCommand.Gameplay.Data
 {
     public class PersistantDataManager : MonoBehaviour
     {

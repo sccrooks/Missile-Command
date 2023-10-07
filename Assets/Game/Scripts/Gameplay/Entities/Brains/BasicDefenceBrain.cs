@@ -1,6 +1,4 @@
 using Sccrooks.Utility.ScriptableObjects.Variables;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MissileCommand.Gameplay.Entities
