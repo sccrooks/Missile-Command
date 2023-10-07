@@ -8,6 +8,6 @@ namespace MissileCommand.Infrastructure
     [System.Serializable]
     public class SaveData
     {
-        public List<Score> ScoreData = new List<Score>();
+        public List<Score> HighscoreData = new List<Score>();
     }
 }

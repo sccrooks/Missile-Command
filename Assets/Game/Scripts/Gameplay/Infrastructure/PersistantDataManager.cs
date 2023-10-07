@@ -30,7 +30,7 @@ namespace MissileCommand.Gameplay
             SaveData saveData = SaveDataManager.LoadGameData();
             if (saveData != null)
             {
-                _highscoreData.Highscores = saveData.ScoreData;
+                _highscoreData.Highscores = saveData.HighscoreData;
             }
             Debug.Log("Loaded save data.");
         }
@@ -39,7 +39,7 @@ namespace MissileCommand.Gameplay
         {
             Debug.Log("Saving save data...");
             SaveData saveData = new SaveData();
-            saveData.ScoreData = _highscoreData.Highscores;
+            saveData.HighscoreData = _highscoreData.Highscores;
             SaveDataManager.SaveGameData(saveData);
             Debug.Log("Saved save data.");
         }
