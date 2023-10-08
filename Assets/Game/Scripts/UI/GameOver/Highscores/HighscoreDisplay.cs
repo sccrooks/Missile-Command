@@ -13,10 +13,10 @@ namespace MissileCommand.UI.GameOver
         private void Start()
         {
 
-            for (int i = 0; i < _highscoreItems.Count; i++)
+            for (int i = 0; i < _highscoreItems.Count && i < _scoreData.Highscores.Count; i++)
             {
                 _highscoreItems[i].SetContent(_scoreData.Highscores[i].User, _scoreData.Highscores[i].Value);
-            }    
+            }
         }
     }
 }

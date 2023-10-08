@@ -56,6 +56,7 @@ namespace MissileCommand.Gameplay.LevelManagement
             {
                 _nextLevelRequested = false;
                 _currentLevel++;
+                Debug.Log("Starting level: " + _currentLevel);
                 _levelList[_currentLevel].Start();
             }
         }
