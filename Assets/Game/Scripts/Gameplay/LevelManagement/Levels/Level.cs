@@ -50,10 +50,7 @@ namespace MissileCommand.Gameplay.LevelManagement
         /// </summary>
         public void Update()
         {
-            if (_currentWave >= Waves.Count)
-                End();
-            else
-                Waves[_currentWave].Update();
+            Waves[_currentWave].Update();
         }
 
         /// <summary>
@@ -62,7 +59,10 @@ namespace MissileCommand.Gameplay.LevelManagement
         public void OnWaveEnded()
         {
             _currentWave++;
-            Waves[_currentWave].Start();
+            if (_currentWave >= Waves.Count)
+                End();
+            else
+                Waves[_currentWave].Start();
         }
     }
 }
