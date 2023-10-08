@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224130951485110974, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 224166536479716514, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -662,6 +662,7 @@ GameObject:
   - component: {fileID: 679351598}
   - component: {fileID: 679351599}
   - component: {fileID: 679351597}
+  - component: {fileID: 679351600}
   m_Layer: 0
   m_Name: PersistantDataManager
   m_TagString: Untagged
@@ -682,6 +683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _highscoreData: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
+  _gameLoadedEvent: {fileID: 11400000, guid: b1b7aa12182b994479df9f95677c2883, type: 2}
+  _gameSavedEvent: {fileID: 11400000, guid: 519e56393781f40469bc9f30a35b9ef6, type: 2}
 --- !u!4 &679351598
 Transform:
   m_ObjectHideFlags: 0
@@ -709,6 +712,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06ced6a4d8ca784590f2cd670933bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &679351600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679351596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: bcdc16f2e9b829b478b08f6b8cab7c19, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 679351597}
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.Data.PersistantDataManager,
+          Gameplay
+        m_MethodName: SaveGameData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &681426849
 GameObject:
   m_ObjectHideFlags: 0

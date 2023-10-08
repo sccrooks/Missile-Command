@@ -1,6 +1,4 @@
-using MissileCommand.Gameplay;
-using System;
-using System.Collections;
+using MissileCommand.Gameplay.Data;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,8 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using MissileCommand.Infrastructure;
-using System.Collections.Generic;
-using Mono.CSharp;
 
 namespace MissileCommand.Gameplay
 {
@@ -10,7 +7,6 @@ namespace MissileCommand.Gameplay
     {
         [SerializeField] private SceneData _sceneData;
         
-
         // Start is called before the first frame update
         void Start()
         {

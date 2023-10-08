@@ -1,10 +1,7 @@
-using MissileCommand.Infrastructure;
 using Sccrooks.Utility.ScriptableObjects.Events;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace MissileCommand.Gameplay
+namespace MissileCommand.Gameplay.Data
 {
     public class PersistantDataManager : MonoBehaviour
     {
@@ -22,9 +19,18 @@ namespace MissileCommand.Gameplay
         }
 
         [SerializeField] private HighscoreData _highscoreData;
-        [SerializeField] private GameEvent _quitGameRequest;
+        [SerializeField] private GameEvent _gameLoadedEvent;
+        [SerializeField] private GameEvent _gameSavedEvent;
 
-        private void Start()
+        private void Awake()
+        {
+            LoadGameData();
+        }
+
+        /// <summary>
+        /// Attempts to load game data from disk
+        /// </summary>
+        public void LoadGameData()
         {
             Debug.Log("Loading save data...");
             SaveData saveData = SaveDataManager.LoadGameData();
@@ -32,16 +38,23 @@ namespace MissileCommand.Gameplay
             {
                 _highscoreData.Highscores = saveData.HighscoreData;
             }
+
             Debug.Log("Loaded save data.");
+            _gameLoadedEvent.Raise();
         }
 
-        private void OnDestroy()
+        /// <summary>
+        /// Attempts to save game data to disk
+        /// </summary>
+        public void SaveGameData()
         {
             Debug.Log("Saving save data...");
             SaveData saveData = new SaveData();
             saveData.HighscoreData = _highscoreData.Highscores;
             SaveDataManager.SaveGameData(saveData);
+
             Debug.Log("Saved save data.");
+            _gameSavedEvent.Raise();
         }
     }
 }
