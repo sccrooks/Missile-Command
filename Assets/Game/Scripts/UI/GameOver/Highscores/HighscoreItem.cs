@@ -9,10 +9,10 @@ namespace MissileCommand.UI.GameOver
         [SerializeField] private TMP_Text _usernameText;
         [SerializeField] private TMP_Text _scoreText;
 
-        public void SetContent(string username, int score)
+        public void SetContent(string username, string score)
         {
             _usernameText.text = username;
-            _scoreText.text = score.ToString();
+            _scoreText.text = score;
         }
     }
 }
