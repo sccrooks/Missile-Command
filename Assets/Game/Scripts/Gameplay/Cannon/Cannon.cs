@@ -43,6 +43,11 @@ namespace MissileCommand.Gameplay.Cannon
                 Instantiate(_defenceMissile, _barrelTip.transform.position, Quaternion.identity, this.gameObject.transform);
             }
         }
+
+        /// <summary>
+        /// Event listerner for level started event,
+        /// used for restocking turret ammo.
+        /// </summary>
         public void OnLevelStartEvent()
         {
             _ammo = _maxAmmo;
