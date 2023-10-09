@@ -3285,7 +3285,7 @@ MonoBehaviour:
   _saveHighscoreMenu: {fileID: 707065519}
   _nameInputField: {fileID: 2017910186}
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
-  _highscores: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
+  _highscoresData: {fileID: 11400000, guid: b8ae6a97cedf4d8419643a2c6b66afab, type: 2}
   _score: {fileID: 11400000, guid: 253a70f5e9031d94da061bc33b622bbc, type: 2}
 --- !u!4 &1358634397
 Transform:
