@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 7734637058012947610}
   - component: {fileID: 1734627793413458973}
   - component: {fileID: 5873382510130923897}
+  - component: {fileID: 6551142225027038814}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -276,6 +277,9 @@ MonoBehaviour:
   _barrelTip: {fileID: 3239985287048881218}
   _audioSource: {fileID: 7734637058012947610}
   _angleModifier: 90
+  _defenceMissile: {fileID: 0}
+  _maxAmmo: 20
+  _ammo: 0
 --- !u!114 &5873382510130923897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +299,34 @@ MonoBehaviour:
       - m_Target: {fileID: 1734627793413458973}
         m_TargetAssemblyTypeName: MissileCommand.Gameplay.Cannon.Cannon, Gameplay
         m_MethodName: OnFireEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6551142225027038814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239985286219084133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6d61c284d7314e148a8a768c7de01260, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1734627793413458973}
+        m_TargetAssemblyTypeName: MissileCommand.Gameplay.Cannon.Cannon, Gameplay
+        m_MethodName: OnLevelStartEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

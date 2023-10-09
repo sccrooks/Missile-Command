@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a4f1f2b6cc66249944b75da636ddb0, type: 3}
   m_Name: Highscores
   m_EditorClassIdentifier: 
-  Highscores: []
+  Highscores:
+  - User: Scott
+    Value: 10000
