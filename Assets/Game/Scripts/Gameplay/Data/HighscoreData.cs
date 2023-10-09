@@ -20,5 +20,6 @@ namespace MissileCommand.Gameplay.Data
     public class HighscoreData : ScriptableObject
     {
         public List<Score> Highscores = new List<Score>();
+        public int MaxHighscores = 5;
     }
 }
