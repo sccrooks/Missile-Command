@@ -42,9 +42,7 @@ namespace MissileCommand.UI.MainMenu
         [Command("Open-Main-Menu")]
         public void OpenMainMenu()
         {
-            _levelEditor.SetActive(false);
             _settingsMenu.SetActive(false);
-
             _mainMenu.SetActive(true);
         }
 
@@ -55,8 +53,6 @@ namespace MissileCommand.UI.MainMenu
         public void OpenSettings()
         {
             _mainMenu.SetActive(false);
-            _levelEditor.SetActive(true);
-
             _settingsMenu.SetActive(true);
         }
     }
