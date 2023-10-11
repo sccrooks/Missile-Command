@@ -19,7 +19,7 @@ namespace MissileCommand.UI.GameOver
 
         [Header("Data")]
         [SerializeField] private SceneData _sceneData;
-        [SerializeField] private HighscoreData _highscores;
+        [SerializeField] private HighscoreData _highscoresData;
         [SerializeField] private IntVariable _score;
 
         private bool _newHighscore = false;
@@ -28,14 +28,16 @@ namespace MissileCommand.UI.GameOver
         {
             _newHighscore = false;
 
-            foreach (Score score in _highscores.Highscores)
-            {
-                if (_score.RunTimeValue > score.Value)
-                {
-                    _newHighscore = true;
-                }
-            }
+            // If the highscore leaderboard isn't filled up yet, add highscore.
+            if (_highscoresData.Highscores.Count < _highscoresData.MaxHighscores)
+                _newHighscore = true;
+            else
+                // Search the score list for a lower highscore
+                foreach (Score score in _highscoresData.Highscores)
+                    if (_score.RunTimeValue > score.Value)
+                        _newHighscore = true;
 
+            // If a new highscore is found, display the add highscore menu
             if (_newHighscore)
                 DisplayNewHighscoreMenu();
             else
@@ -84,10 +86,12 @@ namespace MissileCommand.UI.GameOver
         {
             string name = _nameInputField.text.Trim();
 
-            if (name.Length == 0)
-                return;
-            else
-                return;
+            // Only save highscore if name has more then 1 char
+            if (name.Length > 0)
+                _highscoresData.AddHighscore(name, _score.RunTimeValue);
+
+            DisplayGameOverMenu();
+                
         }
         #endregion
 
