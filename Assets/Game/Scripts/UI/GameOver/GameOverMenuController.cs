@@ -86,10 +86,12 @@ namespace MissileCommand.UI.GameOver
         {
             string name = _nameInputField.text.Trim();
 
-            if (name.Length == 0)
-                return;
-            else
-                return;
+            // Only save highscore if name has more then 1 char
+            if (name.Length > 0)
+                _highscoresData.AddHighscore(name, _score.RunTimeValue);
+
+            DisplayGameOverMenu();
+                
         }
         #endregion
 
