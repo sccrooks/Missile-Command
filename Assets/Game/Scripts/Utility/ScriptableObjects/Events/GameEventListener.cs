@@ -8,6 +8,9 @@ namespace Sccrooks.Utility.ScriptableObjects.Events
 {
     public class GameEventListener : MonoBehaviour
     {
+        [Header("Logging")]
+        [SerializeField] private bool _logEvent = false;
+
         public GameEvent Event;
         public UnityEvent Response;
 
@@ -24,7 +27,9 @@ namespace Sccrooks.Utility.ScriptableObjects.Events
         public void OnEventRaised()
         {
             Response?.Invoke();
-            Debug.Log(gameObject.name);
+
+            if (_logEvent)
+                Debug.Log(gameObject.name);
         }
     }
 }

@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _logEvent: 0
   Event: {fileID: 11400000, guid: 6d61c284d7314e148a8a768c7de01260, type: 2}
   Response:
     m_PersistentCalls:
@@ -418,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _logEvent: 0
   Event: {fileID: 11400000, guid: 10a25309b4d464344a61034d92067989, type: 2}
   Response:
     m_PersistentCalls:
@@ -447,6 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f8ee5d37fd1f046b3c24683a4e7247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _logEvent: 0
   Event: {fileID: 11400000, guid: 2420d23aa60868244909be67f5274d42, type: 2}
   Response:
     m_PersistentCalls:
@@ -808,6 +811,10 @@ PrefabInstance:
       propertyPath: _reticle
       value: 
       objectReference: {fileID: 214838485}
+    - target: {fileID: 5873382510130923897, guid: cd317c3a90ee3a44893b82db0f5fe2be, type: 3}
+      propertyPath: _logEvent
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd317c3a90ee3a44893b82db0f5fe2be, type: 3}
 --- !u!1001 &3939980555647957378
