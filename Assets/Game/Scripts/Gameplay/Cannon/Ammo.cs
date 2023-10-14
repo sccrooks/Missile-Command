@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace MissileCommand.Gameplay
 {
+    [CreateAssetMenu(fileName = "Ammo", menuName = "Data/Ammo")]
     public class Ammo : IntVariable
     {
         [SerializeField] private GameEvent _ammoModified;

@@ -16,7 +16,7 @@ namespace MissileCommand.Gameplay.Cannon
         [SerializeField] private float _angleModifier;
         [SerializeField] private GameObject _defenceMissile;
         [SerializeField] private int _maxAmmo = 20;
-        [SerializeField] private int _ammo;
+        [SerializeField] private Ammo _ammo;
 
         private void OnValidate()
         {
@@ -36,9 +36,9 @@ namespace MissileCommand.Gameplay.Cannon
         /// </summary>
         public void OnFireEvent()
         {
-            if (_ammo > 0)
+            if (_ammo.RuntimeValue > 0)
             {
-                _ammo--;
+                _ammo.RuntimeValue--;
                 _audioSource.Play(0);
                 Instantiate(_defenceMissile, _barrelTip.transform.position, Quaternion.identity, this.gameObject.transform);
             }
@@ -50,7 +50,7 @@ namespace MissileCommand.Gameplay.Cannon
         /// </summary>
         public void OnLevelStartEvent()
         {
-            _ammo = _maxAmmo;
+            _ammo.RuntimeValue = _maxAmmo;
         }
     }
 }

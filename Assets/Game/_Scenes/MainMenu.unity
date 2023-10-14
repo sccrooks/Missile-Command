@@ -2707,7 +2707,6 @@ MonoBehaviour:
   _sceneData: {fileID: 11400000, guid: e44176d173231af4ab8a40b5b426bd81, type: 2}
   _mainMenu: {fileID: 1138698222}
   _settingsMenu: {fileID: 667846125}
-  _levelEditor: {fileID: 0}
 --- !u!1001 &1947951352478549626
 PrefabInstance:
   m_ObjectHideFlags: 0
