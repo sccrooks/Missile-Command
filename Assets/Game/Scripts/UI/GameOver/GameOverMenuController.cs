@@ -34,7 +34,7 @@ namespace MissileCommand.UI.GameOver
             else
                 // Search the score list for a lower highscore
                 foreach (Score score in _highscoresData.Highscores)
-                    if (_score.RunTimeValue > score.Value)
+                    if (_score.RuntimeValue > score.Value)
                         _newHighscore = true;
 
             // If a new highscore is found, display the add highscore menu
@@ -88,7 +88,7 @@ namespace MissileCommand.UI.GameOver
 
             // Only save highscore if name has more then 1 char
             if (name.Length > 0)
-                _highscoresData.AddHighscore(name, _score.RunTimeValue);
+                _highscoresData.AddHighscore(name, _score.RuntimeValue);
 
             DisplayGameOverMenu();
                 
