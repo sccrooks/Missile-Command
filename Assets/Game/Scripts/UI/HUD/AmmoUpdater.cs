@@ -1,5 +1,4 @@
 using MissileCommand.Gameplay;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,12 +24,14 @@ namespace MissileCommand.UI.HUD
         {
             int ammo = _ammo.RuntimeValue;
 
+            // Delete spent ammo
             while (_ammoGameobjects.Count < ammo)
             {
                 GameObject ammoGameobject = Instantiate(_ammoPrefab, transform);
                 _ammoGameobjects.Add(ammoGameobject);
             }
 
+            // Add new ammo
             while (_ammoGameobjects.Count > ammo)
             {
                 GameObject gameObject = _ammoGameobjects[_ammoGameobjects.Count - 1];
