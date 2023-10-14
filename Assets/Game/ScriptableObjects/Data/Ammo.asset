@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ammo
   m_EditorClassIdentifier: 
   InitialValue: 0
-  _ammoModified: {fileID: 0}
+  _ammoModified: {fileID: 11400000, guid: d18b36aef7d7860468fdb9458d221534, type: 2}
