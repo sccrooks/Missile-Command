@@ -36,8 +36,8 @@ namespace MissileCommand.Gameplay.GameController
 
         private void Start()
         {
-            _score.RunTimeValue = 0;
-            _scoreUpdatedEvent.Raise(_score.RunTimeValue);
+            _score.RuntimeValue = 0;
+            _scoreUpdatedEvent.Raise(_score.RuntimeValue);
         }
         #endregion
 
@@ -84,8 +84,8 @@ namespace MissileCommand.Gameplay.GameController
 
         public void IncreaseScore(float score)
         {
-            this._score.RunTimeValue += (int)score;
-            _scoreUpdatedEvent.Raise(this._score.RunTimeValue);
+            this._score.RuntimeValue += (int)score;
+            _scoreUpdatedEvent.Raise(this._score.RuntimeValue);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace MissileCommand.UI
         // Start is called before the first frame update
         void Start()
         {
-            _tmpText.text = $"SCORE: {_score.RunTimeValue.ToString()}";
+            _tmpText.text = $"SCORE: {_score.RuntimeValue.ToString()}";
         }
     }
 }

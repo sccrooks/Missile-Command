@@ -7,18 +7,22 @@ namespace Sccrooks.Utility.ScriptableObjects.Variables
     public class IntVariable : ScriptableObject, ISerializationCallbackReceiver
     {
         public int InitialValue;
-        
-        [NonSerialized]
-        public int RunTimeValue;
+        private int _runtimeVariable;
+
+        public virtual int RuntimeValue
+        {
+            get { return _runtimeVariable; }
+            set { _runtimeVariable = value; }
+        }
 
         public void OnAfterDeserialize()
         {
-            RunTimeValue = InitialValue;
+            RuntimeValue = InitialValue;
         }
 
         public void OnBeforeSerialize()
         {
-
+            // Do nothing
         }
     }
 }
